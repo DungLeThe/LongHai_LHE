@@ -85,7 +85,6 @@ public class AddDistributorManagement extends BaseTest {
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationPage = distributorPage.clickAddMemberButton();
         distributorPage = createInformationPage.clickCancelButton();
-
         assertTrue(distributorPage.isDistributorManagementTextDisplayed());
     }
 
