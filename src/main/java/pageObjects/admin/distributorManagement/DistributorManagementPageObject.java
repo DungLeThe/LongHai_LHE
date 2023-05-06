@@ -17,6 +17,12 @@ public class DistributorManagementPageObject extends BasePage {
 		return new CreateInformationPageObject(driver);
 	}
 
+	public DetailDistributorPageObject clickViewDetailDistributorButton() {
+		waitForElementClickable(driver, AdminHomePageUI.VIEW_DETAIL_DISTRIBUTOR_BUTTON);
+		clickToElement(driver, AdminHomePageUI.VIEW_DETAIL_DISTRIBUTOR_BUTTON);
+		return new DetailDistributorPageObject(driver);
+	}
+
 	public boolean isDistributorManagementTextDisplayed() {
 		waitForElementVisible(driver, AdminHomePageUI.DISTRIBUTOR_MANAGEMENT_TEXT);
 		return isElementDisplay(driver, AdminHomePageUI.DISTRIBUTOR_MANAGEMENT_TEXT);

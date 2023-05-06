@@ -2,7 +2,7 @@ package pageUIs.admin;
 
 public class AdminHomePageUI {
 	public static final String PRODUCT_TEXT = "//p[text()='Sản phẩm tiêu thụ trong tháng']";
-	public static final String DRAG_BUTTON = "//li[@class='slick-active']/following-sibling::li/button";
+	public static final String DRAG_TO_THE_LEFT_BUTTON = "//li[@class='slick-active']/following-sibling::li/button";
 	public static final String NEXT_BUTTON = "//span[text()='Tiếp theo']";
 	public static final String BACK_BUTTON = "//span[text()='Quay lại']";
 	public static final String CREATE_BUTTON = "//span[text()='Tạo mới']";
@@ -10,6 +10,9 @@ public class AdminHomePageUI {
 	public static final String BACK_TO_CREATE_DISTRIBUTOR_PAGE_BUTTON = "//button[@class='btn btn__color--primary btn__size--default']";
 	public static final String DISTRIBUTOR_MANAGEMENT = "//a[@href='#/npp-manager']";
 	public static final String ADD_MEMBER_BUTTON = "//div[@class='npp-manager__container px1']/button";
+	public static final String VIEW_DETAIL_DISTRIBUTOR_BUTTON = "//p[@class='p6 gray-5']";
+	public static final String EDIT_DISTRIBUTOR_BUTTON = "//span[contains(normalize-space(),'Chỉnh sửa')]";
+	public static final String SAVE_DISTRIBUTOR_BUTTON = "//span[text()='Lưu']";
 	public static final String PERSONAL_INFORMATION_TEXT = "//div[text()='Thông tin cá nhân']";
 	public static final String MODAL_ERROR = "//div[@class='modal__content']";
 	public static final String DISTRIBUTOR_MANAGEMENT_TEXT = "//span[contains(normalize-space(),'Quản lý nhà phân phối')]";
@@ -33,6 +36,8 @@ public class AdminHomePageUI {
 	public static final String SELECT_WARD = "//div[contains(normalize-space(),'An Phú') and @class='address-item']";
 	public static final String CREATE_USER_TEXT = "//div[@class='p1 mb1']";
 	public static final String REPRESENTATIVE = "//p[contains(normalize-space(),'%s')]";
+
+	public static final String CONFIRM_SUCCESS_TEXT = "//span[@class='green-2 h5']";
 
 	public static final String ERROR_MESSAGE_EMPTY_REPRESENTATIVE =
 			"//p[contains(normalize-space(),'Người đại diện')]//ancestor::div[contains(@class,'mb1')]//p[contains(normalize-space(),'Bạn cần điền vào mục này')]";
@@ -87,4 +92,39 @@ public class AdminHomePageUI {
 	public static final String CANCEL_BUTTON = "//span[text()='Huỷ bỏ']";
 	public static final String CREATE_NEW_BUTTON = "//span[text()='Tạo mới']";
 	public static final String PRODUCT_NAME = "//p[contains(normalize-space(),'%s')]";
+
+	// Order Page
+	public static final String ORDER_BUTTON = "//a[@href='#/order']";
+	public static final String ADD_NEW_ORDER_BUTTON = "//div[@class='mb15']/button";
+	public static final String ORDER_INFO_TEXT = "//span[@class='h5']";
+	public static final String CHOOSE_STORE_BUTTON = "//input[@class='vs__search']";
+	public static final String STORE_INPUT_VALUE = "//li[contains(normalize-space(),'Kho Cẩm Thượng')]";
+	public static final String CHOOSE_PRODUCT_IN_STOCK_BUTTON = "//span[text()='Chọn sản phẩm trong kho sản phẩm']";
+	public static final String SEARCH_PRODUCT_INPUT = "//input[@placeholder='Tìm kiếm sản phẩm']";
+	public static final String CHOOSE_PRODUCT_CHECKBOX = "//div[text()=' Thạch rau câu phong cách Nhật Bản Kimiko 990g ']/parent::div/parent::div/div/div//input";
+	public static final String CANCEL_PRODUCT_BUTTON = "//div[text()='Huỷ']";
+	public static final String HELP_DESK_ICON = "//div[@class='helpdesk__icon up']";
+	public static final String SELECT_ALL_TEXT = "//p[text()='Chọn tất cả']";
+	public static final String CANCEL_HELP_DESK = "//div[@class='cursor']";
+	public static final String ADD_BUTTON = "//button[@class='btn btn__color--primary btn__size--large']";
+	public static final String DISTRIBUTOR_INPUT = "//input[@placeholder='Tìm kiến nhà phân phối']";
+	public static final String SELECT_DISTRIBUTOR_DROPDOWN = "//p[text()='NPP Test']";
+	public static final String CREATE_ORDER_BUTTON = "//span[text()='Tạo đơn']";
+	public static final String LIST_PAGE_BUTTON = "//p[text()='Trang danh sách']";
+	public static final String VIEW_DETAIL_ORDER_BUTTON = "//p[text()='Chi tiết đơn']";
+	public static final String APPROVE_BUTTON = "//span[text()='Phê duyệt']";
+	public static final String ORDER_SUCCESS_TEXT = "//p[text()='Xác nhận đơn hàng thành công']";
+	public static final String CANCEL_ORDER_MODAL_SUCCESS_BUTTON = "//p[text()='Đóng']";
+	public static final String PROCESSING_BUTTON = "//div[contains(normalize-space(),'Đang xử lý')]";
+	public static final String VIEW_DETAIL_BUTTON = "//span[text()='Xem chi tiết']";
+	public static final String WAITING_FOR_APPROVE_BUTTON = "//div[@class='nav-tab__title--head f aic jcs']//div[contains(text(),'Chờ phê duyệt')]";
+	public static final String REFUSE_ORDER_BUTTON = "//span[text()='Từ chối']";
+	public static final String NOTE_TEXT_AREA = "//textarea[@placeholder='Nhập vào đây']";
+	public static final String CONFIRM_BUTTON = "//span[text()='Xác nhận']";
+	public static final String FAILURE_BUTTON = "//div[contains(normalize-space(),'Thất bại')]";
+
+	// User Management Page
+	public static final String USER_MANAGEMENT_BUTTON = "//a[@href='#/user-manager']";
+	public static final String ADD_NEW_USER_MANAGEMENT_BUTTON = "//div[@class='user-manager__search mb15']/button";
+	public static final String BACK_TO_LIST_DISTRIBUTOR_BUTTON = "//span[text()=' Quay lại trang chi tiết ']";
 }

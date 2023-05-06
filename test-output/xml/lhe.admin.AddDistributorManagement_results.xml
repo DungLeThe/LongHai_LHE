@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Run On CHROME"
-           tests="9"
+           tests="10"
            failures="0"
            errors="0"
            skipped="0"
-           time="98.208">
+           time="112.138">
   <properties />
   
   
-            <testcase name="TC_02_Go_To_Add_Distributor_Management" time="1.344" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_04_Empty_Data" time="2.761" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_10_Create_Account_Success" time="30.414" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_06_Add_Distributor_Management_Success" time="14.731" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_03_Invalid_Data" time="1.980" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_05_Validate_Region_And_Area" time="12.609" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_08_Create_Account_Empty_Data" time="16.786" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_09_Create_Account_Invalid_Data" time="15.746" classname="lhe.admin.AddDistributorManagement" />
-                <testcase name="TC_01_Cancel" time="1.837" classname="lhe.admin.AddDistributorManagement" />
+            <testcase name="TC_01_Cancel" time="1.178" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_05_Validate_Region_And_Area" time="13.327" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_02_Go_To_Add_Distributor_Management" time="1.390" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_07_Back_To_Previous_Page" time="14.879" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_09_Create_Account_Invalid_Data" time="15.765" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_08_Create_Account_Empty_Data" time="16.181" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_06_Add_Distributor_Management_Success" time="15.500" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_10_Create_Account_Success" time="30.135" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_03_Invalid_Data" time="1.012" classname="lhe.admin.AddDistributorManagement" />
+                <testcase name="TC_04_Empty_Data" time="2.771" classname="lhe.admin.AddDistributorManagement" />
       
 </testsuite>

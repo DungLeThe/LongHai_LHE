@@ -52,7 +52,7 @@ public class AddProduct extends BaseTest {
 
     public void goToHomPage() {
         homePage.openPageUrl(driver, ADMIN_LOGIN);
-        homePage.clickButtonDragToTheRight();
+        homePage.clickButtonDragToTheLeft();
     }
 
     @Test

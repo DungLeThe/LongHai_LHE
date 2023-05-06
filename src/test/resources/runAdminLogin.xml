@@ -13,7 +13,10 @@
     <classes>
       <class name="lhe.admin.Login"/>
       <class name="lhe.admin.AddDistributorManagement"/>
+      <class name="lhe.admin.EditDistributorManagement"/>
       <class name="lhe.admin.AddProduct"/>
+      <class name="lhe.admin.AddOrder"/>
+      <class name="lhe.admin.UserManagement"/>
     </classes>
   </test>
 

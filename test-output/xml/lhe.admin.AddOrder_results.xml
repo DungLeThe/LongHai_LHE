@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run On CHROME"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="132.813">
+  <properties />
+  
+  
+            <testcase name="TC_05_Refuse_Approve_Order" time="24.107" classname="lhe.admin.AddOrder" />
+                <testcase name="TC_01_Cancel_Order_Page" time="2.225" classname="lhe.admin.AddOrder" />
+                <testcase name="TC_03_Approve_Order" time="46.166" classname="lhe.admin.AddOrder" />
+                <testcase name="TC_04_Approve_Order_From_Order_Home_Page" time="20.302" classname="lhe.admin.AddOrder" />
+                <testcase name="TC_02_Create_Order_Page_Success" time="40.013" classname="lhe.admin.AddOrder" />
+      
+</testsuite>

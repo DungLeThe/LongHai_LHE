@@ -1,14 +1,14 @@
-package pageObjects.admin.product;
+package pageObjects.admin.userManagement;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageObjects.admin.distributorManagement.CreateAccountDistributorPageObject;
+import pageObjects.admin.product.ProductHomePageObject;
 import pageUIs.admin.AdminHomePageUI;
 
-public class CreateProductPageObject extends BasePage {
+public class CreateUserManagementPageObject extends BasePage {
 	private WebDriver driver;
 
-	public CreateProductPageObject(WebDriver driver) {
+	public CreateUserManagementPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

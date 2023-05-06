@@ -4,7 +4,9 @@ import commons.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pageObjects.admin.distributorManagement.DistributorManagementPageObject;
+import pageObjects.admin.order.OrderHomePageObject;
 import pageObjects.admin.product.ProductHomePageObject;
+import pageObjects.admin.userManagement.UserManagementHomePageObject;
 import pageUIs.admin.AdminHomePageUI;
 
 public class AdminHomePageObject extends BasePage {
@@ -20,9 +22,9 @@ public class AdminHomePageObject extends BasePage {
 		return isElementDisplay(driver, AdminHomePageUI.PRODUCT_TEXT);
 	}
 
-	public void clickButtonDragToTheRight() {
-		waitForElementClickable(driver, AdminHomePageUI.DRAG_BUTTON);
-		clickToElement(driver, AdminHomePageUI.DRAG_BUTTON);
+	public void clickButtonDragToTheLeft() {
+		waitForElementClickable(driver, AdminHomePageUI.DRAG_TO_THE_LEFT_BUTTON);
+		clickToElement(driver, AdminHomePageUI.DRAG_TO_THE_LEFT_BUTTON);
 	}
 
 	public DistributorManagementPageObject clickDistributorManagementButton() {
@@ -35,5 +37,17 @@ public class AdminHomePageObject extends BasePage {
 		waitForElementClickable(driver, AdminHomePageUI.PRODUCT_BUTTON);
 		clickToElement(driver, AdminHomePageUI.PRODUCT_BUTTON);
 		return new ProductHomePageObject(driver);
+	}
+
+	public OrderHomePageObject clickOrderButton() {
+		waitForElementClickable(driver, AdminHomePageUI.ORDER_BUTTON);
+		clickToElement(driver, AdminHomePageUI.ORDER_BUTTON);
+		return new OrderHomePageObject(driver);
+	}
+
+	public UserManagementHomePageObject clickUserManagementButton() {
+		waitForElementClickable(driver, AdminHomePageUI.USER_MANAGEMENT_BUTTON);
+		clickToElement(driver, AdminHomePageUI.USER_MANAGEMENT_BUTTON);
+		return new UserManagementHomePageObject(driver);
 	}
 }

@@ -31,7 +31,7 @@ public class BasePage {
         AdminLoginPageObject loginPage = new AdminLoginPageObject(driver);
         AdminHomePageObject homePage;
         homePage = loginPage.loginWebsite(ACCOUNT, PASSWORD);
-        homePage.clickButtonDragToTheRight();
+        homePage.clickButtonDragToTheLeft();
         assertTrue(homePage.isProductTextDisplayed());
         return new AdminHomePageObject(driver);
     }
@@ -155,10 +155,14 @@ public class BasePage {
         this.getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click();
     }
 
-    public void clickAndHold(WebDriver driver, WebElement locatorType) {
+    public void clickAndHold(WebDriver driver, String locatorType) {
         Actions actions = new Actions(driver);
+        actions.clickAndHold(this.getWebElement(driver, locatorType)).moveByOffset(-1000, 0).release().build().perform();
+    }
 
-        actions.clickAndHold(locatorType).moveByOffset(-1000, 0).release().build().perform();
+    public void dragAndDrop(WebDriver driver, String locatorFrom,String locatorTo) {
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(this.getWebElement(driver, locatorFrom),  this.getWebElement(driver, locatorTo)).build().perform();
     }
 
     public void sendKeyToElement(WebDriver driver, String locatorType, String textValue) {
@@ -497,6 +501,11 @@ public class BasePage {
     public void waitForLoadingIconInvisible(WebDriver driver) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(LOADING_ICON)));
+    }
+
+    public void waitForLoadingItemInvisible(WebDriver driver) {
+        WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
+        explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(LOADING_ITEM)));
     }
 
     /**

@@ -75,7 +75,7 @@ public class AddDistributorManagement extends BaseTest {
 
     public void goToHomPage() {
         homePage.openPageUrl(driver, ADMIN_LOGIN);
-        homePage.clickButtonDragToTheRight();
+        homePage.clickButtonDragToTheLeft();
     }
 
     @Test
@@ -240,7 +240,7 @@ public class AddDistributorManagement extends BaseTest {
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
     }
 
-    //    @Test
+        @Test
     public void TC_07_Back_To_Previous_Page(Method method) {
         ExtentTestManager.startTest(method.getName(), "Click Back Button");
         goToHomPage();

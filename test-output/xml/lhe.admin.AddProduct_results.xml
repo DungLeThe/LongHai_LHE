@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="9.573">
+           time="10.903">
   <properties />
   
   
-            <testcase name="TC_01_Cancel_Product_Page" time="1.083" classname="lhe.admin.AddProduct" />
-                <testcase name="TC_02_Create_Product_Page" time="8.490" classname="lhe.admin.AddProduct" />
+            <testcase name="TC_01_Cancel_Product_Page" time="2.282" classname="lhe.admin.AddProduct" />
+                <testcase name="TC_02_Create_Product_Page" time="8.621" classname="lhe.admin.AddProduct" />
       
 </testsuite>
