@@ -1,4 +1,5 @@
 package lhe.npp;
+
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
@@ -17,10 +18,11 @@ import static org.testng.Assert.assertTrue;
 import pageObjects.npp.NppHomePageObject;
 import pageObjects.npp.NppLoginPageObject;
 import reportConfig.ExtentTestManager;
+
 public class NppLogin extends BaseTest {
     WebDriver driver;
 
-    private String account, password,accountInvalid, passwordInvalid;
+    private String account, password, accountInvalid, passwordInvalid;
     private String browserName;
 
     private NppLoginPageObject loginPage;
@@ -59,20 +61,21 @@ public class NppLogin extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 05: Verify Error Message At Password Textbox");
         assertEquals(loginPage.getErrorMessageAtPassworkTextbox(), "Bạn cần điền vào mục này");
     }
+
     @Test
-    public void TC_02_Login_Invalid(){
+    public void TC_02_Login_Invalid() {
         loginPage.inputToAccountTextbox(accountInvalid);
         loginPage.inputToPasswordTextbox(passwordInvalid);
         loginPage.clickToEyeIcon();
         loginPage.clickToLoginButton();
         loginPage.getErrorTextModal();
-        assertEquals(loginPage.getErrorTextModal(),"Sai tên hoặc sai mật khẩu");
+        assertEquals(loginPage.getErrorTextModal(), "Sai tên hoặc sai mật khẩu");
 
         loginPage.closeErrorPopup();
     }
 
     @Test
-    public void TC_03_Login_Valid(){
+    public void TC_03_Login_Valid() {
         driver.navigate().refresh();
         loginPage.inputToAccountTextbox(account);
         loginPage.inputToPasswordTextbox(password);
@@ -80,6 +83,7 @@ public class NppLogin extends BaseTest {
         assertTrue(loginPage.chartTextIsDisplayed());
         loginPage.dragToLeft();
     }
+
     @AfterClass(alwaysRun = true)
     public void afterClass() {
         closeBrowserAndDriver();

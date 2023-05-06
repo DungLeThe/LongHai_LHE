@@ -5,11 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.npp.order.OrderHomePageObject;
-import pageUIs.admin.AdminHomePageUI;
 import pageUIs.npp.NppHomePageUI;
 import pageUIs.npp.NppLoginPageUI;
 
-import static commons.BasePageUI.LOADING_ITEM;
 
 public class NppHomePageObject extends BasePage {
     private WebDriver driver;

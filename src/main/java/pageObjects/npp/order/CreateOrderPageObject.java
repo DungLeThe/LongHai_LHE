@@ -1,23 +1,27 @@
 package pageObjects.npp.order;
+
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.npp.NppOrderPageUI;
 
 import static pageUIs.npp.NppOrderPageUI.*;
 
-public class CreateOrderPageObject extends BasePage{
+public class CreateOrderPageObject extends BasePage {
 
     private WebDriver driver;
+
     public CreateOrderPageObject(WebDriver driver) {
         this.driver = driver;
     }
 
     public void inputNote() {
-        sendKeyToElement(driver, ORDER_NOTE, "Giao hàng nhanh trong ngày" );
+        sendKeyToElement(driver, ORDER_NOTE, "Giao hàng nhanh trong ngày");
     }
-    public void searchProduct(){
+
+    public void searchProduct() {
         sendKeyToElement(driver, SEARCH_PRODUCT, "Thạch rau câu phong cách Nhật Bản Kimiko 990g");
     }
+
     public void dragAndDropIcon() {
         waitForElementClickable(driver, NppOrderPageUI.HELP_DESK_ICON);
         dragAndDrop(driver, NppOrderPageUI.HELP_DESK_ICON, NppOrderPageUI.BELL_ICON);
@@ -28,7 +32,7 @@ public class CreateOrderPageObject extends BasePage{
         clickToElement(driver, NppOrderPageUI.CANCEL_HELP_DESK);
     }
 
-    public void inputSelectProductCheckbox()  {
+    public void inputSelectProductCheckbox() {
         //waitForElementClickable(driver, NppOrderPageUI.PRODUCT_CHECKBOX);
         clickToElement(driver, NppOrderPageUI.PRODUCT_CHECKBOX);
     }
@@ -42,7 +46,7 @@ public class CreateOrderPageObject extends BasePage{
         waitForElementVisible(driver, NppOrderPageUI.SUCCESSFULL_POPUP_CONTENT);
         String successfullContent = getElementText(driver, NppOrderPageUI.SUCCESSFULL_POPUP_CONTENT);
         return getElementText(driver, SUCCESSFULL_POPUP_CONTENT);
-        }
+    }
 
     public void clickOnOrderDetail() {
         waitForElementVisible(driver, NppOrderPageUI.VIEW_ORDER_DETAIL_BUTTON_AFTER_CREATED_SUCCESS);
