@@ -4,12 +4,12 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="5.257">
+           time="5.810">
   <properties />
   
   
-            <testcase name="TC_01_Login_Empty_Data" time="0.436" classname="lhe.admin.Login" />
-                <testcase name="TC_02_Login_Invalid" time="1.962" classname="lhe.admin.Login" />
-                <testcase name="TC_03_Login_Success" time="2.859" classname="lhe.admin.Login" />
+            <testcase name="TC_01_Login_Empty_Data" time="0.567" classname="lhe.admin.Login" />
+                <testcase name="TC_02_Login_Invalid" time="2.096" classname="lhe.admin.Login" />
+                <testcase name="TC_03_Login_Success" time="3.147" classname="lhe.admin.Login" />
       
 </testsuite>
