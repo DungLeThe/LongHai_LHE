@@ -4,9 +4,12 @@ import java.io.File;
 
 public class GlobalConstants {
     public static final String ADMIN_LOGIN = "https://admin.longhaii.com/";
-
+    public static final String NPP_LOGIN = "https://npp.longhaii.com/";
     public static String ACCOUNT = "adminqc";
     public static String PASSWORD = "admin@11";
+    public static String NPP_ACCOUNT ="npp.lhe";
+
+    public static String NPP_PASSWORD ="lhe@1234";
 
     public static final String PROJECT_PATH = System.getProperty("user.dir");
 
