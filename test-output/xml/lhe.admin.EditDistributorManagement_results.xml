@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run On CHROME"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="17.105">
+  <properties />
+  
+  
+            <testcase name="TC_01_Edit_Data_Success" time="17.105" classname="lhe.admin.EditDistributorManagement" />
+      
+</testsuite>

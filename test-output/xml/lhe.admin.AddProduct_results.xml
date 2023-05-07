@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run On CHROME"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="10.830">
+  <properties />
+  
+  
+            <testcase name="TC_01_Cancel_Product_Page" time="1.940" classname="lhe.admin.AddProduct" />
+                <testcase name="TC_02_Create_Product_Page" time="8.890" classname="lhe.admin.AddProduct" />
+      
+</testsuite>

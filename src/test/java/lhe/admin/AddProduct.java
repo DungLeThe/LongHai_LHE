@@ -76,8 +76,7 @@ public class AddProduct extends BaseTest {
         createProductPage.clickSelectCategory();
         createProductPage.inputDynamic(driver,"Nhập tên sản phẩm", productName);
         createProductPage.inputProductDescription(productDescription);
-        driver.findElement(By.xpath("//input[@type='file']")).sendKeys(productImage);
-//        createProductPage.inputProductImage(productImage);
+        createProductPage.inputProductImage(productImage);
         createProductPage.inputDynamic(driver,"Nhập giá bán lẻ", retailPrice);
         createProductPage.inputDynamic(driver,"Nhập giá theo thùng", perBarrelPrice);
         createProductPage.inputDynamic(driver,"Nhập số lượng sản phẩm trong 1 thùng", numberOfProductsInOneBox);

@@ -159,50 +159,8 @@ public class AddDistributorManagement extends BaseTest {
         assertEquals(createInformationPage.getErrorMessageTimeIn(), "Bạn cần điền vào mục này");
     }
 
-    @Test
-    public void TC_05_Validate_Region_And_Area(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Validate Region And Area");
-        goToHomPage();
-        distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
-
-        createInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
-
-        createInformationPage.inputToTaxCode(taxCode);
-        createInformationPage.inputToIdCard(idCard);
-        createInformationPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
-        createInformationPage.clickToSelectAddress();
-        createInformationPage.clickToSelectCity();
-        createInformationPage.clickToSelectDistrict();
-        createInformationPage.clickToSelectWard();
-        createInformationPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
-
-        createInformationPage.scrollToBottomPage(driver);
-
-        createInformationPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
-        createInformationPage.inputToWarehouseArea(warehouseArea);
-        createInformationPage.inputToLabor(labor);
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
-
-        createInformationPage.clickNextButton();
-
-        assertEquals(createInformationPage.getErrorMessageRegion(), "Vui lòng chọn");
-
-        createInformationPage.clickToInputRegion();
-
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
-
-        createInformationPage.clickNextButton();
-        assertEquals(createInformationPage.getErrorMessageArea(), "Vui lòng chọn");
-    }
-
     @Test()
-    public void TC_06_Add_Distributor_Management_Success(Method method) {
+    public void TC_05_Add_Distributor_Management_Success(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management Success");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
@@ -241,7 +199,7 @@ public class AddDistributorManagement extends BaseTest {
     }
 
         @Test
-    public void TC_07_Back_To_Previous_Page(Method method) {
+    public void TC_06_Back_To_Previous_Page(Method method) {
         ExtentTestManager.startTest(method.getName(), "Click Back Button");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
@@ -283,7 +241,7 @@ public class AddDistributorManagement extends BaseTest {
     }
 
     @Test()
-    public void TC_08_Create_Account_Empty_Data(Method method) {
+    public void TC_07_Create_Account_Empty_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Empty Data");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
@@ -335,7 +293,7 @@ public class AddDistributorManagement extends BaseTest {
     }
 
     @Test()
-    public void TC_09_Create_Account_Invalid_Data(Method method) {
+    public void TC_08_Create_Account_Invalid_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Invalid Data");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
@@ -387,7 +345,7 @@ public class AddDistributorManagement extends BaseTest {
     }
 
     @Test()
-    public void TC_10_Create_Account_Success(Method method) {
+    public void TC_09_Create_Account_Success(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Success");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();

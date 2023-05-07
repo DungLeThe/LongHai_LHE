@@ -29,6 +29,7 @@ public class OrderHomePageObject extends BasePage {
     }
 
 	public void clickWaitingForApproveButton() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.WAITING_FOR_APPROVE_BUTTON);
 		clickToElement(driver, AdminHomePageUI.WAITING_FOR_APPROVE_BUTTON);
 	}

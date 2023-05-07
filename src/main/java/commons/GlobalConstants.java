@@ -8,16 +8,10 @@ public class GlobalConstants {
     public static String ACCOUNT = "adminqc";
     public static String PASSWORD = "admin@11";
     public static String NPP_ACCOUNT ="npp.lhe";
-
     public static String NPP_PASSWORD ="lhe@1234";
-
     public static final String PROJECT_PATH = System.getProperty("user.dir");
-
     public static final String JAVA_VERSION = System.getProperty("java.version");
-
-    public static final String REPORTNGSCREENSHOT = PROJECT_PATH + File.separator + "reportNGImages" + File.separator;
-
-    public static final long SHOT_TIMEOUT = 5;
+    public static final String REPORT_NG_SCREENSHOT = PROJECT_PATH + File.separator + "reportNGImages" + File.separator;
+    public static final int SHORT_TIMEOUT = 1;
     public static final long LONG_TIMEOUT = 10;
-
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run On CHROME"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="5.511">
+  <properties />
+  
+  
+            <testcase name="TC_01_Login_Empty_Data" time="0.430" classname="lhe.admin.Login" />
+                <testcase name="TC_03_Login_Success" time="3.060" classname="lhe.admin.Login" />
+                <testcase name="TC_02_Login_Invalid" time="2.021" classname="lhe.admin.Login" />
+      
+</testsuite>
