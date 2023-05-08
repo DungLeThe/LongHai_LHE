@@ -11,10 +11,10 @@ public class DistributorManagementPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public CreateInformationPageObject clickAddMemberButton() {
+	public CreateInformationDistributorPageObject clickAddMemberButton() {
 		waitForElementClickable(driver, AdminHomePageUI.ADD_MEMBER_BUTTON);
 		clickToElement(driver, AdminHomePageUI.ADD_MEMBER_BUTTON);
-		return new CreateInformationPageObject(driver);
+		return new CreateInformationDistributorPageObject(driver);
 	}
 
 	public DetailDistributorPageObject clickViewDetailDistributorButton() {

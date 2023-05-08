@@ -51,4 +51,8 @@ public class EditInformationPageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.SAVE_DISTRIBUTOR_BUTTON);
 		return new ConfirmEditInformationPageObject(driver);
 	}
+
+	public void inputAvatarImage(String avatarImage) {
+		uploadImage(driver, AdminHomePageUI.AVATAR_IMAGE, avatarImage);
+	}
 }

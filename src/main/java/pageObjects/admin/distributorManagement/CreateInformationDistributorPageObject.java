@@ -4,10 +4,10 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.admin.AdminHomePageUI;
 
-public class CreateInformationPageObject extends BasePage {
+public class CreateInformationDistributorPageObject extends BasePage {
 	private WebDriver driver;
 
-	public CreateInformationPageObject(WebDriver driver) {
+	public CreateInformationDistributorPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 

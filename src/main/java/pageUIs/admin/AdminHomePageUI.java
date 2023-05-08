@@ -85,6 +85,7 @@ public class AdminHomePageUI {
 	public static final String PRODUCT_DESCRIPTION_TEXT_AREA = "//textarea[@placeholder='Nhập mô tả sản phẩm']";
 	public static final String CATEGORY_INPUT = "//input[@placeholder='Chọn một danh mục']";
 	public static final String PRODUCT_IMAGE = "//input[@type='file']";
+	public static final String AVATAR_IMAGE = "//input[@type='file']";
 	public static final String CATEGORY_INPUT_VALUE = "//li[contains(normalize-space(),'Khuyến mại tháng 5')]";
 	public static final String ADD_ATTRIBUTE_BUTTON = "//span[@class='f aic jcc h6']";
 	public static final String DELETE_ATTRIBUTE_BUTTON = "//button[@class='btn btn__color--danger btn__size--default out__line']";
@@ -142,4 +143,5 @@ public class AdminHomePageUI {
 	public static final String USER_MANAGEMENT_BUTTON = "//a[@href='#/user-manager']";
 	public static final String ADD_NEW_USER_MANAGEMENT_BUTTON = "//div[@class='user-manager__search mb15']/button";
 	public static final String BACK_TO_LIST_DISTRIBUTOR_BUTTON = "//span[text()=' Quay lại trang chi tiết ']";
+	public static final String ADD_DISTRIBUTOR_DIV = "//div[contains(text(),'Nhà phân phối')]";
 }
