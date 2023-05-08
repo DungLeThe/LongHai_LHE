@@ -32,12 +32,8 @@ public class CreateOrderPageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.CHOOSE_PRODUCT_IN_STOCK_BUTTON);
 	}
 
-	public void clickSeachInputProduct() {
-		waitForElementClickable(driver, AdminHomePageUI.SEARCH_PRODUCT_INPUT);
-		clickToElement(driver, AdminHomePageUI.SEARCH_PRODUCT_INPUT);
-	}
-
 	public void clickChooseProductTextbox() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.CHOOSE_PRODUCT_CHECKBOX);
 		clickToElement(driver, AdminHomePageUI.CHOOSE_PRODUCT_CHECKBOX);
 	}
@@ -48,6 +44,7 @@ public class CreateOrderPageObject extends BasePage {
 	}
 
 	public void dragAndDropIcon() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.HELP_DESK_ICON);
 		dragAndDrop(driver, AdminHomePageUI.HELP_DESK_ICON, AdminHomePageUI.SELECT_ALL_TEXT);
 	}
@@ -68,6 +65,7 @@ public class CreateOrderPageObject extends BasePage {
 	}
 
 	public void clickSelectDistributor() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_DISTRIBUTOR_DROPDOWN);
 		clickToElement(driver, AdminHomePageUI.SELECT_DISTRIBUTOR_DROPDOWN);
 	}
@@ -78,6 +76,7 @@ public class CreateOrderPageObject extends BasePage {
 	}
 
 	public void clickListPageButton() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.LIST_PAGE_BUTTON);
 		clickToElement(driver, AdminHomePageUI.LIST_PAGE_BUTTON);
 	}

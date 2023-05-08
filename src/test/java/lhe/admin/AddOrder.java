@@ -68,7 +68,6 @@ public class AddOrder extends BaseTest {
         createOrderPage = orderHomePage.clickAddNewOrderButton();
         createOrderPage.inputDynamic(driver,"Tìm kiến nhà phân phối", selectDistributor);
         createOrderPage.clickDistributorInput();
-        createOrderPage.waitForLoadingItemInvisible(driver);
         createOrderPage.clickSelectDistributor();
         createOrderPage.inputDynamic(driver,"Nhập ghi chú", enterNote);
         createOrderPage.clickChooseStoreButton();
@@ -76,11 +75,9 @@ public class AddOrder extends BaseTest {
         createOrderPage.clickChooseProductButton();
         createOrderPage.clickCancelProductButton();
         createOrderPage.clickChooseProductButton();
-        createOrderPage.waitForLoadingItemInvisible(driver);
         createOrderPage.dragAndDropIcon();
         createOrderPage.clickCancelHelpdesk();
         createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
-        createOrderPage.waitForLoadingItemInvisible(driver);
         createOrderPage.clickChooseProductTextbox();
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
@@ -102,11 +99,9 @@ public class AddOrder extends BaseTest {
         createOrderPage.clickChooseProductButton();
         createOrderPage.clickCancelProductButton();
         createOrderPage.clickChooseProductButton();
-        createOrderPage.waitForLoadingItemInvisible(driver);
         createOrderPage.dragAndDropIcon();
         createOrderPage.clickCancelHelpdesk();
         createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
-        createOrderPage.waitForLoadingItemInvisible(driver);
         createOrderPage.clickChooseProductTextbox();
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
@@ -122,7 +117,6 @@ public class AddOrder extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Approve Order From Order Home Page");
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
-        orderHomePage.waitForLoadingItemInvisible(driver);
         orderHomePage.clickWaitingForApproveButton();
         orderDetailPage = orderHomePage.clickViewDetailButton();
         orderDetailPage.clickApproveOrderButton();
@@ -136,7 +130,6 @@ public class AddOrder extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Refuse Approve Order");
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
-        orderHomePage.waitForLoadingItemInvisible(driver);
         orderHomePage.clickWaitingForApproveButton();
         orderDetailPage = orderHomePage.clickViewDetailButton();
         orderDetailPage.clickRefuseOrderButton();

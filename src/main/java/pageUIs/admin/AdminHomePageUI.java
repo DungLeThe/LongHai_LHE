@@ -81,7 +81,6 @@ public class AdminHomePageUI {
 	// Product Page
 	public static final String PRODUCT_BUTTON = "//a[@href='#/product']";
 	public static final String ADD_NEW_PRODUCT_BUTTON = "//div[@class='product-tab__search mb15']/button";
-	public static final String ADD_NEW_PRODUCT_TEXT = "//span[contains(normalize-space(),'Thêm mới sản phẩm')]";
 	public static final String PRODUCT_WAREHOUSE_TEXT = "//span[@class='h5']";
 	public static final String PRODUCT_DESCRIPTION_TEXT_AREA = "//textarea[@placeholder='Nhập mô tả sản phẩm']";
 	public static final String CATEGORY_INPUT = "//input[@placeholder='Chọn một danh mục']";
@@ -92,6 +91,22 @@ public class AdminHomePageUI {
 	public static final String CANCEL_BUTTON = "//span[text()='Huỷ bỏ']";
 	public static final String CREATE_NEW_BUTTON = "//span[text()='Tạo mới']";
 	public static final String PRODUCT_NAME = "//p[contains(normalize-space(),'%s')]";
+	public static final String PRODUCT_DETAIL = "//p[@class='p3 mb025']";
+	public static final String EDIT_PRODUCT_BUTTON = "//span[contains(normalize-space(),'Chỉnh sửa')]";
+	public static final String PRODUCT_DETAIL_TEXT = "//span[contains(normalize-space(),'Chi tiết sản phẩm')]";
+	public static final String CANCEL_EDIT_PRODUCT_BUTTON = "//span[text()='Huỷ bỏ']";
+	public static final String CHANGE_STATUS_PRODUCT_LABEL = "//div[@class='label']";
+	public static final String EXISTING_ATTRIBUTE_DIV = "//p[text()='Thuộc tính hiện có']/following-sibling::div[1]";
+	public static final String ATTRIBUTE_VALUE_INPUT = "//input[@placeholder='Nhập giá trị thuộc tính']";
+	public static final String SAVE_PRODUCT_BUTTON = "//span[text()='Lưu']";
+	public static final String RETAIL_PRICE_INPUT = "//input[@placeholder='Nhập giá bán lẻ']";
+	public static final String PER_BARREL_PRICE_INPUT = "//input[@placeholder='Nhập giá theo thùng']";
+	public static final String NUMBER_OF_PRODUCTS_IN_ONE_BOX_INPUT = "//input[@placeholder='Nhập số lượng']";
+
+	public static final String PRODUCT_STATUS_INACTIVE_TEXT = "//div[@class='px1 f aic jcb border']/p[2]";
+	public static final String PRODUCT_STATUS_ACTIVE_TEXT = "//div[@class='px1 f aic jcb border']/p[2]";
+	public static final String INFO_PRODUCT_INACTIVE_BUTTON = "//div[contains(text(),'Ngưng hoạt động')]";
+	public static final String INFO_PRODUCT_ACTIVE_BUTTON = "//div[contains(text(),'Đang hoạt động')]";
 
 	// Order Page
 	public static final String ORDER_BUTTON = "//a[@href='#/order']";

@@ -27,6 +27,7 @@ public class OrderDetailPageObject extends BasePage {
 	}
 
 	public void clickApproveOrderButton() {
+		waitForLoadingIconInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.APPROVE_BUTTON);
 		clickToElement(driver, AdminHomePageUI.APPROVE_BUTTON);
 	}

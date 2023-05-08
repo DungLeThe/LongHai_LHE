@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -21,7 +20,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.commons.lang3.RandomStringUtils;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
-
 import static commons.BasePageUI.*;
 import static commons.GlobalConstants.*;
 import static org.testng.Assert.assertTrue;
@@ -171,7 +169,6 @@ public class BasePage {
         element.sendKeys(textValue);
     }
 
-
     public void clearValueInElementByDeleteKey(WebDriver driver, String locatorType) {
         WebElement element = this.getWebElement(driver, locatorType);
         element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
@@ -223,8 +220,8 @@ public class BasePage {
         WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
         List<WebElement> allItems = explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(childLocator)));
         for (WebElement item : allItems) {
-            JavascriptExecutor jsExecuter = (JavascriptExecutor) driver;
-            jsExecuter.executeScript("arguments[0].scrollIntoView(true);", item);
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+            jsExecutor.executeScript("arguments[0].scrollIntoView(true);", item);
             sleepInSecond(1);
             item.click();
             break;
@@ -403,7 +400,6 @@ public class BasePage {
     public boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-
         ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
@@ -421,7 +417,6 @@ public class BasePage {
                 return jsExecutor.executeScript("return document.readyState").toString().equals("complete");
             }
         };
-
         return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
     }
 
@@ -445,6 +440,11 @@ public class BasePage {
         boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
                 getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
         return status;
+    }
+
+    public void uploadImage(WebDriver driver, String locator, String imagePath) {
+        WebElement element = this.getWebElement(driver, locator);
+        element.sendKeys(imagePath);
     }
 
     public void waitForElementVisible(WebDriver driver, String locatorType) {
@@ -612,6 +612,5 @@ public class BasePage {
     }
 
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
-    private long shortTimeout = GlobalConstants.SHOT_TIMEOUT;
-
+    private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 }
