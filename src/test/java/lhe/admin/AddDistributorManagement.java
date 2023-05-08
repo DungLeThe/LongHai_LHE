@@ -345,7 +345,7 @@ public class AddDistributorManagement extends BaseTest {
     }
 
     @Test()
-    public void TC_09_Create_Account_Success(Method method) {
+    public void TC_10_Create_Account_Success(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Success");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
@@ -381,6 +381,14 @@ public class AddDistributorManagement extends BaseTest {
 
         createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
+
+        createAccountDistributorPage.inputToAccountDistributor(accountDistributor);
+        createAccountDistributorPage.inputToPassWordDistributor(passwordDistributor);
+        createAccountDistributorPage.inputToEmailDistributor(emailDistributor);
+
+        createAccountDistributorPage.clickCreateButton();
+        userManagementHomePage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
+        assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
 
         createAccountDistributorPage.inputToAccountDistributor(accountDistributor);
         createAccountDistributorPage.inputToPassWordDistributor(passwordDistributor);
