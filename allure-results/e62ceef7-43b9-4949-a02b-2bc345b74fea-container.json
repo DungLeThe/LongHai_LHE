@@ -1,0 +1,1 @@
+{"uuid":"e62ceef7-43b9-4949-a02b-2bc345b74fea","name":"Admin","children":["42e0865c-65cf-46c6-8b02-7360d47b4e5c"],"befores":[{"name":"initBeforeSuite","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1683558778640,"stop":1683558778647}],"afters":[],"links":[],"start":1683558778630,"stop":1683558789175}
