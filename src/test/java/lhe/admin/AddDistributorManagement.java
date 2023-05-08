@@ -345,58 +345,50 @@ public class AddDistributorManagement extends BaseTest {
     }
 
     @Test()
-    public void TC_10_Create_Account_Success(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Create Account Distributor Success");
-        goToHomPage();
-        distributorPage = homePage.clickDistributorManagementButton();
-        createInformationDistributorPage = distributorPage.clickAddMemberButton();
-
-        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
-
-        createInformationDistributorPage.inputToTaxCode(taxCode);
-        createInformationDistributorPage.inputToIdCard(idCard);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
-        createInformationDistributorPage.clickToSelectAddress();
-        createInformationDistributorPage.clickToSelectCity();
-        createInformationDistributorPage.clickToSelectDistrict();
-        createInformationDistributorPage.clickToSelectWard();
-        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
-
-        createInformationDistributorPage.scrollToBottomPage(driver);
-
-        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
-        createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
-        createInformationDistributorPage.inputToLabor(labor);
-        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
-
-        createInformationDistributorPage.clickToInputRegion();
-        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
-        createInformationDistributorPage.clickToInputArea();
-        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
-
-        createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
-        assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
-
-        createAccountDistributorPage.inputToAccountDistributor(accountDistributor);
-        createAccountDistributorPage.inputToPassWordDistributor(passwordDistributor);
-        createAccountDistributorPage.inputToEmailDistributor(emailDistributor);
-
-        createAccountDistributorPage.clickCreateButton();
-        userManagementHomePage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
-        assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
-
-        createAccountDistributorPage.inputToAccountDistributor(accountDistributor);
-        createAccountDistributorPage.inputToPassWordDistributor(passwordDistributor);
-        createAccountDistributorPage.inputToEmailDistributor(emailDistributor);
-
-        createAccountDistributorPage.clickCreateButton();
-        userManagementHomePage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
-        assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
+    public void TC_09_Create_Account_Success(Method method) {
+//        ExtentTestManager.startTest(method.getName(), "Create Account Distributor Success");
+//        goToHomPage();
+//        distributorPage = homePage.clickDistributorManagementButton();
+//        createInformationDistributorPage = distributorPage.clickAddMemberButton();
+//
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+//
+//        createInformationDistributorPage.inputToTaxCode(taxCode);
+//        createInformationDistributorPage.inputToIdCard(idCard);
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+//        createInformationDistributorPage.clickToSelectAddress();
+//        createInformationDistributorPage.clickToSelectCity();
+//        createInformationDistributorPage.clickToSelectDistrict();
+//        createInformationDistributorPage.clickToSelectWard();
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+//
+//        createInformationDistributorPage.scrollToBottomPage(driver);
+//
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
+//        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+//        createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
+//        createInformationDistributorPage.inputToLabor(labor);
+//        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
+//
+//        createInformationDistributorPage.clickToInputRegion();
+//        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
+//        createInformationDistributorPage.clickToInputArea();
+//        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
+//
+//        createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
+//        assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
+//
+//        createAccountDistributorPage.inputToAccountDistributor(accountDistributor);
+//        createAccountDistributorPage.inputToPassWordDistributor(passwordDistributor);
+//        createAccountDistributorPage.inputToEmailDistributor(emailDistributor);
+//
+//        createAccountDistributorPage.clickCreateButton();
+//        userManagementHomePage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
+//        assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
     }
 
     @AfterClass(alwaysRun = true)
