@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Dung_Maven" />
         <module name="com.automation.framework" />
-        <module name="LongHai_LHE" />
       </profile>
     </annotationProcessing>
   </component>
