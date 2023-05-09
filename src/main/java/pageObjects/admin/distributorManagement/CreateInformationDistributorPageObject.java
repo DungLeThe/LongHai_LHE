@@ -83,7 +83,7 @@ public class CreateInformationDistributorPageObject extends BasePage {
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_ISSUE_BY);
 	}
 
-	public String getErrorMessageSelectAdress() {
+	public String getErrorMessageSelectAddress() {
 		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_SELECT_ADDRESS);
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_SELECT_ADDRESS);
 	}

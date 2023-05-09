@@ -1,26 +1,26 @@
-package pageObjects.admin.distributorManagement;
+package pageObjects.admin.userManagement;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageObjects.admin.userManagement.UserManagementHomePageObject;
+import pageObjects.admin.distributorManagement.CreateInformationDistributorPageObject;
 import pageUIs.admin.AdminHomePageUI;
 
-public class CreateAccountDistributorPageObject extends BasePage {
+public class CreateAccountMarketingStaffPageObject extends BasePage {
 	private WebDriver driver;
 
-	public CreateAccountDistributorPageObject(WebDriver driver) {
+	public CreateAccountMarketingStaffPageObject(WebDriver driver) {
 		this.driver = driver;
-	}
-
-	public boolean isCreateUserTextDisplayed() {
-		waitForElementVisible(driver, AdminHomePageUI.CREATE_USER_TEXT);
-		return isElementDisplay(driver, AdminHomePageUI.CREATE_USER_TEXT);
 	}
 
 	public CreateInformationDistributorPageObject clickBackButton() {
 		waitForElementClickable(driver, AdminHomePageUI.BACK_BUTTON);
 		clickToElement(driver, AdminHomePageUI.BACK_BUTTON);
 		return new CreateInformationDistributorPageObject(driver);
+	}
+
+	public boolean isAccountMarketingStaffTextDisplayed() {
+		waitForElementVisible(driver, AdminHomePageUI.ACCOUNT_MARKETING_STAFF_TEXT);
+		return isElementDisplay(driver, AdminHomePageUI.ACCOUNT_MARKETING_STAFF_TEXT);
 	}
 
     public void inputToAccountDistributor(String accountDistributor) {
@@ -48,7 +48,7 @@ public class CreateAccountDistributorPageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.CLOSE_MODAL_BUTTON);
 	}
 
-	public UserManagementHomePageObject clickToBackCreateDistributorPageButton() {
+	public UserManagementHomePageObject clickToUserManagementHomePageButton() {
 		waitForLoadingIconInvisible(driver);
 		clickToElement(driver, AdminHomePageUI.BACK_TO_MANAGEMENT_HOME_PAGE_BUTTON);
 		return new UserManagementHomePageObject(driver);
@@ -70,6 +70,41 @@ public class CreateAccountDistributorPageObject extends BasePage {
 	}
 
 	public String getErrorMessageEmailDistributor() {
+		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMAIL);
+		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMAIL);
+	}
+
+	public void inputToAccountMarketingStaff(String account) {
+		waitForElementVisible(driver, AdminHomePageUI.ACCOUNT_MARKETING_STAFF_INPUT_TEXT);
+		sendKeyToElement(driver, AdminHomePageUI.ACCOUNT_MARKETING_STAFF_INPUT_TEXT, account);
+	}
+
+	public void inputToPassWordMarketingStaff(String password) {
+		waitForElementVisible(driver, AdminHomePageUI.PASSWORD_MARKETING_STAFF_INPUT_TEXT);
+		sendKeyToElement(driver, AdminHomePageUI.PASSWORD_MARKETING_STAFF_INPUT_TEXT, password);
+	}
+
+	public void inputToEmailMarketingStaff(String email) {
+		waitForElementVisible(driver, AdminHomePageUI.EMAIL_MARKETING_STAFF_INPUT_TEXT);
+		sendKeyToElement(driver, AdminHomePageUI.EMAIL_MARKETING_STAFF_INPUT_TEXT, email);
+	}
+
+	public void clickCreateMarketingStaffButton() {
+		waitForElementClickable(driver, AdminHomePageUI.CREATE_MARKETING_STAFF_BUTTON);
+		clickToElement(driver, AdminHomePageUI.CREATE_MARKETING_STAFF_BUTTON);
+	}
+
+	public String getErrorMessageAccountMarketingStaff() {
+		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_ACCOUNT);
+		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_ACCOUNT);
+	}
+
+	public String getErrorMessagePassWordMarketingStaff() {
+		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_PASSWORD);
+		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_PASSWORD);
+	}
+
+	public String getErrorMessageEmailMarketingStaff() {
 		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMAIL);
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMAIL);
 	}

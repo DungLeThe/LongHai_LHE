@@ -149,7 +149,7 @@ public class AddDistributorManagement extends BaseTest {
         assertEquals(createInformationDistributorPage.getErrorMessageIdCard(), "Bạn cần điền vào mục này");
         assertEquals(createInformationDistributorPage.getErrorMessageDateRange(), "Bạn cần điền vào mục này");
         assertEquals(createInformationDistributorPage.getErrorMessageIssuedBy(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationDistributorPage.getErrorMessageSelectAdress(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageSelectAddress(), "Bạn cần điền vào mục này");
         assertEquals(createInformationDistributorPage.getErrorMessageAddress(), "Bạn cần điền vào mục này");
 
         createInformationDistributorPage.scrollToBottomPage(driver);
