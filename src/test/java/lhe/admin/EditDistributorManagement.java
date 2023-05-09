@@ -98,6 +98,6 @@ public class EditDistributorManagement extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-//        closeBrowserAndDriver();
+        closeBrowserAndDriver();
     }
 }

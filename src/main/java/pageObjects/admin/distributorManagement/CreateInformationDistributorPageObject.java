@@ -143,19 +143,9 @@ public class CreateInformationDistributorPageObject extends BasePage {
 		sendKeyToElement(driver, AdminHomePageUI.LABOR_INPUT_TEXT, idCard);
 	}
 
-	public String getErrorMessageRegion() {
-		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_REGION);
-		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_REGION);
-	}
-
 	public void clickToInputRegion() {
 		waitForElementVisible(driver, AdminHomePageUI.REGION_INPUT_TEXT);
 		clickToElement(driver, AdminHomePageUI.REGION_INPUT_TEXT);
-	}
-
-	public String getErrorMessageArea() {
-		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_AREA);
-		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_AREA);
 	}
 
 	public void clickToInputArea() {

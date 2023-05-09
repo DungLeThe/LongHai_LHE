@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
-import pageObjects.admin.distributorManagement.CreateMarketingStaffPageObject;
+import pageObjects.admin.userManagement.CreateMarketingStaffPageObject;
 import pageObjects.admin.userManagement.CreateAccountMarketingStaffPageObject;
 import pageObjects.admin.userManagement.CreateUserManagementPageObject;
 import pageObjects.admin.userManagement.UserManagementHomePageObject;
@@ -35,7 +35,7 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     private CreateMarketingStaffPageObject createMarketingStaffPage;
     private CreateAccountMarketingStaffPageObject createAccountMarketingStaffPage;
 
-    private String name, nameInvalid, gender, phone, maritalStatus, dateOfBirth, idCard, dateRange,
+    private String name, gender, phone, maritalStatus, dateOfBirth, idCard, dateRange,
             issuedBy, address, position, region, area, nationality, nation,
             timeIn, account, password, passwordShort, passwordMissNumber, passwordMissSpecial, email, emailInvalid;
 
@@ -47,7 +47,6 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         homePage = loginPage.goToAdminHomePage(driver);
 
         name = "LHETest" + getRandomString();
-        nameInvalid = "LHETest1";
         gender = "Nam";
         phone = "098765" + getRandomInt();
         maritalStatus = "Độc thân";
@@ -325,6 +324,6 @@ public class UserManagementAddMarketingStaff extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-//        closeBrowserAndDriver();
+        closeBrowserAndDriver();
     }
 }

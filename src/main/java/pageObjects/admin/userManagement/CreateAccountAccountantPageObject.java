@@ -4,16 +4,16 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.admin.AdminHomePageUI;
 
-public class CreateAccountMarketingStaffPageObject extends BasePage {
+public class CreateAccountAccountantPageObject extends BasePage {
 	private WebDriver driver;
 
-	public CreateAccountMarketingStaffPageObject(WebDriver driver) {
+	public CreateAccountAccountantPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public boolean isAccountMarketingStaffTextDisplayed() {
-		waitForElementVisible(driver, AdminHomePageUI.ACCOUNT_IN_USER_MANAGEMENT_TEXT);
-		return isElementDisplay(driver, AdminHomePageUI.ACCOUNT_IN_USER_MANAGEMENT_TEXT);
+	public boolean isAccountAccountantTextDisplayed() {
+		waitForElementVisible(driver, AdminHomePageUI.ACCOUNT_ACCOUNTANT_TEXT);
+		return isElementDisplay(driver, AdminHomePageUI.ACCOUNT_ACCOUNTANT_TEXT);
 	}
 
 	public void closeModalErrorButton() {
@@ -32,27 +32,27 @@ public class CreateAccountMarketingStaffPageObject extends BasePage {
 		return isElementDisplay(driver, AdminHomePageUI.MODAL_ERROR);
 	}
 
-	public void inputToAccountMarketingStaff(String account) {
+	public void inputToAccount(String account) {
 		waitForElementVisible(driver, AdminHomePageUI.ACCOUNT_IN_USER_MANAGEMENT_INPUT_TEXT);
 		sendKeyToElement(driver, AdminHomePageUI.ACCOUNT_IN_USER_MANAGEMENT_INPUT_TEXT, account);
 	}
 
-	public void inputToPassWordMarketingStaff(String password) {
+	public void inputToPassWord(String password) {
 		waitForElementVisible(driver, AdminHomePageUI.PASSWORD_IN_USER_MANAGEMENT_INPUT_TEXT);
 		sendKeyToElement(driver, AdminHomePageUI.PASSWORD_IN_USER_MANAGEMENT_INPUT_TEXT, password);
 	}
 
-	public void inputToEmailMarketingStaff(String email) {
+	public void inputToEmail(String email) {
 		waitForElementVisible(driver, AdminHomePageUI.EMAIL_IN_USER_MANAGEMENT_INPUT_TEXT);
 		sendKeyToElement(driver, AdminHomePageUI.EMAIL_IN_USER_MANAGEMENT_INPUT_TEXT, email);
 	}
 
-	public void clickCreateMarketingStaffButton() {
+	public void clickCreateAccountantButton() {
 		waitForElementClickable(driver, AdminHomePageUI.CREATE_IN_USER_MANAGEMENT_BUTTON);
 		clickToElement(driver, AdminHomePageUI.CREATE_IN_USER_MANAGEMENT_BUTTON);
 	}
 
-	public String getErrorMessageAccountMarketingStaff() {
+	public String getErrorMessageAccount() {
 		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_ACCOUNT);
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_ACCOUNT);
 	}
@@ -62,7 +62,7 @@ public class CreateAccountMarketingStaffPageObject extends BasePage {
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_PASSWORD);
 	}
 
-	public String getErrorMessageEmailMarketingStaff() {
+	public String getErrorMessageEmail() {
 		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMAIL);
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMAIL);
 	}

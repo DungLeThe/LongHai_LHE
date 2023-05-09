@@ -16,5 +16,4 @@ public class DetailDistributorPageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.EDIT_DISTRIBUTOR_BUTTON);
 		return new EditInformationPageObject(driver);
 	}
-
 }
