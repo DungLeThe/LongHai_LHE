@@ -607,7 +607,7 @@ public class BasePage {
     }
 
     public static String getRandomString() {
-        return RandomStringUtils.randomAlphabetic(2);
+        return RandomStringUtils.randomAlphabetic(5);
     }
 
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
