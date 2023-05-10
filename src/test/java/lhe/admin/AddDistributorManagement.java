@@ -47,10 +47,10 @@ public class AddDistributorManagement extends BaseTest {
 
         representative = "LHETest" + getRandomString();
         representativeInvalid = "Test1";
-        phone = "098765" + getRandomInt();
+        phone = "09876" + getRandomInt();
         phoneInvalid = "0987654321987654321";
         taxCode = "01234" + getRandomInt();
-        idCard = "0123456" + getRandomInt();
+        idCard = "0380970" + getRandomInt();
         idCardInvalid = "0987654321987654321";
         dateRange = "01/01/2011";
         issuedBy = "Ha Noi";

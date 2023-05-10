@@ -44,7 +44,7 @@ public class EditDistributorManagement extends BaseTest {
 
         avatarImage =  PROJECT_PATH + "\\uploadFiles\\AvatarImage.jpg";
         representative = "LHETest" + getRandomString();
-        phone = "098765" + getRandomInt();
+        phone = "09876" + getRandomInt();
         taxCode = "01234" + getRandomInt();
         idCard = "0123456" + getRandomInt();
         idCardInvalid = "0987654321987654321";

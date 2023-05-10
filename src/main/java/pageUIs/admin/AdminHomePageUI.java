@@ -7,7 +7,7 @@ public class AdminHomePageUI {
 	public static final String DRAG_TO_THE_LEFT_BUTTON = "//li[@class='slick-active']/following-sibling::li/button";
 	public static final String NEXT_BUTTON = "//span[text()='Tiếp theo']";
 	public static final String BACK_BUTTON = "//span[text()='Quay lại']";
-	public static final String CREATE_BUTTON = "//span[text()='Tạo mới']";
+	public static final String CREATE_BUTTON = "//span[text()='Tạo tài khoản']";
 	public static final String CLOSE_MODAL_BUTTON = "//p[text()='Đóng']";
 	public static final String BACK_TO_CREATE_DISTRIBUTOR_PAGE_BUTTON = "//button[@class='btn btn__color--primary btn__size--default']";
 	public static final String DISTRIBUTOR_MANAGEMENT = "//a[@href='#/npp-manager']";

@@ -4,6 +4,8 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.admin.AdminHomePageUI;
 
+import static commons.GlobalConstants.SHORT_TIMEOUT;
+
 public class CreateInformationDistributorPageObject extends BasePage {
 	private WebDriver driver;
 
@@ -114,21 +116,25 @@ public class CreateInformationDistributorPageObject extends BasePage {
 	}
 
 	public void clickToSelectAddress() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_ADDRESS_INPUT);
 		clickToElement(driver, AdminHomePageUI.SELECT_ADDRESS_INPUT);
 	}
 
 	public void clickToSelectCity() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_CITY);
 		clickToElement(driver, AdminHomePageUI.SELECT_CITY);
 	}
 
 	public void clickToSelectDistrict() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_DISTRICT);
 		clickToElement(driver, AdminHomePageUI.SELECT_DISTRICT);
 	}
 
 	public void clickToSelectWard() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_WARD);
 		clickToElement(driver, AdminHomePageUI.SELECT_WARD);
 	}

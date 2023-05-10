@@ -45,9 +45,9 @@ public class UserManagementAddDistributor extends BaseTest {
         homePage = loginPage.goToAdminHomePage(driver);
 
         representative = "LHETest" + getRandomString();
-        phone = "098765" + getRandomInt();
+        phone = "09876" + getRandomInt();
         taxCode = "01234" + getRandomInt();
-        idCard = "0123456" + getRandomInt();
+        idCard = "0380970" + getRandomInt();
         dateRange = "01/01/2011";
         issuedBy = "Ha Noi";
         enterAddress = "Cau Giay, Ha Noi";

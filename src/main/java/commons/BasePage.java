@@ -1,7 +1,6 @@
 package commons;
 
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;
@@ -22,6 +21,7 @@ import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
 import static commons.BasePageUI.*;
 import static commons.GlobalConstants.*;
+import static org.apache.commons.lang.RandomStringUtils.randomNumeric;
 import static org.testng.Assert.assertTrue;
 
 public class BasePage {
@@ -601,9 +601,9 @@ public class BasePage {
         }
     }
 
-    public static int getRandomInt() {
-        Random rand = new Random();
-        return rand.nextInt(99999);
+    public static String getRandomInt() {
+//        Random rand = new Random();
+        return randomNumeric(5);
     }
 
     public static String getRandomString() {

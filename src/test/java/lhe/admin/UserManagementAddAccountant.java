@@ -45,10 +45,10 @@ public class UserManagementAddAccountant extends BaseTest {
 
         name = "LHETest" + getRandomString();
         gender = "Nam";
-        phone = "098765" + getRandomInt();
+        phone = "09876" + getRandomInt();
         maritalStatus = "Độc thân";
         dateOfBirth = "01/01/2000";
-        idCard = "0123456" + getRandomInt();
+        idCard = "0380970" + getRandomInt();
         dateRange = "01/01/2011";
         issuedBy = "Ha Noi";
         address = "Cau Giay, Ha Noi";

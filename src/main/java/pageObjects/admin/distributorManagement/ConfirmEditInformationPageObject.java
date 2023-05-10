@@ -18,6 +18,7 @@ public class ConfirmEditInformationPageObject extends BasePage {
 	}
 
 	public boolean isConfirmSuccessTextDisplayed() {
+		waitForLoadingIconInvisible(driver);
 		waitForElementVisible(driver, AdminHomePageUI.CONFIRM_SUCCESS_TEXT);
 		return isElementDisplay(driver, AdminHomePageUI.CONFIRM_SUCCESS_TEXT);
 	}
