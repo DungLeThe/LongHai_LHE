@@ -1,8 +1,7 @@
 package lhe.npp;
+
 import commons.BaseTest;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -12,11 +11,11 @@ import pageObjects.npp.NppLoginPageObject;
 import pageObjects.npp.product.category.ProductPageObject;
 import pageUIs.npp.NppCategoryPageUI;
 import reportConfig.ExtentTestManager;
-import static commons.GlobalConstants.SHORT_TIMEOUT;
+
 import java.lang.reflect.Method;
-import commons.BasePage;
 
 import static commons.GlobalConstants.NPP_LOGIN;
+
 public class CreateCategory extends BaseTest {
     private WebDriver driver;
     private String browserName;
@@ -60,8 +59,9 @@ public class CreateCategory extends BaseTest {
         nppProductPage.deleteCategory();
         nppProductPage.clickDeleteCategoryButton();
     }
+
     @Test
-    public void TC_03_CreateNewCategoryWithoutInputName(Method method){
+    public void TC_03_CreateNewCategoryWithoutInputName(Method method) {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
         goToNppHomePage();
         nppProductPage = nppHomePage.clickProductButton();
@@ -72,8 +72,9 @@ public class CreateCategory extends BaseTest {
 
         Assert.assertFalse(nppProductPage.isElementEnable(driver, NppCategoryPageUI.CONFIRM_CREATE_NEW_CATEGORY_BUTTON));
     }
+
     @Test
-    public void TC_04_ConfigCategory(Method method){
+    public void TC_04_ConfigCategory(Method method) {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
         goToNppHomePage();
         nppProductPage = nppHomePage.clickProductButton();
@@ -83,6 +84,7 @@ public class CreateCategory extends BaseTest {
         Assert.assertEquals(nppProductPage.numberOfCheckboxesIsSelected(), "Đã chọn (1)");
         System.out.println(nppProductPage.numberOfCheckboxesIsSelected());
     }
+
     @AfterClass(alwaysRun = true)
     public void afterClass() {
         closeBrowserAndDriver();

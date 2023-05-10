@@ -1,16 +1,15 @@
 package lhe.npp;
+
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.npp.NppHomePageObject;
 import pageObjects.npp.NppLoginPageObject;
 import pageObjects.npp.product.category.ProductPageObject;
-import pageUIs.npp.NppCategoryPageUI;
 import reportConfig.ExtentTestManager;
-import pageUIs.npp.NppProductPageUI;
+
 import java.lang.reflect.Method;
 
 import static commons.GlobalConstants.NPP_LOGIN;
@@ -42,6 +41,7 @@ public class ProductListAndViewDetailProduct extends BaseTest {
         nppProductPage = nppHomePage.clickProductButton();
         nppProductPage.clickViewProductDetail();
     }
+
     @AfterClass(alwaysRun = true)
     public void afterClass() {
         closeBrowserAndDriver();

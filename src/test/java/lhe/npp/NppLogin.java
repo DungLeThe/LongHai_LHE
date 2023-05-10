@@ -1,23 +1,21 @@
 package lhe.npp;
 
-import java.lang.reflect.Method;
-import java.util.concurrent.TimeUnit;
-
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pageObjects.npp.NppHomePageObject;
+import pageObjects.npp.NppLoginPageObject;
+import reportConfig.ExtentTestManager;
+
+import java.lang.reflect.Method;
+import java.util.concurrent.TimeUnit;
 
 import static commons.GlobalConstants.NPP_LOGIN;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-
-import pageObjects.npp.NppHomePageObject;
-import pageObjects.npp.NppLoginPageObject;
-import reportConfig.ExtentTestManager;
 
 public class NppLogin extends BaseTest {
     WebDriver driver;
@@ -88,5 +86,4 @@ public class NppLogin extends BaseTest {
     public void afterClass() {
         closeBrowserAndDriver();
     }
-
 }

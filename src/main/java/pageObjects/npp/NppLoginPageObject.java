@@ -1,7 +1,7 @@
 package pageObjects.npp;
+
 import commons.BasePage;
 import io.qameta.allure.Step;
-
 import org.openqa.selenium.WebDriver;
 import pageUIs.npp.NppLoginPageUI;
 
@@ -10,7 +10,8 @@ import static commons.GlobalConstants.NPP_PASSWORD;
 
 public class NppLoginPageObject extends BasePage {
     private WebDriver driver;
-    public NppLoginPageObject (WebDriver driver) {
+
+    public NppLoginPageObject(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -78,7 +79,7 @@ public class NppLoginPageObject extends BasePage {
         return getElementText(driver, NppLoginPageUI.MODAL_TEXT);
     }
 
-    public boolean chartTextIsDisplayed(){
+    public boolean chartTextIsDisplayed() {
         waitForElementVisible(driver, NppLoginPageUI.LOGIN_SUCCESS_MARK);
         return isElementDisplay(driver, NppLoginPageUI.LOGIN_SUCCESS_MARK);
     }
@@ -87,6 +88,7 @@ public class NppLoginPageObject extends BasePage {
         waitForElementVisible(driver, NppLoginPageUI.PROFIT_TEXT);
         clickAndHold(driver, NppLoginPageUI.PROFIT_TEXT);
     }
+
     public NppHomePageObject goToNppHomePage(WebDriver driver) {
         NppLoginPageObject loginNppPage = new NppLoginPageObject(this.driver);
         NppHomePageObject NppHomePage;
@@ -94,5 +96,4 @@ public class NppLoginPageObject extends BasePage {
         NppHomePage.clickAndHold(this.driver, NppLoginPageUI.PROFIT_TEXT);
         return new NppHomePageObject(this.driver);
     }
-
 }
