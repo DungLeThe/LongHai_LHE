@@ -214,9 +214,8 @@ public class BasePage {
     }
 
     public void selectItemInCustomDropdown(WebDriver driver, String parentLocator, String childLocator, String expectedTextItem) {
-        this.getWebElement(driver, parentLocator).click();
         sleepInSecond(2);
-
+        this.getWebElement(driver, parentLocator).click();
         WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
         List<WebElement> allItems = explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(childLocator)));
         for (WebElement item : allItems) {

@@ -17,7 +17,11 @@
       <class name="lhe.admin.AddProduct"/>
       <class name="lhe.admin.EditProduct"/>
       <class name="lhe.admin.AddOrder"/>
-<!--      <class name="lhe.admin.UserManagement"/>-->
+      <class name="lhe.admin.UserManagementAddDistributor"/>
+      <class name="lhe.admin.UserManagementAddMarketingStaff"/>
+      <class name="lhe.admin.UserManagementAddAccountant"/>
+      <class name="lhe.admin.UserManagementAddWarehouse"/>
+      <class name="lhe.admin.UserManagementAddAdmin"/>
     </classes>
   </test>
 

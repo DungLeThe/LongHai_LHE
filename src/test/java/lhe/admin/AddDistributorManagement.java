@@ -7,10 +7,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
-import pageObjects.admin.accountManagement.AccountManagementPageObject;
 import pageObjects.admin.distributorManagement.CreateAccountDistributorPageObject;
 import pageObjects.admin.distributorManagement.DistributorManagementPageObject;
-import pageObjects.admin.distributorManagement.CreateInformationPageObject;
+import pageObjects.admin.distributorManagement.CreateInformationDistributorPageObject;
+import pageObjects.admin.userManagement.UserManagementHomePageObject;
 import pageUIs.admin.AdminHomePageUI;
 import reportConfig.ExtentTestManager;
 
@@ -33,9 +33,9 @@ public class AddDistributorManagement extends BaseTest {
     private AdminLoginPageObject loginPage;
     private AdminHomePageObject homePage;
     private DistributorManagementPageObject distributorPage;
-    private CreateInformationPageObject createInformationPage;
+    private CreateInformationDistributorPageObject createInformationDistributorPage;
     private CreateAccountDistributorPageObject createAccountDistributorPage;
-    private AccountManagementPageObject accountManagementPage;
+    private UserManagementHomePageObject userManagementHomePage;
     private AdminHomePageUI homePageUI;
 
     @BeforeClass
@@ -83,8 +83,8 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Click Cancel Button");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
-        distributorPage = createInformationPage.clickCancelButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
+        distributorPage = createInformationDistributorPage.clickCancelButton();
         assertTrue(distributorPage.isDistributorManagementTextDisplayed());
     }
 
@@ -93,9 +93,9 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        assertTrue(createInformationPage.isPersonalInformationTextDisplayed());
+        assertTrue(createInformationDistributorPage.isPersonalInformationTextDisplayed());
     }
 
     @Test
@@ -103,17 +103,17 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management Invalid Data");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", representativeInvalid);
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", phoneInvalid);
-        createInformationPage.inputToIdCard(idCardInvalid);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representativeInvalid);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phoneInvalid);
+        createInformationDistributorPage.inputToIdCard(idCardInvalid);
 
-        createInformationPage.clickNextButton();
+        createInformationDistributorPage.clickNextButton();
 
-        assertEquals(createInformationPage.getErrorMessageInvalidRepresentative(), "Tên không hợp lệ");
-        assertEquals(createInformationPage.getErrorMessageInvalidPhone(), "Số điện thoại không hợp lệ");
-        assertEquals(createInformationPage.getErrorInvalidMessageIdCard(), "CMT/CCCD không hợp lệ");
+        assertEquals(createInformationDistributorPage.getErrorMessageInvalidRepresentative(), "Tên không hợp lệ");
+        assertEquals(createInformationDistributorPage.getErrorMessageInvalidPhone(), "Số điện thoại không hợp lệ");
+        assertEquals(createInformationDistributorPage.getErrorInvalidMessageIdCard(), "CMT/CCCD không hợp lệ");
     }
 
     @Test
@@ -121,42 +121,42 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management Empty Data");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        createInformationPage.clickToInputByPlaceholder(driver, "Nơi cấp");
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", "");
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", "");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Nơi cấp");
+        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", "");
+        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", "");
 
-        createInformationPage.clickToInputByPlaceholder(driver, "Mã số thuế NPP");
-        createInformationPage.inputToIdCard("");
-        createInformationPage.clickToInputByPlaceholder(driver, "Ngày cấp");
-        createInformationPage.clickToInputByPlaceholder(driver, "Địa chỉ cụ thể");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Mã số thuế NPP");
+        createInformationDistributorPage.inputToIdCard("");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Ngày cấp");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Địa chỉ cụ thể");
 
-        createInformationPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage(driver);
 
-        createInformationPage.clickToInputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo");
-        createInformationPage.clickToInputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo");
-        createInformationPage.clickToInputByPlaceholder(driver, "Thời gian vào");
-        createInformationPage.clickToInputByPlaceholder(driver, "Diện tích kho");
-        createInformationPage.clickToLabor();
-        createInformationPage.clickToInputByPlaceholder(driver, "Loại hình kinh doanh");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Thời gian vào");
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Diện tích kho");
+        createInformationDistributorPage.clickToLabor();
+        createInformationDistributorPage.clickToInputByPlaceholder(driver, "Loại hình kinh doanh");
 
-        createInformationPage.clickNextButton();
+        createInformationDistributorPage.clickNextButton();
 
-        assertEquals(createInformationPage.getErrorMessageRepresentative(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessagePhone(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageTaxCode(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageIdCard(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageDateRange(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageIssuedBy(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageSelectAdress(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageAddress(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageRepresentative(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessagePhone(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageTaxCode(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageIdCard(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageDateRange(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageIssuedBy(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageSelectAddress(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageAddress(), "Bạn cần điền vào mục này");
 
-        createInformationPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage(driver);
 
-        assertEquals(createInformationPage.getErrorMessageWarehouseArea(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageLabor(), "Bạn cần điền vào mục này");
-        assertEquals(createInformationPage.getErrorMessageTimeIn(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageWarehouseArea(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageLabor(), "Bạn cần điền vào mục này");
+        assertEquals(createInformationDistributorPage.getErrorMessageTimeIn(), "Bạn cần điền vào mục này");
     }
 
     @Test()
@@ -164,37 +164,37 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management Success");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        createInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
 
-        createInformationPage.inputToTaxCode(taxCode);
-        createInformationPage.inputToIdCard(idCard);
-        createInformationPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
-        createInformationPage.clickToSelectAddress();
-        createInformationPage.clickToSelectCity();
-        createInformationPage.clickToSelectDistrict();
-        createInformationPage.clickToSelectWard();
-        createInformationPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+        createInformationDistributorPage.inputToTaxCode(taxCode);
+        createInformationDistributorPage.inputToIdCard(idCard);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+        createInformationDistributorPage.clickToSelectAddress();
+        createInformationDistributorPage.clickToSelectCity();
+        createInformationDistributorPage.clickToSelectDistrict();
+        createInformationDistributorPage.clickToSelectWard();
+        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
 
-        createInformationPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage(driver);
 
-        createInformationPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
-        createInformationPage.inputToWarehouseArea(warehouseArea);
-        createInformationPage.inputToLabor(labor);
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+        createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
+        createInformationDistributorPage.inputToLabor(labor);
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
 
-        createInformationPage.clickToInputRegion();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
-        createInformationPage.clickToInputArea();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
+        createInformationDistributorPage.clickToInputRegion();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
+        createInformationDistributorPage.clickToInputArea();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
 
-        createAccountDistributorPage = createInformationPage.clickNextButton();
+        createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
     }
 
@@ -203,41 +203,41 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Click Back Button");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        createInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
 
-        createInformationPage.inputToTaxCode(taxCode);
-        createInformationPage.inputToIdCard(idCard);
-        createInformationPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
-        createInformationPage.clickToSelectAddress();
-        createInformationPage.clickToSelectCity();
-        createInformationPage.clickToSelectDistrict();
-        createInformationPage.clickToSelectWard();
-        createInformationPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+        createInformationDistributorPage.inputToTaxCode(taxCode);
+        createInformationDistributorPage.inputToIdCard(idCard);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+        createInformationDistributorPage.clickToSelectAddress();
+        createInformationDistributorPage.clickToSelectCity();
+        createInformationDistributorPage.clickToSelectDistrict();
+        createInformationDistributorPage.clickToSelectWard();
+        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
 
-        createInformationPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage(driver);
 
-        createInformationPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
-        createInformationPage.inputToWarehouseArea(warehouseArea);
-        createInformationPage.inputToLabor(labor);
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+        createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
+        createInformationDistributorPage.inputToLabor(labor);
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
 
-        createInformationPage.clickToInputRegion();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
-        createInformationPage.clickToInputArea();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
+        createInformationDistributorPage.clickToInputRegion();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
+        createInformationDistributorPage.clickToInputArea();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
 
-        createAccountDistributorPage = createInformationPage.clickNextButton();
+        createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
-        createInformationPage = createAccountDistributorPage.clickBackButton();
+        createInformationDistributorPage = createAccountDistributorPage.clickBackButton();
 
-        assertTrue(createInformationPage.isPersonalInformationTextDisplayed());
+        assertTrue(createInformationDistributorPage.isPersonalInformationTextDisplayed());
     }
 
     @Test()
@@ -245,37 +245,37 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Empty Data");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        createInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
 
-        createInformationPage.inputToTaxCode(taxCode);
-        createInformationPage.inputToIdCard(idCard);
-        createInformationPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
-        createInformationPage.clickToSelectAddress();
-        createInformationPage.clickToSelectCity();
-        createInformationPage.clickToSelectDistrict();
-        createInformationPage.clickToSelectWard();
-        createInformationPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+        createInformationDistributorPage.inputToTaxCode(taxCode);
+        createInformationDistributorPage.inputToIdCard(idCard);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+        createInformationDistributorPage.clickToSelectAddress();
+        createInformationDistributorPage.clickToSelectCity();
+        createInformationDistributorPage.clickToSelectDistrict();
+        createInformationDistributorPage.clickToSelectWard();
+        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
 
-        createInformationPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage(driver);
 
-        createInformationPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
-        createInformationPage.inputToWarehouseArea(warehouseArea);
-        createInformationPage.inputToLabor(labor);
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+        createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
+        createInformationDistributorPage.inputToLabor(labor);
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
 
-        createInformationPage.clickToInputRegion();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
-        createInformationPage.clickToInputArea();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
+        createInformationDistributorPage.clickToInputRegion();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
+        createInformationDistributorPage.clickToInputArea();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
 
-        createAccountDistributorPage = createInformationPage.clickNextButton();
+        createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
 
         createAccountDistributorPage.inputToAccountDistributor("");
@@ -297,37 +297,37 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Invalid Data");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        createInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
 
-        createInformationPage.inputToTaxCode(taxCode);
-        createInformationPage.inputToIdCard(idCard);
-        createInformationPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
-        createInformationPage.clickToSelectAddress();
-        createInformationPage.clickToSelectCity();
-        createInformationPage.clickToSelectDistrict();
-        createInformationPage.clickToSelectWard();
-        createInformationPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+        createInformationDistributorPage.inputToTaxCode(taxCode);
+        createInformationDistributorPage.inputToIdCard(idCard);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+        createInformationDistributorPage.clickToSelectAddress();
+        createInformationDistributorPage.clickToSelectCity();
+        createInformationDistributorPage.clickToSelectDistrict();
+        createInformationDistributorPage.clickToSelectWard();
+        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
 
-        createInformationPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage(driver);
 
-        createInformationPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
-        createInformationPage.inputToWarehouseArea(warehouseArea);
-        createInformationPage.inputToLabor(labor);
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+        createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
+        createInformationDistributorPage.inputToLabor(labor);
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
 
-        createInformationPage.clickToInputRegion();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
-        createInformationPage.clickToInputArea();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
+        createInformationDistributorPage.clickToInputRegion();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
+        createInformationDistributorPage.clickToInputArea();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
 
-        createAccountDistributorPage = createInformationPage.clickNextButton();
+        createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
 
         createAccountDistributorPage.inputToPassWordDistributor(passwordShort);
@@ -349,37 +349,37 @@ public class AddDistributorManagement extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Success");
         goToHomPage();
         distributorPage = homePage.clickDistributorManagementButton();
-        createInformationPage = distributorPage.clickAddMemberButton();
+        createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
-        createInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
 
-        createInformationPage.inputToTaxCode(taxCode);
-        createInformationPage.inputToIdCard(idCard);
-        createInformationPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
-        createInformationPage.clickToSelectAddress();
-        createInformationPage.clickToSelectCity();
-        createInformationPage.clickToSelectDistrict();
-        createInformationPage.clickToSelectWard();
-        createInformationPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+        createInformationDistributorPage.inputToTaxCode(taxCode);
+        createInformationDistributorPage.inputToIdCard(idCard);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+        createInformationDistributorPage.clickToSelectAddress();
+        createInformationDistributorPage.clickToSelectCity();
+        createInformationDistributorPage.clickToSelectDistrict();
+        createInformationDistributorPage.clickToSelectWard();
+        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
 
-        createInformationPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage(driver);
 
-        createInformationPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
-        createInformationPage.inputToWarehouseArea(warehouseArea);
-        createInformationPage.inputToLabor(labor);
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
+        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+        createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
+        createInformationDistributorPage.inputToLabor(labor);
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
 
-        createInformationPage.clickToInputRegion();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
-        createInformationPage.clickToInputArea();
-        createInformationPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
+        createInformationDistributorPage.clickToInputRegion();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
+        createInformationDistributorPage.clickToInputArea();
+        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
 
-        createAccountDistributorPage = createInformationPage.clickNextButton();
+        createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
 
         createAccountDistributorPage.inputToAccountDistributor(accountDistributor);
@@ -387,8 +387,8 @@ public class AddDistributorManagement extends BaseTest {
         createAccountDistributorPage.inputToEmailDistributor(emailDistributor);
 
         createAccountDistributorPage.clickCreateButton();
-        accountManagementPage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
-        assertTrue(accountManagementPage.representativeDisplayed(representative), representative);
+        userManagementHomePage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
+        assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
     }
 
     @AfterClass(alwaysRun = true)
