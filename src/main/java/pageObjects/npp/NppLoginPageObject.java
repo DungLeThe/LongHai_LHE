@@ -3,7 +3,6 @@ import commons.BasePage;
 import io.qameta.allure.Step;
 
 import org.openqa.selenium.WebDriver;
-import pageObjects.admin.AdminHomePageObject;
 import pageUIs.npp.NppLoginPageUI;
 
 import static commons.GlobalConstants.NPP_ACCOUNT;
@@ -89,11 +88,11 @@ public class NppLoginPageObject extends BasePage {
         clickAndHold(driver, NppLoginPageUI.PROFIT_TEXT);
     }
     public NppHomePageObject goToNppHomePage(WebDriver driver) {
-        NppLoginPageObject loginNppPage = new NppLoginPageObject(driver);
+        NppLoginPageObject loginNppPage = new NppLoginPageObject(this.driver);
         NppHomePageObject NppHomePage;
         NppHomePage = loginNppPage.loginWebsite(NPP_ACCOUNT, NPP_PASSWORD);
-        NppHomePage.clickAndHold(driver, NppLoginPageUI.PROFIT_TEXT);
-        return new NppHomePageObject(driver);
+        NppHomePage.clickAndHold(this.driver, NppLoginPageUI.PROFIT_TEXT);
+        return new NppHomePageObject(this.driver);
     }
 
 }
