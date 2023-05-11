@@ -29,7 +29,7 @@ public class AddOrder extends BaseTest {
         nppHomePage = nppLoginPage.goToNppHomePage(driver);
     }
 
-    public void goToNppHomPage() {
+    public void goToNppHomePage() {
         nppHomePage.openPageUrl(driver, NPP_LOGIN);
         nppHomePage.dragToLeft();
     }
@@ -37,7 +37,7 @@ public class AddOrder extends BaseTest {
     @Test
     public void TC_01_AddOrderSuccessfully(Method method) {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
-        goToNppHomPage();
+        goToNppHomePage();
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
@@ -54,7 +54,7 @@ public class AddOrder extends BaseTest {
     @Test
     public void TC_02_AddOrderSuccessThenViewOrderDetail(Method method) {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
-        goToNppHomPage();
+        goToNppHomePage();
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
@@ -70,7 +70,7 @@ public class AddOrder extends BaseTest {
     @Test
     public void TC_03_AddOrderSuccessThenViewOrderList(Method method) {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
-        goToNppHomPage();
+        goToNppHomePage();
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
