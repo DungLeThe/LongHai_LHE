@@ -1,4 +1,5 @@
 package pageObjects.npp;
+
 import commons.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import pageUIs.npp.NppLoginPageUI;
 
 public class NppHomePageObject extends BasePage {
     private WebDriver driver;
+
     public NppHomePageObject(WebDriver driver) {
         this.driver = driver;
     }
