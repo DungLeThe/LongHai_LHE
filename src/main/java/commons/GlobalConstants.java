@@ -18,7 +18,7 @@ public class GlobalConstants {
 
     public static final String JAVA_VERSION = System.getProperty("java.version");
 
-    public static final String REPORTNGSCREENSHOT = PROJECT_PATH + File.separator + "reportNGImages" + File.separator;
+    public static final String REPORT_NG_SCREENSHOT = PROJECT_PATH + File.separator + "reportNGImages" + File.separator;
     public static final int SHORT_TIMEOUT = 1;
     public static final int THREE_SECONDS = 3;
     public static final long SHOT_TIMEOUT = 5;
