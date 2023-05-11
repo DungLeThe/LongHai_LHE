@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
+import pageObjects.admin.distributorManagement.DetailUserPageObject;
 import pageObjects.admin.userManagement.CreateMarketingStaffPageObject;
 import pageObjects.admin.userManagement.CreateAccountMarketingStaffPageObject;
 import pageObjects.admin.userManagement.CreateUserManagementPageObject;
@@ -34,6 +35,7 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     private CreateUserManagementPageObject createUserManagementPage;
     private CreateMarketingStaffPageObject createMarketingStaffPage;
     private CreateAccountMarketingStaffPageObject createAccountMarketingStaffPage;
+    private DetailUserPageObject detailUserPage;
 
     private String name, gender, phone, maritalStatus, dateOfBirth, idCard, dateRange,
             issuedBy, address, position, region, area, nationality, nation,
@@ -50,9 +52,9 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         gender = "Nam";
         phone = "09876" + getRandomInt();
         maritalStatus = "Độc thân";
-        dateOfBirth = "01/01/2000";
+        dateOfBirth = "2011-01-01";
         idCard = "0380970" + getRandomInt();
-        dateRange = "01/01/2011";
+        dateRange = "2011-01-01";
         issuedBy = "Ha Noi";
         address = "Cau Giay, Ha Noi";
         position = "Trưởng phòng thị trường";
@@ -60,7 +62,7 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         area = "Khu vực 11";
         nationality = "Việt Nam";
         nation = "Kinh";
-        timeIn = "20/04/2020";
+        timeIn = "2011-01-01";
         passwordShort = "test";
         passwordMissNumber = "LongHaiTest@";
         passwordMissSpecial = "LongHaiTest123";
@@ -320,10 +322,28 @@ public class UserManagementAddMarketingStaff extends BaseTest {
 
         createAccountMarketingStaffPage.clickCreateMarketingStaffButton();
         userManagementHomePage = createAccountMarketingStaffPage.clickToUserManagementHomePageButton();
+
+        userManagementHomePage.clickViewDetailAllMarketingStaff();
+        detailUserPage = userManagementHomePage.clickViewDetailNewMarketingStaff();
+        assertEquals(detailUserPage.getUserNameText(), name);
+        assertEquals(detailUserPage.getInfoDistributorText("Email"), email);
+        assertEquals(detailUserPage.getInfoDistributorText("Giới tính"), gender);
+        assertEquals(detailUserPage.getInfoDistributorText("CMT/CCCD"), idCard);
+        assertEquals(detailUserPage.getInfoDistributorText("Ngày cấp"), dateRange);
+        assertEquals(detailUserPage.getInfoDistributorText("Nơi cấp"), issuedBy);
+        assertEquals(detailUserPage.getInfoDistributorText("Địa chỉ"), address);
+        assertEquals(detailUserPage.getInfoDistributorText("Quốc tịch"), nationality);
+        assertEquals(detailUserPage.getInfoDistributorText("Dân tộc"), nation);
+        assertEquals(detailUserPage.getInfoDistributorText("Tình trạng hôn nhân"), maritalStatus);
+        assertEquals(detailUserPage.getInfoDistributorText("Vùng"), region);
+        assertEquals(detailUserPage.getInfoDistributorText("Khu vực"), area);
+        assertEquals(detailUserPage.getInfoDistributorText("Bộ phận"), "Phòng thị trường");
+        assertEquals(detailUserPage.getInfoDistributorText("Chức vụ"), position);
+        assertEquals(detailUserPage.getInfoDistributorText("Ngày vào"), timeIn);
     }
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        closeBrowserAndDriver();
+//        closeBrowserAndDriver();
     }
 }

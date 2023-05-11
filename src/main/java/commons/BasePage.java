@@ -28,7 +28,7 @@ public class BasePage {
     public AdminHomePageObject goToAdminHomePage(WebDriver driver) {
         AdminLoginPageObject loginPage = new AdminLoginPageObject(driver);
         AdminHomePageObject homePage;
-        homePage = loginPage.loginWebsite(ACCOUNT, PASSWORD);
+        homePage = loginPage.loginWebsite(ADMIN_ACCOUNT, ADMIN_PASSWORD);
         homePage.clickButtonDragToTheLeft();
         assertTrue(homePage.isProductTextDisplayed());
         return new AdminHomePageObject(driver);

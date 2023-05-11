@@ -393,7 +393,7 @@ public class AddDistributorManagement extends BaseTest {
         assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
         userManagementHomePage.clickViewDetailAllDistributor();
         detailUserPage = userManagementHomePage.clickViewDetailNewDistributor();
-        assertEquals(detailUserPage.getRepresentativeText(), representative);
+        assertEquals(detailUserPage.getUserNameText(), representative);
         assertEquals(detailUserPage.getInfoDistributorText("Email"), emailDistributor);
         assertEquals(detailUserPage.getInfoDistributorText("CMT/CCCD"), idCard);
         assertEquals(detailUserPage.getInfoDistributorText("Ngày cấp"), dateRange);

@@ -11,9 +11,9 @@ public class DetailUserPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public String getRepresentativeText() {
-		waitForElementVisible(driver, AdminHomePageUI.REPRESENTATIVE_TEXT);
-		return getElementText(driver, AdminHomePageUI.REPRESENTATIVE_TEXT);
+	public String getUserNameText() {
+		waitForElementVisible(driver, AdminHomePageUI.USER_NAME_TEXT);
+		return getElementText(driver, AdminHomePageUI.USER_NAME_TEXT);
 	}
 
 	public String
