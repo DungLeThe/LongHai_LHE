@@ -4,10 +4,12 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.admin.AdminHomePageUI;
 
-public class CreateInformationPageObject extends BasePage {
+import static commons.GlobalConstants.SHORT_TIMEOUT;
+
+public class CreateInformationDistributorPageObject extends BasePage {
 	private WebDriver driver;
 
-	public CreateInformationPageObject(WebDriver driver) {
+	public CreateInformationDistributorPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -83,7 +85,7 @@ public class CreateInformationPageObject extends BasePage {
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_ISSUE_BY);
 	}
 
-	public String getErrorMessageSelectAdress() {
+	public String getErrorMessageSelectAddress() {
 		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_SELECT_ADDRESS);
 		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_SELECT_ADDRESS);
 	}
@@ -114,21 +116,25 @@ public class CreateInformationPageObject extends BasePage {
 	}
 
 	public void clickToSelectAddress() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_ADDRESS_INPUT);
 		clickToElement(driver, AdminHomePageUI.SELECT_ADDRESS_INPUT);
 	}
 
 	public void clickToSelectCity() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_CITY);
 		clickToElement(driver, AdminHomePageUI.SELECT_CITY);
 	}
 
 	public void clickToSelectDistrict() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_DISTRICT);
 		clickToElement(driver, AdminHomePageUI.SELECT_DISTRICT);
 	}
 
 	public void clickToSelectWard() {
+		waitForLoadingItemInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.SELECT_WARD);
 		clickToElement(driver, AdminHomePageUI.SELECT_WARD);
 	}
@@ -143,19 +149,9 @@ public class CreateInformationPageObject extends BasePage {
 		sendKeyToElement(driver, AdminHomePageUI.LABOR_INPUT_TEXT, idCard);
 	}
 
-	public String getErrorMessageRegion() {
-		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_REGION);
-		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_REGION);
-	}
-
 	public void clickToInputRegion() {
 		waitForElementVisible(driver, AdminHomePageUI.REGION_INPUT_TEXT);
 		clickToElement(driver, AdminHomePageUI.REGION_INPUT_TEXT);
-	}
-
-	public String getErrorMessageArea() {
-		waitForElementVisible(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_AREA);
-		return getElementText(driver, AdminHomePageUI.ERROR_MESSAGE_EMPTY_AREA);
 	}
 
 	public void clickToInputArea() {

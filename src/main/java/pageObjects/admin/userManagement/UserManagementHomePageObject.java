@@ -12,19 +12,14 @@ public class UserManagementHomePageObject extends BasePage {
 		this.driver = driver;
 	}
 
-//	public boolean isProductWareHouseTextDisplayed() {
-//		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_WAREHOUSE_TEXT);
-//		return isElementDisplay(driver, AdminHomePageUI.PRODUCT_WAREHOUSE_TEXT);
-//	}
-//
 		public CreateUserManagementPageObject clickAddUserManagementButton() {
 		waitForElementClickable(driver, AdminHomePageUI.ADD_NEW_USER_MANAGEMENT_BUTTON);
 		clickToElement(driver, AdminHomePageUI.ADD_NEW_USER_MANAGEMENT_BUTTON);
 		return new CreateUserManagementPageObject(driver);
 	}
-//
-//	public boolean productNameDisplayed(String productName) {
-//		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_NAME, productName);
-//		return isElementDisplay(driver, AdminHomePageUI.PRODUCT_NAME, productName);
-//	}
+
+	public boolean representativeDisplayed(String representative) {
+		waitForElementVisible(driver, AdminHomePageUI.REPRESENTATIVE, representative);
+		return isElementDisplay(driver, AdminHomePageUI.REPRESENTATIVE, representative);
+	}
 }

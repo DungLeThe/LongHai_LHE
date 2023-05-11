@@ -90,11 +90,10 @@ public class NppLoginPageObject extends BasePage {
     }
 
     public NppHomePageObject goToNppHomePage(WebDriver driver) {
-        NppLoginPageObject loginNppPage = new NppLoginPageObject(driver);
+        NppLoginPageObject loginNppPage = new NppLoginPageObject(this.driver);
         NppHomePageObject NppHomePage;
         NppHomePage = loginNppPage.loginWebsite(NPP_ACCOUNT, NPP_PASSWORD);
-        NppHomePage.clickAndHold(driver, NppLoginPageUI.PROFIT_TEXT);
-        return new NppHomePageObject(driver);
+        NppHomePage.clickAndHold(this.driver, NppLoginPageUI.PROFIT_TEXT);
+        return new NppHomePageObject(this.driver);
     }
-
 }

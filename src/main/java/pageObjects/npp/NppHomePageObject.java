@@ -1,13 +1,14 @@
 package pageObjects.npp;
 
 import commons.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.npp.order.OrderHomePageObject;
+import pageObjects.npp.product.category.ProductPageObject;
 import pageUIs.npp.NppHomePageUI;
 import pageUIs.npp.NppLoginPageUI;
+import pageUIs.npp.NppProductPageUI;
+
+import static commons.GlobalConstants.SHORT_TIMEOUT;
 
 
 public class NppHomePageObject extends BasePage {
@@ -22,16 +23,17 @@ public class NppHomePageObject extends BasePage {
         clickAndHold(driver, NppLoginPageUI.PROFIT_TEXT);
     }
 
-
     public OrderHomePageObject clickOrderButton() {
+        sleepInSecond(SHORT_TIMEOUT);
         waitForElementVisible(driver, NppHomePageUI.ORDER_BUTTON);
         clickToElement(driver, NppHomePageUI.ORDER_BUTTON);
         return new OrderHomePageObject(driver);
     }
 
-
-    public void waitForOrderButtonInvisible(WebDriver driver) {
-        WebDriverWait explicitWait = new WebDriverWait(driver, 5);
-        explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(NppHomePageUI.ORDER_BUTTON)));
+    public ProductPageObject clickProductButton() {
+        sleepInSecond(SHORT_TIMEOUT);
+        waitForElementVisible(driver, NppProductPageUI.PRODUCT_ICON);
+        clickToElement(driver, NppProductPageUI.PRODUCT_ICON);
+        return new ProductPageObject(driver);
     }
 }

@@ -1,11 +1,13 @@
 package pageUIs.admin;
 
 public class AdminHomePageUI {
+
+	//  Distributor Management Page
 	public static final String PRODUCT_TEXT = "//p[text()='Sản phẩm tiêu thụ trong tháng']";
 	public static final String DRAG_TO_THE_LEFT_BUTTON = "//li[@class='slick-active']/following-sibling::li/button";
 	public static final String NEXT_BUTTON = "//span[text()='Tiếp theo']";
 	public static final String BACK_BUTTON = "//span[text()='Quay lại']";
-	public static final String CREATE_BUTTON = "//span[text()='Tạo mới']";
+	public static final String CREATE_BUTTON = "//span[text()='Tạo tài khoản']";
 	public static final String CLOSE_MODAL_BUTTON = "//p[text()='Đóng']";
 	public static final String BACK_TO_CREATE_DISTRIBUTOR_PAGE_BUTTON = "//button[@class='btn btn__color--primary btn__size--default']";
 	public static final String DISTRIBUTOR_MANAGEMENT = "//a[@href='#/npp-manager']";
@@ -81,17 +83,33 @@ public class AdminHomePageUI {
 	// Product Page
 	public static final String PRODUCT_BUTTON = "//a[@href='#/product']";
 	public static final String ADD_NEW_PRODUCT_BUTTON = "//div[@class='product-tab__search mb15']/button";
-	public static final String ADD_NEW_PRODUCT_TEXT = "//span[contains(normalize-space(),'Thêm mới sản phẩm')]";
 	public static final String PRODUCT_WAREHOUSE_TEXT = "//span[@class='h5']";
 	public static final String PRODUCT_DESCRIPTION_TEXT_AREA = "//textarea[@placeholder='Nhập mô tả sản phẩm']";
 	public static final String CATEGORY_INPUT = "//input[@placeholder='Chọn một danh mục']";
 	public static final String PRODUCT_IMAGE = "//input[@type='file']";
+	public static final String AVATAR_IMAGE = "//input[@type='file']";
 	public static final String CATEGORY_INPUT_VALUE = "//li[contains(normalize-space(),'Khuyến mại tháng 5')]";
 	public static final String ADD_ATTRIBUTE_BUTTON = "//span[@class='f aic jcc h6']";
 	public static final String DELETE_ATTRIBUTE_BUTTON = "//button[@class='btn btn__color--danger btn__size--default out__line']";
 	public static final String CANCEL_BUTTON = "//span[text()='Huỷ bỏ']";
 	public static final String CREATE_NEW_BUTTON = "//span[text()='Tạo mới']";
 	public static final String PRODUCT_NAME = "//p[contains(normalize-space(),'%s')]";
+	public static final String PRODUCT_DETAIL = "//p[@class='p3 mb025']";
+	public static final String EDIT_PRODUCT_BUTTON = "//span[contains(normalize-space(),'Chỉnh sửa')]";
+	public static final String PRODUCT_DETAIL_TEXT = "//span[contains(normalize-space(),'Chi tiết sản phẩm')]";
+	public static final String CANCEL_EDIT_PRODUCT_BUTTON = "//span[text()='Huỷ bỏ']";
+	public static final String CHANGE_STATUS_PRODUCT_LABEL = "//div[@class='label']";
+	public static final String EXISTING_ATTRIBUTE_DIV = "//p[text()='Thuộc tính hiện có']/following-sibling::div[1]";
+	public static final String ATTRIBUTE_VALUE_INPUT = "//input[@placeholder='Nhập giá trị thuộc tính']";
+	public static final String SAVE_PRODUCT_BUTTON = "//span[text()='Lưu']";
+	public static final String RETAIL_PRICE_INPUT = "//input[@placeholder='Nhập giá bán lẻ']";
+	public static final String PER_BARREL_PRICE_INPUT = "//input[@placeholder='Nhập giá theo thùng']";
+	public static final String NUMBER_OF_PRODUCTS_IN_ONE_BOX_INPUT = "//input[@placeholder='Nhập số lượng']";
+
+	public static final String PRODUCT_STATUS_INACTIVE_TEXT = "//div[@class='px1 f aic jcb border']/p[2]";
+	public static final String PRODUCT_STATUS_ACTIVE_TEXT = "//div[@class='px1 f aic jcb border']/p[2]";
+	public static final String INFO_PRODUCT_INACTIVE_BUTTON = "//div[contains(text(),'Ngưng hoạt động')]";
+	public static final String INFO_PRODUCT_ACTIVE_BUTTON = "//div[contains(text(),'Đang hoạt động')]";
 
 	// Order Page
 	public static final String ORDER_BUTTON = "//a[@href='#/order']";
@@ -127,4 +145,54 @@ public class AdminHomePageUI {
 	public static final String USER_MANAGEMENT_BUTTON = "//a[@href='#/user-manager']";
 	public static final String ADD_NEW_USER_MANAGEMENT_BUTTON = "//div[@class='user-manager__search mb15']/button";
 	public static final String BACK_TO_LIST_DISTRIBUTOR_BUTTON = "//span[text()=' Quay lại trang chi tiết ']";
+	public static final String ADD_DISTRIBUTOR_DIV = "//div[contains(text(),'Nhà phân phối')]";
+	public static final String ADD_MARKETING_STAFF_DIV = "//div[contains(text(),'NV thị trường')]";
+	public static final String ADD_ACCOUNTANT_DIV = "//div[contains(text(),'Kế toán')]";
+	public static final String ADD_WAREHOUSE_DIV = "//div[contains(text(),'Kho')]";
+	public static final String ADD_ADMIN_DIV = "//div[contains(text(),'Quản lý tổng')]";
+	public static final String CANCEL_MARKETING_STAFF_BUTTON = "//div[@class='create-user-page__action bg-white f aic jcb px1 gap1 box-shadow-t'][2]//span[text()='Huỷ bỏ']";
+	public static final String CANCEL_ACCOUNTANT_BUTTON = "//div[@class='create-user-page__action bg-white f aic jcb px1 gap1 box-shadow-t'][2]//span[text()='Huỷ bỏ']";
+	public static final String CANCEL_WAREHOUSE_BUTTON = "//div[@class='create-user-page__action bg-white f aic jcb px1 gap1 box-shadow-t'][2]//span[text()='Huỷ bỏ']";
+	public static final String DATE_OF_BIRTH_IN_USER_MANAGEMENT_INPUT = "//p[text()='Ngày sinh ']/parent::div/div//input";
+	public static final String NAME_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Nhập họ và tên']";
+	public static final String GENDER_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Chọn Giới tính']";
+	public static final String MARITAL_STATUS_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Chọn TTHN']";
+	public static final String PHONE_NUMBER_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Nhập số điện thoại']";
+	public static final String DATE_RANGE_IN_USER_MANAGEMENT_INPUT = "//p[text()='Ngày cấp ']/parent::div/div//input";
+	public static final String ISSUED_BY_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Nhập nơi cấp']";
+	public static final String ADDRESS_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Nhập địa chỉ']";
+	public static final String POSITION_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Chọn chức vụ']";
+	public static final String NATIONALITY_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Chọn quốc tịch']";
+	public static final String NATION_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Chọn dân tộc']";
+	public static final String REGION_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Chọn vùng']";
+	public static final String AREA_IN_USER_MANAGEMENT_INPUT = "//input[@placeholder='Chọn khu vực']";
+	public static final String TIME_IN_IN_USER_MANAGEMENT_INPUT = "//p[text()='Thời gian vào ']/parent::div/div//input";
+	public static final String NEXT_IN_USER_MANAGEMENT_BUTTON = "//div[@class='create-user-page__action bg-white f aic jcb px1 gap1 box-shadow-t'][2]//span[text()='Tiếp theo']";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_NAME = "//p[text()='Họ và tên ']/parent::div/div/p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_PHONE = "//p[text()='Số điện thoại ']/parent::div/div/p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_DATE_OF_BIRTH = "//p[text()='Ngày sinh ']/parent::div/div//p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_ID_CARD = "//p[text()='CMT/CCCD ']/parent::div/div/p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_DATE_RANGE = "//p[text()='Ngày cấp ']/parent::div/div//p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_ISSUE_BY = "//p[text()='Nơi cấp ']/parent::div/div/p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_SELECT_ADDRESS = "//p[text()='Địa chỉ ']/parent::div/div/p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_GENDER = "//p[text()='Giới tính ']/parent::div/div/p";
+	public static final String ERROR_MESSAGE_IN_USER_MANAGEMENT_EMPTY_MARITAL_STATUS = "//p[text()='Tình trạng hôn nhân ']/parent::div/div/p";
+	public static final String VALUE_GENDER_IN_USER_MANAGEMENT_INPUT = "//ul[@id='vs3__listbox']/li[1]";
+	public static final String VALUE_MARITAL_STATUS_IN_USER_MANAGEMENT_INPUT = "//ul[@id='vs4__listbox']/li[1]";
+	public static final String VALUE_POSITION_IN_USER_MANAGEMENT_INPUT = "//ul[@id='vs5__listbox']/li[1]";
+	public static final String VALUE_NATIONALITY_IN_USER_MANAGEMENT_INPUT = "//ul[@id='vs8__listbox']/li[1]";
+	public static final String VALUE_NATION_IN_USER_MANAGEMENT_INPUT = "//ul[@id='vs9__listbox']/li[1]";
+	public static final String VALUE_REGION_IN_USER_MANAGEMENT_INPUT = "//ul[@id='vs6__listbox']/li[1]";
+	public static final String VALUE_AREA_IN_USER_MANAGEMENT_INPUT = "//ul[@id='vs7__listbox']/li[1]";
+	public static final String ACCOUNT_IN_USER_MANAGEMENT_TEXT = "//div[contains(text(),'Tài khoản nhân viên thị trường')]";
+	public static final String ACCOUNT_IN_USER_MANAGEMENT_INPUT_TEXT = "//input[@placeholder='VD: Số điện thoại của bạn']";
+	public static final String PASSWORD_IN_USER_MANAGEMENT_INPUT_TEXT = "//input[@placeholder='Nhập mật khẩu']";
+	public static final String EMAIL_IN_USER_MANAGEMENT_INPUT_TEXT = "//input[@placeholder='Nhập email']";
+	public static final String CREATE_IN_USER_MANAGEMENT_BUTTON = "//div[@class='create-user-page__container px1']/div/div[4]//span[text()='Tạo mới']";
+	public static final String BACK_TO_MANAGEMENT_HOME_PAGE_BUTTON = "//button[@class='btn btn__color--primary btn__size--default']";
+	public static final String VALUE_NATIONALITY_ACCOUNTANT_INPUT = "//ul[@id='vs6__listbox']/li[1]";
+	public static final String VALUE_NATION_ACCOUNTANT_INPUT = "//ul[@id='vs7__listbox']/li[1]";
+	public static final String ACCOUNT_ACCOUNTANT_TEXT = "//div[contains(text(),'Tài khoản Kế toán')]";
+	public static final String ACCOUNT_WAREHOUSE_TEXT = "//div[contains(text(),'Tài khoản Kho')]";
+	public static final String ACCOUNT_ADMIN_TEXT = "//div[contains(text(),'Tài khoản Tổng')]";
 }

@@ -27,13 +27,8 @@ public class CreateOrderPageObject extends BasePage {
         dragAndDrop(driver, NppOrderPageUI.HELP_DESK_ICON, NppOrderPageUI.BELL_ICON);
     }
 
-    public void clickCancelHelpdesk() {
-        waitForElementClickable(driver, NppOrderPageUI.CANCEL_HELP_DESK);
-        clickToElement(driver, NppOrderPageUI.CANCEL_HELP_DESK);
-    }
-
     public void inputSelectProductCheckbox() {
-        //waitForElementClickable(driver, NppOrderPageUI.PRODUCT_CHECKBOX);
+        waitForElementClickable(driver, NppOrderPageUI.PRODUCT_CHECKBOX);
         clickToElement(driver, NppOrderPageUI.PRODUCT_CHECKBOX);
     }
 
@@ -44,7 +39,6 @@ public class CreateOrderPageObject extends BasePage {
 
     public String getTextFromSuccessPopup() {
         waitForElementVisible(driver, NppOrderPageUI.SUCCESSFULL_POPUP_CONTENT);
-        String successfullContent = getElementText(driver, NppOrderPageUI.SUCCESSFULL_POPUP_CONTENT);
         return getElementText(driver, SUCCESSFULL_POPUP_CONTENT);
     }
 
@@ -54,6 +48,7 @@ public class CreateOrderPageObject extends BasePage {
     }
 
     public void clickOnOrderList() {
+        waitForLoadingIconInvisible(driver);
         waitForElementVisible(driver, VIEW_ORDER_LIST_BUTTON_AFTER_CREATED_SUCCESS);
         clickToElement(driver, VIEW_ORDER_LIST_BUTTON_AFTER_CREATED_SUCCESS);
     }

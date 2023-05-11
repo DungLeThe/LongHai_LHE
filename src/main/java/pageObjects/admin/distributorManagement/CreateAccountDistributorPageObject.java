@@ -2,7 +2,7 @@ package pageObjects.admin.distributorManagement;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageObjects.admin.accountManagement.AccountManagementPageObject;
+import pageObjects.admin.userManagement.UserManagementHomePageObject;
 import pageUIs.admin.AdminHomePageUI;
 
 public class CreateAccountDistributorPageObject extends BasePage {
@@ -17,10 +17,10 @@ public class CreateAccountDistributorPageObject extends BasePage {
 		return isElementDisplay(driver, AdminHomePageUI.CREATE_USER_TEXT);
 	}
 
-	public CreateInformationPageObject clickBackButton() {
+	public CreateInformationDistributorPageObject clickBackButton() {
 		waitForElementClickable(driver, AdminHomePageUI.BACK_BUTTON);
 		clickToElement(driver, AdminHomePageUI.BACK_BUTTON);
-		return new CreateInformationPageObject(driver);
+		return new CreateInformationDistributorPageObject(driver);
 	}
 
     public void inputToAccountDistributor(String accountDistributor) {
@@ -48,10 +48,10 @@ public class CreateAccountDistributorPageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.CLOSE_MODAL_BUTTON);
 	}
 
-	public AccountManagementPageObject clickToBackCreateDistributorPageButton() {
+	public UserManagementHomePageObject clickToBackCreateDistributorPageButton() {
 		waitForLoadingIconInvisible(driver);
-		clickToElement(driver, AdminHomePageUI.BACK_TO_CREATE_DISTRIBUTOR_PAGE_BUTTON);
-		return new AccountManagementPageObject(driver);
+		clickToElement(driver, AdminHomePageUI.BACK_TO_MANAGEMENT_HOME_PAGE_BUTTON);
+		return new UserManagementHomePageObject(driver);
 	}
 
 	public boolean isModalErrorDisplayed() {

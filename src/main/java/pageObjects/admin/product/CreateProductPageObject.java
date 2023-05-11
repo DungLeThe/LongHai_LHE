@@ -53,4 +53,8 @@ public class CreateProductPageObject extends BasePage {
 		clickToElement(driver, AdminHomePageUI.CLOSE_MODAL_BUTTON);
 		return new ProductHomePageObject(driver);
 	}
+
+	public void inputProductImage(String productImage) {
+		uploadImage(driver, AdminHomePageUI.PRODUCT_IMAGE, productImage);
+	}
 }

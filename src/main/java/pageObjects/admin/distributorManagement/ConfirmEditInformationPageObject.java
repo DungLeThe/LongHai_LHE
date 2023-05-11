@@ -2,7 +2,6 @@ package pageObjects.admin.distributorManagement;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageObjects.admin.accountManagement.ListDistributorPageObject;
 import pageUIs.admin.AdminHomePageUI;
 
 public class ConfirmEditInformationPageObject extends BasePage {
@@ -19,13 +18,8 @@ public class ConfirmEditInformationPageObject extends BasePage {
 	}
 
 	public boolean isConfirmSuccessTextDisplayed() {
+		waitForLoadingIconInvisible(driver);
 		waitForElementVisible(driver, AdminHomePageUI.CONFIRM_SUCCESS_TEXT);
 		return isElementDisplay(driver, AdminHomePageUI.CONFIRM_SUCCESS_TEXT);
-	}
-
-	public ListDistributorPageObject clickBackToListDistributorPage() {
-		waitForElementVisible(driver, AdminHomePageUI.BACK_TO_LIST_DISTRIBUTOR_BUTTON);
-		clickToElement(driver, AdminHomePageUI.BACK_TO_LIST_DISTRIBUTOR_BUTTON);
-		return new ListDistributorPageObject(driver);
 	}
 }

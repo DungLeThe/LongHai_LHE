@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
-import pageObjects.admin.accountManagement.ListDistributorPageObject;
 import pageObjects.admin.distributorManagement.*;
 import pageUIs.admin.AdminHomePageUI;
 import reportConfig.ExtentTestManager;
@@ -34,7 +33,6 @@ public class EditDistributorManagement extends BaseTest {
     private EditInformationPageObject editInformationPage;
     private DetailDistributorPageObject detailDistributorPage;
     private ConfirmEditInformationPageObject confirmEditInformationPage;
-    private ListDistributorPageObject listDistributorPage;
     private AdminHomePageUI homePageUI;
 
     @BeforeClass
@@ -46,7 +44,7 @@ public class EditDistributorManagement extends BaseTest {
 
         avatarImage =  PROJECT_PATH + "\\uploadFiles\\AvatarImage.jpg";
         representative = "LHETest" + getRandomString();
-        phone = "098765" + getRandomInt();
+        phone = "09876" + getRandomInt();
         taxCode = "01234" + getRandomInt();
         idCard = "0123456" + getRandomInt();
         idCardInvalid = "0987654321987654321";
@@ -73,7 +71,7 @@ public class EditDistributorManagement extends BaseTest {
         detailDistributorPage = distributorPage.clickViewDetailDistributorButton();
         editInformationPage = detailDistributorPage.clickEditDistributorButton();
 
-        driver.findElement(By.xpath("//input[@type='file']")).sendKeys(avatarImage);
+        editInformationPage.inputAvatarImage(avatarImage);
         editInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
         editInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
         editInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
@@ -96,7 +94,6 @@ public class EditDistributorManagement extends BaseTest {
         editInformationPage.inputToLabor(labor);
         confirmEditInformationPage = editInformationPage.clickSaveButton();
         assertTrue(confirmEditInformationPage.isConfirmSuccessTextDisplayed());
-        listDistributorPage = confirmEditInformationPage.clickBackToListDistributorPage();
     }
 
     @AfterClass(alwaysRun = true)

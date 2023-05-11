@@ -9,6 +9,8 @@ import pageObjects.admin.product.ProductHomePageObject;
 import pageObjects.admin.userManagement.UserManagementHomePageObject;
 import pageUIs.admin.AdminHomePageUI;
 
+import static commons.GlobalConstants.SHORT_TIMEOUT;
+
 public class AdminHomePageObject extends BasePage {
 	private WebDriver driver;
 
@@ -28,18 +30,21 @@ public class AdminHomePageObject extends BasePage {
 	}
 
 	public DistributorManagementPageObject clickDistributorManagementButton() {
+		sleepInSecond(SHORT_TIMEOUT);
 		waitForElementClickable(driver, AdminHomePageUI.DISTRIBUTOR_MANAGEMENT);
 		clickToElement(driver, AdminHomePageUI.DISTRIBUTOR_MANAGEMENT);
 		return new DistributorManagementPageObject(driver);
 	}
 
 	public ProductHomePageObject clickProductButton() {
+		sleepInSecond(SHORT_TIMEOUT);
 		waitForElementClickable(driver, AdminHomePageUI.PRODUCT_BUTTON);
 		clickToElement(driver, AdminHomePageUI.PRODUCT_BUTTON);
 		return new ProductHomePageObject(driver);
 	}
 
 	public OrderHomePageObject clickOrderButton() {
+		sleepInSecond(SHORT_TIMEOUT);
 		waitForElementClickable(driver, AdminHomePageUI.ORDER_BUTTON);
 		clickToElement(driver, AdminHomePageUI.ORDER_BUTTON);
 		return new OrderHomePageObject(driver);

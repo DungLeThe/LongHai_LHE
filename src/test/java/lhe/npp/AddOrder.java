@@ -39,7 +39,7 @@ public class AddOrder extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
         goToNppHomPage();
         orderHomePage = nppHomePage.clickOrderButton();
-        addOrderPage = orderHomePage.CreateOrderButton();
+        addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
         addOrderPage.waitForLoadingItemInvisible(driver);
         addOrderPage.dragAndDropIcon();
@@ -49,17 +49,14 @@ public class AddOrder extends BaseTest {
         addOrderPage.clickConfirmOrder();
         addOrderPage.getTextFromSuccessPopup();
         Assert.assertEquals(addOrderPage.getTextFromSuccessPopup(), "Bạn đã tạo đơn nhập hàng thành công");
-
-
     }
-
 
     @Test
     public void TC_02_AddOrderSuccessThenViewOrderDetail(Method method) {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
         goToNppHomPage();
         orderHomePage = nppHomePage.clickOrderButton();
-        addOrderPage = orderHomePage.CreateOrderButton();
+        addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
         addOrderPage.waitForLoadingItemInvisible(driver);
         addOrderPage.dragAndDropIcon();
@@ -75,7 +72,7 @@ public class AddOrder extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
         goToNppHomPage();
         orderHomePage = nppHomePage.clickOrderButton();
-        addOrderPage = orderHomePage.CreateOrderButton();
+        addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
         addOrderPage.waitForLoadingItemInvisible(driver);
         addOrderPage.dragAndDropIcon();
@@ -84,8 +81,6 @@ public class AddOrder extends BaseTest {
         addOrderPage.inputSelectProductCheckbox();
         addOrderPage.clickConfirmOrder();
         addOrderPage.clickOnOrderList();
-
-
     }
 
     @AfterClass(alwaysRun = true)

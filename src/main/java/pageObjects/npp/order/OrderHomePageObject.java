@@ -10,7 +10,6 @@ public class OrderHomePageObject extends BasePage {
     public OrderHomePageObject(WebDriver driver) {
         this.driver = driver;
     }
-
     public CreateOrderPageObject CreateOrderButton() {
         waitForElementVisible(driver, NppHomePageUI.CREATE_ORDER_BUTTON);
         clickToElement(driver, NppHomePageUI.CREATE_ORDER_BUTTON);

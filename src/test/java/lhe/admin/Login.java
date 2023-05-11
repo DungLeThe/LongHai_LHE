@@ -75,11 +75,10 @@ public class Login extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 03: Click Button Login");
         loginPage.clickToLoginButton();
 
-        ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Verify Modal Cofirm");
+        ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Verify Modal Confirm");
         assertTrue(loginPage.isModalConfirmDisplayed());
 
     }
-
 
     @Test
     public void TC_03_Login_Success(Method method) {
