@@ -602,7 +602,6 @@ public class BasePage {
     }
 
     public static String getRandomInt() {
-//        Random rand = new Random();
         return randomNumeric(5);
     }
 

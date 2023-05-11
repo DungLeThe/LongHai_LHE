@@ -11,12 +11,8 @@ public class OrderDetailPageObject extends BasePage {
 		this.driver = driver;
 	}
 
-	public boolean isOrderSuccessTextDisplayed() {
-		waitForElementVisible(driver, AdminHomePageUI.ORDER_SUCCESS_TEXT);
-		return isElementDisplay(driver, AdminHomePageUI.ORDER_SUCCESS_TEXT);
-	}
-
 	public void clickCancelButton() {
+		waitForLoadingIconInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.CANCEL_ORDER_MODAL_SUCCESS_BUTTON);
 		clickToElement(driver, AdminHomePageUI.CANCEL_ORDER_MODAL_SUCCESS_BUTTON);
 	}
@@ -50,5 +46,25 @@ public class OrderDetailPageObject extends BasePage {
 	public boolean isFailureButtonDisplayed() {
 		waitForElementVisible(driver, AdminHomePageUI.FAILURE_BUTTON);
 		return isElementDisplay(driver, AdminHomePageUI.FAILURE_BUTTON);
+	}
+
+	public String getDistributorText() {
+		waitForElementVisible(driver, AdminHomePageUI.DISTRIBUTOR_TEXT);
+		return getElementText(driver, AdminHomePageUI.DISTRIBUTOR_TEXT);
+	}
+
+	public String getEnterNoteText() {
+		waitForElementVisible(driver, AdminHomePageUI.ENTER_NOTE_TEXT);
+		return getElementText(driver, AdminHomePageUI.ENTER_NOTE_TEXT);
+	}
+
+	public String getStoreText() {
+		waitForElementVisible(driver, AdminHomePageUI.STORE_TEXT);
+		return getElementText(driver, AdminHomePageUI.STORE_TEXT);
+	}
+
+	public String getProductNameText() {
+		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_NAME_TEXT);
+		return getElementText(driver, AdminHomePageUI.PRODUCT_NAME_TEXT);
 	}
 }

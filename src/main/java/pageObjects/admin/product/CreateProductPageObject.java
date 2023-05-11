@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.admin.distributorManagement.CreateAccountDistributorPageObject;
 import pageUIs.admin.AdminHomePageUI;
 
+import static commons.GlobalConstants.SHORT_TIMEOUT;
+
 public class CreateProductPageObject extends BasePage {
 	private WebDriver driver;
 
@@ -29,6 +31,7 @@ public class CreateProductPageObject extends BasePage {
 	}
 
 	public void clickSelectCategory() {
+		sleepInSecond(SHORT_TIMEOUT);
 		waitForElementVisible(driver, AdminHomePageUI.CATEGORY_INPUT_VALUE);
 		clickToElement(driver, AdminHomePageUI.CATEGORY_INPUT_VALUE);
 	}

@@ -82,6 +82,7 @@ public class CreateOrderPageObject extends BasePage {
 	}
 
 	public OrderDetailPageObject clickViewDetailOrderButton() {
+		waitForLoadingIconInvisible(driver);
 		waitForElementClickable(driver, AdminHomePageUI.VIEW_DETAIL_ORDER_BUTTON);
 		clickToElement(driver, AdminHomePageUI.VIEW_DETAIL_ORDER_BUTTON);
 		return new OrderDetailPageObject(driver);

@@ -9,6 +9,7 @@ import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.admin.distributorManagement.CreateAccountDistributorPageObject;
 import pageObjects.admin.distributorManagement.CreateInformationDistributorPageObject;
+import pageObjects.admin.distributorManagement.DetailUserPageObject;
 import pageObjects.admin.userManagement.CreateUserManagementPageObject;
 import pageObjects.admin.userManagement.UserManagementHomePageObject;
 import pageUIs.admin.AdminHomePageUI;
@@ -19,6 +20,7 @@ import java.lang.reflect.Method;
 import static commons.BasePage.getRandomInt;
 import static commons.BasePage.getRandomString;
 import static commons.GlobalConstants.ADMIN_LOGIN;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class UserManagementAddDistributor extends BaseTest {
@@ -33,6 +35,7 @@ public class UserManagementAddDistributor extends BaseTest {
     private CreateUserManagementPageObject createUserManagementPage;
     private CreateInformationDistributorPageObject createInformationDistributorPage;
     private CreateAccountDistributorPageObject createAccountDistributorPage;
+    private DetailUserPageObject detailUserPage;
     private String representative, phone, taxCode, idCard, dateRange, issuedBy, enterAddress, region,
             area, businessModel, warehouseArea, labor, timeIn, distributionRoomCode, marketRoomCode,
             accountDistributor, passwordDistributor, emailDistributor;
@@ -48,7 +51,7 @@ public class UserManagementAddDistributor extends BaseTest {
         phone = "09876" + getRandomInt();
         taxCode = "01234" + getRandomInt();
         idCard = "0380970" + getRandomInt();
-        dateRange = "01/01/2011";
+        dateRange = "2011-01-01";
         issuedBy = "Ha Noi";
         enterAddress = "Cau Giay, Ha Noi";
         region = "Vùng 1";
@@ -56,7 +59,7 @@ public class UserManagementAddDistributor extends BaseTest {
         businessModel = "Công ty";
         warehouseArea = "1000";
         labor = "20";
-        timeIn = "20/04/2020";
+        timeIn = "2020-01-01";
         distributionRoomCode = "AD1";
         marketRoomCode = "AD1";
         accountDistributor = "Account" + getRandomInt();
@@ -116,6 +119,19 @@ public class UserManagementAddDistributor extends BaseTest {
         createAccountDistributorPage.clickCreateButton();
         userManagementHomePage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
         assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
+        userManagementHomePage.clickViewDetailAllDistributor();
+        detailUserPage = userManagementHomePage.clickViewDetailNewDistributor();
+        assertEquals(detailUserPage.getRepresentativeText(), representative);
+        assertEquals(detailUserPage.getInfoDistributorText("Email"), emailDistributor);
+        assertEquals(detailUserPage.getInfoDistributorText("CMT/CCCD"), idCard);
+        assertEquals(detailUserPage.getInfoDistributorText("Ngày cấp"), dateRange);
+        assertEquals(detailUserPage.getInfoDistributorText("Nơi cấp"), issuedBy);
+        assertEquals(detailUserPage.getInfoDistributorText("Địa chỉ"), enterAddress);
+        assertEquals(detailUserPage.getInfoDistributorText("Vùng"), region);
+        assertEquals(detailUserPage.getInfoDistributorText("Khu vực"), area);
+        assertEquals(detailUserPage.getInfoDistributorText("Diện tích kho"), warehouseArea);
+        assertEquals(detailUserPage.getInfoDistributorText("Số lượng nhân công"), labor);
+        assertEquals(detailUserPage.getInfoDistributorText("Ngày vào"), timeIn);
     }
 
     @AfterClass(alwaysRun = true)

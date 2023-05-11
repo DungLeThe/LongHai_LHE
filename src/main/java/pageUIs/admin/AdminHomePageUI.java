@@ -38,9 +38,7 @@ public class AdminHomePageUI {
 	public static final String SELECT_WARD = "//div[contains(normalize-space(),'An Phú') and @class='address-item']";
 	public static final String CREATE_USER_TEXT = "//div[@class='p1 mb1']";
 	public static final String REPRESENTATIVE = "//p[contains(normalize-space(),'%s')]";
-
 	public static final String CONFIRM_SUCCESS_TEXT = "//span[@class='green-2 h5']";
-
 	public static final String ERROR_MESSAGE_EMPTY_REPRESENTATIVE =
 			"//p[contains(normalize-space(),'Người đại diện')]//ancestor::div[contains(@class,'mb1')]//p[contains(normalize-space(),'Bạn cần điền vào mục này')]";
 	public static final String ERROR_MESSAGE_INVALID_REPRESENTATIVE =
@@ -79,6 +77,11 @@ public class AdminHomePageUI {
 			"//input[@placeholder='Nhập mật khẩu']/parent::div/following-sibling::p";
 	public static final String ERROR_MESSAGE_EMAIL =
 			"//input[@placeholder='Nhập email']/parent::div/following-sibling::p";
+	public static final String VIEW_DETAIL_ALL_DISTRIBUTOR_DIV = "//div[contains(text(),'Nhà phân phối')]";
+	public static final String VIEW_DETAIL_NEW_DISTRIBUTOR = "//div[@class='user-manager__search mb15']/following-sibling::div/div/div[1]//p[@class='p5 mb05']";
+	public static final String REPRESENTATIVE_TEXT = "//div[@class='user-manager__user-details__avatar']//p[@class='h5']";
+	public static final String INFO_DISTRIBUTOR_TEXT = "//p[text()='%s']/following-sibling::p";
+
 
 	// Product Page
 	public static final String PRODUCT_BUTTON = "//a[@href='#/product']";
@@ -140,6 +143,10 @@ public class AdminHomePageUI {
 	public static final String NOTE_TEXT_AREA = "//textarea[@placeholder='Nhập vào đây']";
 	public static final String CONFIRM_BUTTON = "//span[text()='Xác nhận']";
 	public static final String FAILURE_BUTTON = "//div[contains(normalize-space(),'Thất bại')]";
+	public static final String DISTRIBUTOR_TEXT = "//div[@class='mt15']//p[@class='p3 mb025']";
+	public static final String ENTER_NOTE_TEXT = "//div[@class='gray-5 ph1 pb1']//p[contains(text(),'LHETest')]";
+	public static final String STORE_TEXT = "//span[contains(text(),'Kho Cẩm Thượng')]";
+	public static final String PRODUCT_NAME_TEXT = "//div[@class='card-product__name f aic cursor px1']//p[@class='p3 mb025']";
 
 	// User Management Page
 	public static final String USER_MANAGEMENT_BUTTON = "//a[@href='#/user-manager']";

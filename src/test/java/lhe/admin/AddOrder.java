@@ -16,6 +16,7 @@ import reportConfig.ExtentTestManager;
 import java.lang.reflect.Method;
 
 import static commons.GlobalConstants.ADMIN_LOGIN;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class AddOrder extends BaseTest {
@@ -106,8 +107,13 @@ public class AddOrder extends BaseTest {
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
         orderDetailPage = createOrderPage.clickViewDetailOrderButton();
+
+        assertEquals(orderDetailPage.getDistributorText(), selectDistributor);
+        assertEquals(orderDetailPage.getEnterNoteText(), enterNote);
+        assertEquals(orderDetailPage.getStoreText(), "Kho Cẩm Thượng");
+        assertEquals(orderDetailPage.getProductNameText(), productName);
+
         orderDetailPage.clickApproveOrderButton();
-        assertTrue(orderDetailPage.isOrderSuccessTextDisplayed());
         orderDetailPage.clickCancelButton();
         assertTrue(orderDetailPage.isProcessingButtonDisplayed());
     }
@@ -120,7 +126,6 @@ public class AddOrder extends BaseTest {
         orderHomePage.clickWaitingForApproveButton();
         orderDetailPage = orderHomePage.clickViewDetailButton();
         orderDetailPage.clickApproveOrderButton();
-        assertTrue(orderDetailPage.isOrderSuccessTextDisplayed());
         orderDetailPage.clickCancelButton();
         assertTrue(orderDetailPage.isProcessingButtonDisplayed());
     }

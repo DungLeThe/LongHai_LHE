@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.admin.distributorManagement.CreateAccountDistributorPageObject;
+import pageObjects.admin.distributorManagement.DetailUserPageObject;
 import pageObjects.admin.distributorManagement.DistributorManagementPageObject;
 import pageObjects.admin.distributorManagement.CreateInformationDistributorPageObject;
 import pageObjects.admin.userManagement.UserManagementHomePageObject;
@@ -36,6 +37,7 @@ public class AddDistributorManagement extends BaseTest {
     private CreateInformationDistributorPageObject createInformationDistributorPage;
     private CreateAccountDistributorPageObject createAccountDistributorPage;
     private UserManagementHomePageObject userManagementHomePage;
+    private DetailUserPageObject detailUserPage;
     private AdminHomePageUI homePageUI;
 
     @BeforeClass
@@ -52,7 +54,7 @@ public class AddDistributorManagement extends BaseTest {
         taxCode = "01234" + getRandomInt();
         idCard = "0380970" + getRandomInt();
         idCardInvalid = "0987654321987654321";
-        dateRange = "01/01/2011";
+        dateRange = "2011-01-01";
         issuedBy = "Ha Noi";
         enterAddress = "Cau Giay, Ha Noi";
         region = "Vùng 1";
@@ -60,7 +62,7 @@ public class AddDistributorManagement extends BaseTest {
         businessModel = "Công ty";
         warehouseArea = "1000";
         labor = "20";
-        timeIn = "20/04/2020";
+        timeIn = "2020-01-01";
         distributionRoomCode = "AD1";
         marketRoomCode = "AD1";
         accountDistributor = "Account" + getRandomInt();
@@ -389,6 +391,19 @@ public class AddDistributorManagement extends BaseTest {
         createAccountDistributorPage.clickCreateButton();
         userManagementHomePage = createAccountDistributorPage.clickToBackCreateDistributorPageButton();
         assertTrue(userManagementHomePage.representativeDisplayed(representative), representative);
+        userManagementHomePage.clickViewDetailAllDistributor();
+        detailUserPage = userManagementHomePage.clickViewDetailNewDistributor();
+        assertEquals(detailUserPage.getRepresentativeText(), representative);
+        assertEquals(detailUserPage.getInfoDistributorText("Email"), emailDistributor);
+        assertEquals(detailUserPage.getInfoDistributorText("CMT/CCCD"), idCard);
+        assertEquals(detailUserPage.getInfoDistributorText("Ngày cấp"), dateRange);
+        assertEquals(detailUserPage.getInfoDistributorText("Nơi cấp"), issuedBy);
+        assertEquals(detailUserPage.getInfoDistributorText("Địa chỉ"), enterAddress);
+        assertEquals(detailUserPage.getInfoDistributorText("Vùng"), region);
+        assertEquals(detailUserPage.getInfoDistributorText("Khu vực"), area);
+        assertEquals(detailUserPage.getInfoDistributorText("Diện tích kho"), warehouseArea);
+        assertEquals(detailUserPage.getInfoDistributorText("Số lượng nhân công"), labor);
+        assertEquals(detailUserPage.getInfoDistributorText("Ngày vào"), timeIn);
     }
 
     @AfterClass(alwaysRun = true)
