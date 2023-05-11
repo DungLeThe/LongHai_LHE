@@ -11,10 +11,11 @@
   <test name="Run On CHROME">
 	<parameter name="browser" value="chrome"/>
     <classes>
-      <class name="lhe.npp.NppLogin"/>
+      <class name="lhe.npp.Login"/>
       <class name="lhe.npp.AddOrder"/>
       <class name="lhe.npp.CreateCategory"/>
       <class name="lhe.npp.ProductListAndViewDetailProduct"/>
+      <class name="lhe.npp.ViewAndEditPersonalInformation"/>
     </classes>
   </test>
 

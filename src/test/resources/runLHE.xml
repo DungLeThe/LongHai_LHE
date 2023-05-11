@@ -23,7 +23,7 @@
       <class name="lhe.admin.UserManagementAddWarehouse"/>
       <class name="lhe.admin.UserManagementAddAdmin"/>
 
-      <class name="lhe.npp.NppLogin"/>
+      <class name="lhe.npp.Login"/>
       <class name="lhe.npp.AddOrder"/>
       <class name="lhe.npp.CreateCategory"/>
       <class name="lhe.npp.ProductListAndViewDetailProduct"/>
