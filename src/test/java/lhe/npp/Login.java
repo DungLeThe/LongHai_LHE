@@ -17,7 +17,7 @@ import static commons.GlobalConstants.NPP_LOGIN;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class NppLogin extends BaseTest {
+public class Login extends BaseTest {
     WebDriver driver;
 
     private String account, password, accountInvalid, passwordInvalid;
