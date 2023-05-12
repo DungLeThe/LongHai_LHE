@@ -74,9 +74,20 @@ public class ListProductsPageObject extends BasePage {
 		clickToElement(driver, MarketingStaffHomePageUI.CONFIRM_BUTTON);
 	}
 
-	public void clickDetailOrderButton() {
+	public OrderDetailPageObject clickDetailOrderButton() {
 		waitForLoadingIconInvisible(driver);
 		waitForElementVisible(driver, MarketingStaffHomePageUI.DETAIL_ORDER_BUTTON);
 		clickToElement(driver, MarketingStaffHomePageUI.DETAIL_ORDER_BUTTON);
+		return new OrderDetailPageObject(driver);
+	}
+
+	public boolean isPriceTextDisplayed() {
+		waitForElementVisible(driver, MarketingStaffHomePageUI.PRICE_VALUE);
+		return isElementDisplay(driver, MarketingStaffHomePageUI.PRICE_VALUE);
+	}
+
+	public void clickPriceText() {
+		waitForElementVisible(driver, MarketingStaffHomePageUI.PRICE_TEXT);
+		clickToElement(driver, MarketingStaffHomePageUI.PRICE_TEXT);
 	}
 }

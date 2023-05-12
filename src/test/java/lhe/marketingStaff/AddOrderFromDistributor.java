@@ -9,12 +9,14 @@ import pageObjects.marketingStaff.MarketingStaffHomePageObject;
 import pageObjects.marketingStaff.MarketingStaffLoginPageObject;
 import pageObjects.marketingStaff.order.AddOrderFromDistributorPageObject;
 import pageObjects.marketingStaff.order.ListProductsPageObject;
+import pageObjects.marketingStaff.order.OrderDetailPageObject;
 import pageObjects.marketingStaff.order.OrderHomePageObject;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
 
 import static commons.GlobalConstants.MARKETING_STAFF_LOGIN;
+import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class AddOrderFromDistributor extends BaseTest {
@@ -27,6 +29,8 @@ public class AddOrderFromDistributor extends BaseTest {
     private OrderHomePageObject orderHomePage;
     private AddOrderFromDistributorPageObject addOrderFromDistributorPage;
     private ListProductsPageObject listProductsPage;
+    private OrderDetailPageObject orderDetailPage;
+
     private String product, numberOfBoxes, numberOfBags;
 
     @BeforeClass
@@ -68,7 +72,7 @@ public class AddOrderFromDistributor extends BaseTest {
     }
 
     @Test
-    public void TC_03_Choose_Product(Method method) {
+    public void TC_03_Choose_Product_Then_View_Order_Detail(Method method) {
         ExtentTestManager.startTest(method.getName(), "Choose Product Success");
         goToMarketingStaffHomePage();
         orderHomePage = marketingStaffHomePage.clickOrderButton();
@@ -82,12 +86,16 @@ public class AddOrderFromDistributor extends BaseTest {
         listProductsPage.clickAddUnitIcon();
         listProductsPage.inputNumberOfBoxes(numberOfBoxes);
         listProductsPage.inputNumberOfBags(numberOfBags);
+//        listProductsPage.clickPriceText();
+//        assertTrue(listProductsPage.isPriceTextDisplayed());
         listProductsPage.clickConfirmButton();
-        listProductsPage.clickDetailOrderButton();
+        orderDetailPage = listProductsPage.clickDetailOrderButton();
+        orderDetailPage.getProductNameText();
+        assertEquals(orderDetailPage.getProductNameText(), product);
     }
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        closeBrowserAndDriver();
+//        closeBrowserAndDriver();
     }
 }

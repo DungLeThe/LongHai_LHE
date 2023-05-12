@@ -17,4 +17,7 @@ public class MarketingStaffHomePageUI {
     public static final String NUMBER_OF_BAGS_INPUT = "//div[@class='f jcs aic gap05 mb1 input-custom-wrapper'][2]//input[@placeholder='Nhập số lượng']";
     public static final String CONFIRM_BUTTON = "//div[contains(text(),'Xác nhận')]";
     public static final String DETAIL_ORDER_BUTTON = "//p[text()='Chi tiết đơn']";
+    public static final String PRODUCT_NAME_TEXT = "//div[@class='card-product__name f aic cursor border-radius-m px1']//p[@class='p3 mb025']";
+    public static final String PRICE_VALUE = "//div[text()='Tổng đơn hàng']/following-sibling::div[contains(text(),'960.000')]";
+    public static final String PRICE_TEXT = "//div[text()='Tổng đơn hàng']/following-sibling::div";
 }
