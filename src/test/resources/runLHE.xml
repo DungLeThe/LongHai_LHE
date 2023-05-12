@@ -27,6 +27,8 @@
       <class name="lhe.npp.AddOrder"/>
       <class name="lhe.npp.CreateCategory"/>
       <class name="lhe.npp.ProductListAndViewDetailProduct"/>
+      <class name="lhe.warehouse.WareHouseLogin"/>
+      <class name="lhe.warehouse.TransactionSlip"/>
     </classes>
   </test>
 
