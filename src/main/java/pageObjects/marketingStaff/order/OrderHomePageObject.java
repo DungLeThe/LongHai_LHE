@@ -16,4 +16,10 @@ public class OrderHomePageObject extends BasePage {
 		clickToElement(driver, MarketingStaffHomePageUI.ADD_ORDER_FROM_DISTRIBUTOR_BUTTON);
 		return new AddOrderFromDistributorPageObject(driver);
 	}
+
+    public AddOrderForGroceriesPageObject clickAddOrderForGroceries() {
+		waitForElementVisible(driver, MarketingStaffHomePageUI.ADD_ORDER_FOR_GROCERIES_BUTTON);
+		clickToElement(driver, MarketingStaffHomePageUI.ADD_ORDER_FOR_GROCERIES_BUTTON);
+		return new AddOrderForGroceriesPageObject(driver);
+    }
 }

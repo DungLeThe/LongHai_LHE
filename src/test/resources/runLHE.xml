@@ -23,12 +23,21 @@
       <class name="lhe.admin.UserManagementAddWarehouse"/>
       <class name="lhe.admin.UserManagementAddAdmin"/>
 
+      <class name="lhe.marketingStaff.Login"/>
+      <class name="lhe.marketingStaff.AddOrderFromDistributor"/>
+
       <class name="lhe.npp.Login"/>
       <class name="lhe.npp.AddOrder"/>
       <class name="lhe.npp.CreateCategory"/>
       <class name="lhe.npp.ProductListAndViewDetailProduct"/>
+      <class name="lhe.npp.ViewAndEditPersonalInformation"/>
+
       <class name="lhe.warehouse.WareHouseLogin"/>
       <class name="lhe.warehouse.TransactionSlip"/>
+
+      <class name="lhe.accountant.ViewOrderDetail"/>
+
+
     </classes>
   </test>
 

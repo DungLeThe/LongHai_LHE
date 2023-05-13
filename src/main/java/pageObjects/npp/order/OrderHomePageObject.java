@@ -16,4 +16,17 @@ public class OrderHomePageObject extends BasePage {
         return new CreateOrderPageObject(driver);
     }
 
+    public void clickInProgressTab() {
+        waitForElementVisible(driver, NppHomePageUI.IN_PROGRESS_TAB);
+        clickToElement(driver, NppHomePageUI.IN_PROGRESS_TAB);
+    }
+
+    public void clickViewOrderDetailsButton() {
+        waitForElementVisible(driver, NppHomePageUI.VIEW_ORDER_DETAILS_BUTTON);
+        clickToElement(driver, NppHomePageUI.VIEW_ORDER_DETAILS_BUTTON);
+    }
+
+    public void clickConfirmReceivedButton() {
+        waitForElementVisible(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON);
+    }
 }

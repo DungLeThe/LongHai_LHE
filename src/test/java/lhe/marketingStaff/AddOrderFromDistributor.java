@@ -73,7 +73,7 @@ public class AddOrderFromDistributor extends BaseTest {
 
     @Test
     public void TC_03_Choose_Product_Then_View_Order_Detail(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Choose Product Success");
+        ExtentTestManager.startTest(method.getName(), "Choose Product Success Then View Order Detail");
         goToMarketingStaffHomePage();
         orderHomePage = marketingStaffHomePage.clickOrderButton();
         addOrderFromDistributorPage = orderHomePage.clickAddOrderFromDistributor();
@@ -94,8 +94,27 @@ public class AddOrderFromDistributor extends BaseTest {
         assertEquals(orderDetailPage.getProductNameText(), product);
     }
 
+    @Test
+    public void TC_04_Choose_Product_Then_View_Order_List(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Choose Product Success Then View Order List");
+        goToMarketingStaffHomePage();
+        orderHomePage = marketingStaffHomePage.clickOrderButton();
+        addOrderFromDistributorPage = orderHomePage.clickAddOrderFromDistributor();
+        listProductsPage = addOrderFromDistributorPage.clickAddOrderButton();
+        listProductsPage.clickChooseProductButton();
+        listProductsPage.inputSearchProduct(product);
+        listProductsPage.dragAndDropIcon();
+        listProductsPage.clickTextboxChooseProduct();
+        listProductsPage.clickAddNewProductButton();
+        listProductsPage.clickAddUnitIcon();
+        listProductsPage.inputNumberOfBoxes(numberOfBoxes);
+        listProductsPage.inputNumberOfBags(numberOfBags);
+        listProductsPage.clickConfirmButton();
+        addOrderFromDistributorPage = listProductsPage.clickListOrderButton();
+    }
+
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-//        closeBrowserAndDriver();
+        closeBrowserAndDriver();
     }
 }

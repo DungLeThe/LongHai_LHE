@@ -4,10 +4,10 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.marketingStaff.MarketingStaffHomePageUI;
 
-public class ListProductsPageObject extends BasePage {
+public class ListGroceriesPageObject extends BasePage {
 	private WebDriver driver;
 
-	public ListProductsPageObject(WebDriver driver) {
+	public ListGroceriesPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -96,5 +96,12 @@ public class ListProductsPageObject extends BasePage {
 		waitForElementVisible(driver, MarketingStaffHomePageUI.LIST_ORDER_BUTTON);
 		clickToElement(driver, MarketingStaffHomePageUI.LIST_ORDER_BUTTON);
 		return new AddOrderFromDistributorPageObject(driver);
+	}
+
+	public ChooseOneGroceryPageObject clickChooseOneGroceryButton() {
+		waitForLoadingIconInvisible(driver);
+		waitForElementVisible(driver, MarketingStaffHomePageUI.CHOOSE_ONE_GROCERY_BUTTON);
+		clickToElement(driver, MarketingStaffHomePageUI.CHOOSE_ONE_GROCERY_BUTTON);
+		return new ChooseOneGroceryPageObject(driver);
 	}
 }

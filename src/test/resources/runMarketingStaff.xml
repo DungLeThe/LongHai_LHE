@@ -12,6 +12,7 @@
 	<parameter name="browser" value="chrome"/>
     <classes>
       <class name="lhe.marketingStaff.Login"/>
+      <class name="lhe.marketingStaff.AddOrderFromDistributor"/>
     </classes>
   </test>
 
