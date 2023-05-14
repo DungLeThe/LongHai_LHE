@@ -152,6 +152,7 @@ public class CreateInformationDistributorPageObject extends BasePage {
 	public void clickToInputRegion() {
 		waitForElementVisible(driver, AdminHomePageUI.REGION_INPUT_TEXT);
 		clickToElement(driver, AdminHomePageUI.REGION_INPUT_TEXT);
+		waitForElementClickable(driver, AdminHomePageUI.REGION_VALUE);
 	}
 
 	public void clickToInputArea() {

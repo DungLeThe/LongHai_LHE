@@ -17,6 +17,7 @@
       <class name="lhe.admin.AddProduct"/>
       <class name="lhe.admin.EditProduct"/>
       <class name="lhe.admin.AddOrder"/>
+      <class name="lhe.admin.AddMarketingStaffForDistributor"/>
       <class name="lhe.admin.UserManagementAddDistributor"/>
       <class name="lhe.admin.UserManagementAddMarketingStaff"/>
       <class name="lhe.admin.UserManagementAddAccountant"/>

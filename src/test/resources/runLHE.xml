@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Admin">
+<suite name="LHE" parallel="classes" thread-count="3">
   <listeners>
     <listener class-name="commons.MethodListener" />
     <listener class-name="reportConfig.ReportNGListener" />
@@ -17,6 +17,7 @@
       <class name="lhe.admin.AddProduct"/>
       <class name="lhe.admin.EditProduct"/>
       <class name="lhe.admin.AddOrder"/>
+      <class name="lhe.admin.AddMarketingStaffForDistributor"/>
       <class name="lhe.admin.UserManagementAddDistributor"/>
       <class name="lhe.admin.UserManagementAddMarketingStaff"/>
       <class name="lhe.admin.UserManagementAddAccountant"/>
@@ -25,6 +26,7 @@
 
       <class name="lhe.marketingStaff.Login"/>
       <class name="lhe.marketingStaff.AddOrderFromDistributor"/>
+      <class name="lhe.marketingStaff.AddOrderForGroceries"/>
 
       <class name="lhe.npp.Login"/>
       <class name="lhe.npp.AddOrder"/>
