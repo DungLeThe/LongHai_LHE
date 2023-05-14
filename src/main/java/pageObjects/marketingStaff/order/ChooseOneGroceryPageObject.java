@@ -4,6 +4,8 @@ import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageUIs.marketingStaff.MarketingStaffHomePageUI;
 
+import static commons.GlobalConstants.SHORT_TIMEOUT;
+
 public class ChooseOneGroceryPageObject extends BasePage {
 	private WebDriver driver;
 
@@ -29,6 +31,7 @@ public class ChooseOneGroceryPageObject extends BasePage {
 	}
 
 	public void inputSearchProduct(String product) {
+		sleepInSecond(SHORT_TIMEOUT);
 		waitForElementVisible(driver, MarketingStaffHomePageUI.INPUT_SEARCH_PRODUCT);
 		sendKeyToElement(driver, MarketingStaffHomePageUI.INPUT_SEARCH_PRODUCT, product);
 	}
@@ -50,6 +53,7 @@ public class ChooseOneGroceryPageObject extends BasePage {
 	}
 
 	public void clickAddUnitIcon() {
+		scrollToElement(driver, MarketingStaffHomePageUI.ADD_UNIT_ICON);
 		waitForElementVisible(driver, MarketingStaffHomePageUI.ADD_UNIT_ICON);
 		clickToElement(driver, MarketingStaffHomePageUI.ADD_UNIT_ICON);
 	}
@@ -68,5 +72,11 @@ public class ChooseOneGroceryPageObject extends BasePage {
 		waitForElementVisible(driver, MarketingStaffHomePageUI.CONFIRM_BUTTON);
 		clickToElement(driver, MarketingStaffHomePageUI.CONFIRM_BUTTON);
 		return new PreviewDetailOrderPageObject(driver);
+	}
+
+	public void clickEditChooseProductToOrderButton() {
+		waitForLoadingItemInvisible(driver);
+		waitForElementVisible(driver, MarketingStaffHomePageUI.EDIT_CHOOSE_PRODUCT_TO_ORDER_BUTTON);
+		clickToElement(driver, MarketingStaffHomePageUI.EDIT_CHOOSE_PRODUCT_TO_ORDER_BUTTON);
 	}
 }

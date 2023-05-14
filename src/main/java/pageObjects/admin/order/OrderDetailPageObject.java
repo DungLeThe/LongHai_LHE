@@ -67,4 +67,44 @@ public class OrderDetailPageObject extends BasePage {
 		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_NAME_TEXT);
 		return getElementText(driver, AdminHomePageUI.PRODUCT_NAME_TEXT);
 	}
+
+    public void clickAddProductButton() {
+		waitForLoadingIconInvisible(driver);
+		waitForElementClickable(driver, AdminHomePageUI.ADD_PRODUCT_IN_EDIT_ORDER_BUTTON);
+		clickToElement(driver, AdminHomePageUI.ADD_PRODUCT_IN_EDIT_ORDER_BUTTON);
+    }
+
+	public void dragAndDropIcon() {
+		waitForLoadingItemInvisible(driver);
+		waitForElementClickable(driver, AdminHomePageUI.HELP_DESK_ICON);
+		dragAndDrop(driver, AdminHomePageUI.HELP_DESK_ICON, AdminHomePageUI.SELECT_ALL_TEXT);
+	}
+
+	public void clickCancelHelpdesk() {
+		waitForElementClickable(driver, AdminHomePageUI.CANCEL_HELP_DESK);
+		clickToElement(driver, AdminHomePageUI.CANCEL_HELP_DESK);
+	}
+
+	public void clickChooseProductTextbox() {
+		waitForLoadingItemInvisible(driver);
+		waitForElementClickable(driver, AdminHomePageUI.CHOOSE_PRODUCT_CHECKBOX);
+		clickToElement(driver, AdminHomePageUI.CHOOSE_PRODUCT_CHECKBOX);
+	}
+
+	public void clickAddButton() {
+		waitForElementClickable(driver, AdminHomePageUI.ADD_BUTTON);
+		clickToElement(driver, AdminHomePageUI.ADD_BUTTON);
+	}
+
+	public void clickChooseProductAddNewTextbox() {
+		waitForLoadingItemInvisible(driver);
+		waitForElementClickable(driver, AdminHomePageUI.CHOOSE_PRODUCT_ADD_NEW_CHECKBOX);
+		clickToElement(driver, AdminHomePageUI.CHOOSE_PRODUCT_ADD_NEW_CHECKBOX);
+	}
+
+	public void clickUpdateOrderButton() {
+		waitForLoadingIconInvisible(driver);
+		waitForElementClickable(driver, AdminHomePageUI.UPDATE_ORDER_BUTTON);
+		clickToElement(driver, AdminHomePageUI.UPDATE_ORDER_BUTTON);
+	}
 }

@@ -19,6 +19,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.commons.lang3.RandomStringUtils;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
+import pageUIs.admin.AdminHomePageUI;
+
 import static commons.BasePageUI.*;
 import static commons.GlobalConstants.*;
 import static org.apache.commons.lang.RandomStringUtils.randomNumeric;
@@ -40,6 +42,13 @@ public class BasePage {
 
     public void openPageUrl(WebDriver driver, String pageUrl) {
         driver.get(pageUrl);
+    }
+
+    public AdminHomePageObject clickGoToAdminHomePageIcon(WebDriver driver) {
+        sleepInSecond(SHORT_TIMEOUT);
+        waitForElementClickable(driver, BasePageUI.HOME_PAGE_ICON);
+        clickToElement(driver, BasePageUI.HOME_PAGE_ICON);
+        return new AdminHomePageObject(driver);
     }
 
     protected String getPageTitle(WebDriver driver) {
@@ -389,6 +398,11 @@ public class BasePage {
     public void scrollToElement(WebDriver driver, String locator) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", this.getWebElement(driver, locator));
+    }
+
+    public void scrollToElement(WebDriver driver, String locator, String... dynamicValues) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", this.getWebElement(driver, getDynamicXpath(locator, dynamicValues)));
     }
 
     public void removeAttributeInDOM(WebDriver driver, String locator, String attributeRemove) {

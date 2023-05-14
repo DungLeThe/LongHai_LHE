@@ -7,8 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
-import pageObjects.admin.order.OrderDetailPageObject;
 import pageObjects.admin.order.CreateOrderPageObject;
+import pageObjects.admin.order.OrderDetailPageObject;
 import pageObjects.admin.order.OrderHomePageObject;
 import pageUIs.admin.AdminHomePageUI;
 import reportConfig.ExtentTestManager;
@@ -19,7 +19,7 @@ import static commons.GlobalConstants.ADMIN_LOGIN;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class AddOrder extends BaseTest {
+public class EditOrder extends BaseTest {
     WebDriver driver;
 
     private String browserName;
@@ -31,7 +31,7 @@ public class AddOrder extends BaseTest {
     private CreateOrderPageObject createOrderPage;
     private OrderDetailPageObject orderDetailPage;
 
-    private String selectDistributor, enterNote, productName, productAddName, noteText;
+    private String selectDistributor, enterNote, productName, noteText;
 
     @BeforeClass
     public void beforeClass() {
@@ -43,7 +43,6 @@ public class AddOrder extends BaseTest {
         selectDistributor = "NPP Test";
         enterNote = "LHETest";
         productName = "Thạch rau câu phong cách Nhật Bản Kimiko 990g";
-        productAddName = "Thạch rau câu phong cách Nhật Bản Kimikoko hihi 450g";
         noteText = "LHETest";
     }
 
@@ -124,34 +123,8 @@ public class AddOrder extends BaseTest {
         ExtentTestManager.startTest(method.getName(), "Approve Order From Order Home Page");
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
-        createOrderPage = orderHomePage.clickAddNewOrderButton();
-        createOrderPage.inputDynamic(driver,"Tìm kiến nhà phân phối", selectDistributor);
-        createOrderPage.clickDistributorInput();
-        createOrderPage.clickSelectDistributor();
-        createOrderPage.inputDynamic(driver,"Nhập ghi chú", enterNote);
-        createOrderPage.clickChooseStoreButton();
-        createOrderPage.clickSelectStore();
-        createOrderPage.clickChooseProductButton();
-        createOrderPage.clickCancelProductButton();
-        createOrderPage.clickChooseProductButton();
-        createOrderPage.dragAndDropIcon();
-        createOrderPage.clickCancelHelpdesk();
-        createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
-        createOrderPage.clickChooseProductTextbox();
-        createOrderPage.clickAddButton();
-        createOrderPage.clickCreateOrderButton();
-        createOrderPage.clickListPageButton();
-
         orderHomePage.clickWaitingForApproveButton();
         orderDetailPage = orderHomePage.clickViewDetailButton();
-        orderDetailPage.clickAddProductButton();
-        orderDetailPage.dragAndDropIcon();
-        orderDetailPage.clickCancelHelpdesk();
-        orderDetailPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productAddName);
-        orderDetailPage.clickChooseProductAddNewTextbox();
-        orderDetailPage.clickAddButton();
-        orderDetailPage.clickUpdateOrderButton();
-        orderDetailPage.clickCancelButton();
         orderDetailPage.clickApproveOrderButton();
         orderDetailPage.clickCancelButton();
         assertTrue(orderDetailPage.isProcessingButtonDisplayed());

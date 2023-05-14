@@ -28,6 +28,7 @@ public class MarketingStaffHomePageUI {
     public static final String CHOOSE_ONE_GROCERY_BUTTON = "//div[@class='infinite-scroll__container relative mb2 pb1']/div[1]//span[text()='Chọn cửa hàng tạp hóa này']";
     public static final String NOTE_AREA_INPUT = "//textarea[@placeholder='Nhập ghi chú']";
     public static final String CHOOSE_PRODUCT_TO_ORDER_BUTTON = "//div[contains(text(),'Chọn sản phẩm để đặt hàng')]";
+    public static final String EDIT_CHOOSE_PRODUCT_TO_ORDER_BUTTON = "//div[contains(text(),'Thêm sản phẩm')]";
     public static final String COMPLETED_BUTTON = "//span[contains(text(),'Hoàn thành')]";
     public static final String EDIT_ORDER_BUTTON = "//span[contains(text(),'Chỉnh sửa')]";
 }

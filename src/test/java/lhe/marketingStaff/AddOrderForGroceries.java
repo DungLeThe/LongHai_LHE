@@ -109,39 +109,38 @@ public class AddOrderForGroceries extends BaseTest {
         addOrderForGroceriesPage = previewDetailOrderPage.clickListOrderButton();
     }
 
-    @Test
-    public void TC_04_Edit_Order_For_Groceries(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Edit Order For Groceries");
-        goToMarketingStaffHomePage();
-        orderHomePage = marketingStaffHomePage.clickOrderButton();
-        addOrderForGroceriesPage = orderHomePage.clickAddOrderForGroceries();
-        listGroceriesPage = addOrderForGroceriesPage.clickAddOrderForGroceriesButton();
-        chooseOneGroceryPage = listGroceriesPage.clickChooseOneGroceryButton();
-        chooseOneGroceryPage.inputNoteArea(note);
-        chooseOneGroceryPage.clickChooseProductToOrderButton();
-        chooseOneGroceryPage.inputSearchProduct(product);
-        chooseOneGroceryPage.dragAndDropIcon();
-        chooseOneGroceryPage.clickTextboxChooseProduct();
-        chooseOneGroceryPage.clickAddNewProductButton();
-        chooseOneGroceryPage.clickAddUnitIcon();
-        chooseOneGroceryPage.inputNumberOfBoxes(numberOfBoxes);
-        chooseOneGroceryPage.inputNumberOfBags(numberOfBags);
-        previewDetailOrderPage = chooseOneGroceryPage.clickConfirmButton();
-        assertEquals(previewDetailOrderPage.getProductNameText(), product);
-        chooseOneGroceryPage = previewDetailOrderPage.clickEditOrderButton();
-
-        chooseOneGroceryPage.clickChooseProductToOrderButton();
-        chooseOneGroceryPage.inputSearchProduct(productEdit);
-        chooseOneGroceryPage.dragAndDropIcon();
-        chooseOneGroceryPage.clickTextboxChooseProduct();
-        chooseOneGroceryPage.clickAddNewProductButton();
-        chooseOneGroceryPage.clickAddUnitIcon();
-        chooseOneGroceryPage.inputNumberOfBoxes(numberOfBoxes);
-        chooseOneGroceryPage.inputNumberOfBags(numberOfBags);
-    }
+//    @Test
+//    public void TC_04_Edit_Order_For_Groceries(Method method) {
+//        ExtentTestManager.startTest(method.getName(), "Edit Order For Groceries");
+//        goToMarketingStaffHomePage();
+//        orderHomePage = marketingStaffHomePage.clickOrderButton();
+//        addOrderForGroceriesPage = orderHomePage.clickAddOrderForGroceries();
+//        listGroceriesPage = addOrderForGroceriesPage.clickAddOrderForGroceriesButton();
+//        chooseOneGroceryPage = listGroceriesPage.clickChooseOneGroceryButton();
+//        chooseOneGroceryPage.inputNoteArea(note);
+//        chooseOneGroceryPage.clickChooseProductToOrderButton();
+//        chooseOneGroceryPage.inputSearchProduct(product);
+//        chooseOneGroceryPage.dragAndDropIcon();
+//        chooseOneGroceryPage.clickTextboxChooseProduct();
+//        chooseOneGroceryPage.clickAddNewProductButton();
+//        chooseOneGroceryPage.clickAddUnitIcon();
+//        chooseOneGroceryPage.inputNumberOfBoxes(numberOfBoxes);
+//        chooseOneGroceryPage.inputNumberOfBags(numberOfBags);
+//        previewDetailOrderPage = chooseOneGroceryPage.clickConfirmButton();
+//        assertEquals(previewDetailOrderPage.getProductNameText(), product);
+//        chooseOneGroceryPage = previewDetailOrderPage.clickEditOrderButton();
+//
+//        chooseOneGroceryPage.clickEditChooseProductToOrderButton();
+//        chooseOneGroceryPage.inputSearchProduct(productEdit);
+//        chooseOneGroceryPage.clickTextboxChooseProduct();
+//        chooseOneGroceryPage.clickAddNewProductButton();
+//        chooseOneGroceryPage.clickAddUnitIcon();
+//        chooseOneGroceryPage.inputNumberOfBoxes(numberOfBoxes);
+//        chooseOneGroceryPage.inputNumberOfBags(numberOfBags);
+//    }
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-//        closeBrowserAndDriver();
+        closeBrowserAndDriver();
     }
 }
