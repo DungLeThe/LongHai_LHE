@@ -36,7 +36,7 @@ public class ProductListAndViewDetailProduct extends BaseTest {
 
     @Test
     public void TC_01_View_Product_List_And_Product_Detail(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
+        ExtentTestManager.startTest(method.getName(), "View List and Product Detail");
         goToNppHomePage();
         nppProductPage = nppHomePage.clickProductButton();
         nppProductPage.clickViewProductDetail();

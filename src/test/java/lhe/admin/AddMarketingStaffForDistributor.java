@@ -19,8 +19,7 @@ import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
 
-import static commons.BasePage.getRandomInt;
-import static commons.BasePage.getRandomString;
+import static commons.BasePage.*;
 import static commons.GlobalConstants.ADMIN_LOGIN;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -52,12 +51,12 @@ public class AddMarketingStaffForDistributor extends BaseTest {
         loginPage = new AdminLoginPageObject(driver);
         homePage = loginPage.goToAdminHomePage(driver);
 
-        name = "LHETest" + getRandomString();
+        name = "Test" + getRandomString();
         gender = "Nam";
-        phone = "09876" + getRandomInt();
+        phone = "09" + getRandomIntEightNumber();
         maritalStatus = "Độc thân";
         dateOfBirth = "2011-01-01";
-        idCard = "0380970" + getRandomInt();
+        idCard = "0380" + getRandomIntEightNumber();
         dateRange = "2011-01-01";
         issuedBy = "Ha Noi";
         address = "Cau Giay, Ha Noi";
@@ -71,9 +70,9 @@ public class AddMarketingStaffForDistributor extends BaseTest {
         passwordMissNumber = "LongHaiTest@";
         passwordMissSpecial = "LongHaiTest123";
         emailInvalid = "LongHaiTest";
-        account = "Account" + getRandomInt();
+        account = "LHETest" + getRandomIntEightNumber();
         password = "LHETest@123";
-        email = "LongHaiTest" + getRandomInt() + "@gmail.com";
+        email = "LHETest" + getRandomIntEightNumber() + "@gmail.com";
     }
 
     public void goToHomePage() {
@@ -82,109 +81,7 @@ public class AddMarketingStaffForDistributor extends BaseTest {
     }
 
     @Test
-    public void TC_01_Add_New_Marketing_Staff(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Add New Marketing Staff");
-        goToHomePage();
-        userManagementHomePage = homePage.clickUserManagementButton();
-        createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
-        createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
-        createMarketingStaffPage.inputToName(name);
-        createMarketingStaffPage.inputToPhone(phone);
-        createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
-        createMarketingStaffPage.inputToIdCard(idCard);
-        createMarketingStaffPage.inputToDateRange(dateRange);
-        createMarketingStaffPage.inputToIssuedBy(issuedBy);
-        createMarketingStaffPage.inputToAddress(address);
-        createMarketingStaffPage.inputToTimeIn(timeIn);
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
-
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
-        createMarketingStaffPage.clickToValueMaritalStatus();
-
-        createMarketingStaffPage.inputToPosition(position);
-        createMarketingStaffPage.clickToValuePosition();
-
-        createMarketingStaffPage.inputToRegion(region);
-        createMarketingStaffPage.clickToValueRegion();
-        createMarketingStaffPage.inputToArea(area);
-        createMarketingStaffPage.clickToValueArea();
-
-        createMarketingStaffPage.inputToNationality(nationality);
-        createMarketingStaffPage.clickToValueNationality();
-        createMarketingStaffPage.inputToNation(nation);
-        createMarketingStaffPage.clickToValueNation();
-        createAccountMarketingStaffPage = createMarketingStaffPage.clickNextMarketingStaffButton();
-        assertTrue(createAccountMarketingStaffPage.isAccountMarketingStaffTextDisplayed());
-    }
-
-    @Test
-    public void TC_02_Add_Marketing_Staff_Account_Success(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Add Marketing Staff Account Success");
-        goToHomePage();
-        userManagementHomePage = homePage.clickUserManagementButton();
-        createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
-        createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
-        createMarketingStaffPage.inputToName(name);
-        createMarketingStaffPage.inputToPhone(phone);
-        createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
-        createMarketingStaffPage.inputToIdCard(idCard);
-        createMarketingStaffPage.inputToDateRange(dateRange);
-        createMarketingStaffPage.inputToIssuedBy(issuedBy);
-        createMarketingStaffPage.inputToAddress(address);
-        createMarketingStaffPage.inputToTimeIn(timeIn);
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
-
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
-        createMarketingStaffPage.clickToValueMaritalStatus();
-
-        createMarketingStaffPage.inputToPosition(position);
-        createMarketingStaffPage.clickToValuePosition();
-
-        createMarketingStaffPage.inputToRegion(region);
-        createMarketingStaffPage.clickToValueRegion();
-        createMarketingStaffPage.inputToArea(area);
-        createMarketingStaffPage.clickToValueArea();
-
-        createMarketingStaffPage.inputToNationality(nationality);
-        createMarketingStaffPage.clickToValueNationality();
-        createMarketingStaffPage.inputToNation(nation);
-        createMarketingStaffPage.clickToValueNation();
-        createAccountMarketingStaffPage = createMarketingStaffPage.clickNextMarketingStaffButton();
-
-        createAccountMarketingStaffPage.inputToAccountMarketingStaff(account);
-        createAccountMarketingStaffPage.inputToPassWordMarketingStaff(password);
-        createAccountMarketingStaffPage.inputToEmailMarketingStaff(email);
-
-        createAccountMarketingStaffPage.clickCreateMarketingStaffButton();
-        userManagementHomePage = createAccountMarketingStaffPage.clickToUserManagementHomePageButton();
-
-        userManagementHomePage.clickViewDetailAllMarketingStaff();
-        detailUserPage = userManagementHomePage.clickViewDetailNewMarketingStaff();
-        assertEquals(detailUserPage.getUserNameText(), name);
-        assertEquals(detailUserPage.getInfoDistributorText("Email"), email);
-        assertEquals(detailUserPage.getInfoDistributorText("Giới tính"), gender);
-        assertEquals(detailUserPage.getInfoDistributorText("CMT/CCCD"), idCard);
-        assertEquals(detailUserPage.getInfoDistributorText("Ngày cấp"), dateRange);
-        assertEquals(detailUserPage.getInfoDistributorText("Nơi cấp"), issuedBy);
-        assertEquals(detailUserPage.getInfoDistributorText("Địa chỉ"), address);
-        assertEquals(detailUserPage.getInfoDistributorText("Quốc tịch"), nationality);
-        assertEquals(detailUserPage.getInfoDistributorText("Dân tộc"), nation);
-        assertEquals(detailUserPage.getInfoDistributorText("Tình trạng hôn nhân"), maritalStatus);
-        assertEquals(detailUserPage.getInfoDistributorText("Vùng"), region);
-        assertEquals(detailUserPage.getInfoDistributorText("Khu vực"), area);
-        assertEquals(detailUserPage.getInfoDistributorText("Bộ phận"), "Phòng thị trường");
-        assertEquals(detailUserPage.getInfoDistributorText("Chức vụ"), position);
-        assertEquals(detailUserPage.getInfoDistributorText("Ngày vào"), timeIn);
-    }
-
-    @Test
-    public void TC_03_Add_Marketing_Staff_For_Distributor(Method method) {
+    public void TC_01_Add_Marketing_Staff_For_Distributor(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Marketing Staff For Distributor");
         goToHomePage();
         userManagementHomePage = homePage.clickUserManagementButton();

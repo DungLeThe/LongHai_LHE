@@ -52,6 +52,74 @@ public class CreateOrderPageObject extends BasePage {
         waitForElementVisible(driver, VIEW_ORDER_LIST_BUTTON_AFTER_CREATED_SUCCESS);
         clickToElement(driver, VIEW_ORDER_LIST_BUTTON_AFTER_CREATED_SUCCESS);
     }
+
+    public void clickChooseProductFromWarehouseButton() {
+        waitForLoadingIconInvisible(driver);
+        waitForElementVisible(driver, NppOrderPageUI.CHOOSE_PRODUCT_FROM_WAREHOUSE);
+        clickToElement(driver, NppOrderPageUI.CHOOSE_PRODUCT_FROM_WAREHOUSE);
+    }
+
+    public void clickToWarehouseList() {
+        waitForLoadingIconInvisible(driver);
+        waitForElementVisible(driver, NppOrderPageUI.EXPORT_FROM_FIELD);
+        clickToElement(driver, EXPORT_FROM_FIELD);
+    }
+
+    public void chooseWarehouseValue() {
+        waitForElementVisible(driver, NppOrderPageUI.EXPORT_FROM_VALUE);
+        clickToElement(driver, EXPORT_FROM_VALUE);
+    }
+
+    public void clickToObjectList() {
+        waitForElementVisible(driver, EXPORT_TO_FIELD);
+        clickToElement(driver, EXPORT_TO_FIELD);
+    }
+
+    public void chooseObject() {
+        waitForElementVisible(driver, EXPORT_TO_VALUE);
+        clickToElement(driver, EXPORT_TO_VALUE);
+    }
+
+    public void clickChooseProductFromWareHouseButton() {
+        waitForElementVisible(driver, CHOOSE_PRODUCT_FROM_WAREHOUSE_BUTTON);
+        clickToElement(driver, CHOOSE_PRODUCT_FROM_WAREHOUSE_BUTTON);
+    }
+
+    public void selectProductFromWareHouse() {
+        waitForElementVisible(driver, PRODUCT_FROM_WAREHOUSE);
+        clickToElement(driver, PRODUCT_FROM_WAREHOUSE);
+    }
+
+    public void clickToExportFromConsignmentButton() {
+        waitForElementVisible(driver, EXPORT_CONSIGNMENT_BUTTON);
+        clickToElement(driver, EXPORT_CONSIGNMENT_BUTTON);
+    }
+
+    public void inputExportAmount() {
+        waitForElementVisible(driver, INPUT_AMOUNT_FIELD);
+        sendKeyToElement(driver, INPUT_AMOUNT_FIELD, "1");
+    }
+
+    public void inputSingleAmount() {
+        waitForElementVisible(driver, INPUT_SINGLE_AMOUNT_FIELD);
+        sendKeyToElement(driver, INPUT_SINGLE_AMOUNT_FIELD, "1");
+    }
+
+    public void clickConfirmExportButton() {
+        waitForElementVisible(driver, CONFIRM_EXPORT_BUTTON);
+        clickToElement(driver, CONFIRM_EXPORT_BUTTON);
+    }
+
+    public void clickCreateExportOrderButton() {
+        waitForElementVisible(driver, CREATE_EXPORT_ORDER);
+        clickToElement(driver, CREATE_EXPORT_ORDER);
+    }
+
+    public void clickViewExportOrderDetail() {
+        waitForLoadingIconInvisible(driver);
+        waitForElementVisible(driver, VIEW_EXPORT_ORDER_DETAIL);
+        clickToElement(driver, VIEW_EXPORT_ORDER_DETAIL);
+    }
 }
 
 

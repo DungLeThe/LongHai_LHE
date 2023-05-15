@@ -87,6 +87,6 @@ public class CreateCategory extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        closeBrowserAndDriver();
+//        closeBrowserAndDriver();
     }
 }

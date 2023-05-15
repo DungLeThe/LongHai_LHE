@@ -17,6 +17,7 @@ public class OrderHomePageObject extends BasePage {
     }
 
     public void clickInProgressTab() {
+        waitForLoadingItemInvisible(driver);
         waitForElementVisible(driver, NppHomePageUI.IN_PROGRESS_TAB);
         clickToElement(driver, NppHomePageUI.IN_PROGRESS_TAB);
     }
@@ -28,5 +29,26 @@ public class OrderHomePageObject extends BasePage {
 
     public void clickConfirmReceivedButton() {
         waitForElementVisible(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON);
+        clickToElement(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON);
+    }
+
+    public void inputNoteInReceivedPopup() {
+        waitForElementVisible(driver, NppHomePageUI.RECEIVED_NOTE);
+        sendKeyToElement(driver, NppHomePageUI.RECEIVED_NOTE,"Đã kiểm tra và nhận đủ hàng");
+    }
+
+    public void inputImage(String productImage) {
+        uploadImage(driver, NppHomePageUI.PRODUCT_IMAGE,productImage);
+    }
+
+    public void clickConfirmReceivedButtonFromPopup() {
+        waitForElementVisible(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON_FROM_POPUP);
+        clickToElement(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON_FROM_POPUP);
+    }
+
+    public CreateOrderPageObject clickExportOrderTab() {
+        waitForElementVisible(driver, NppHomePageUI.EXPORT_ORDER_TAB);
+        clickToElement(driver, NppHomePageUI.EXPORT_ORDER_TAB);
+        return new CreateOrderPageObject(driver);
     }
 }

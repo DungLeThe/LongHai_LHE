@@ -47,7 +47,7 @@ public class ViewAndEditPersonalInformation extends BaseTest {
 
     @Test
     public void TC_01_EditInfoThenSave(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
+        ExtentTestManager.startTest(method.getName(), "Edit Info");
         goToNppHomePage();
         infoPage = homePage.clickPersonalInfoIcon();
         infoPage.clickPersonalInfoTab();
@@ -73,7 +73,7 @@ public class ViewAndEditPersonalInformation extends BaseTest {
 
     @Test
     public void TC_02_CancelEditInfo(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
+        ExtentTestManager.startTest(method.getName(), "Cancel Edit Info");
         goToNppHomePage();
         infoPage = homePage.clickPersonalInfoIcon();
         infoPage.clickPersonalInfoTab();

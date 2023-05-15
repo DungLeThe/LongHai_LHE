@@ -173,6 +173,6 @@ public class AddOrder extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        closeBrowserAndDriver();
+//        closeBrowserAndDriver();
     }
 }

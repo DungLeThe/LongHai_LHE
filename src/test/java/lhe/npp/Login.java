@@ -61,24 +61,34 @@ public class Login extends BaseTest {
     }
 
     @Test
-    public void TC_02_Login_Invalid() {
+    public void TC_02_Login_Invalid(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Login Invalid Data");
+        ExtentTestManager.getTest().log(Status.INFO, "Login Invalid - Step 01: Input Invalid Account to Account Textbox");
         loginPage.inputToAccountTextbox(accountInvalid);
+        ExtentTestManager.getTest().log(Status.INFO, "Login Invalid - Step 02: Input Invalid Password to Account Textbox");
         loginPage.inputToPasswordTextbox(passwordInvalid);
+        ExtentTestManager.getTest().log(Status.INFO, "Login Invalid - Step 03: Click Hide/Show Password");
         loginPage.clickToEyeIcon();
+        ExtentTestManager.getTest().log(Status.INFO, "Login Invalid - Step 04: Click Login");
         loginPage.clickToLoginButton();
         loginPage.getErrorTextModal();
         assertEquals(loginPage.getErrorTextModal(), "Sai tên hoặc sai mật khẩu");
-
+        ExtentTestManager.getTest().log(Status.INFO, "Login Invalid - Step 05: Close Error Popup");
         loginPage.closeErrorPopup();
     }
 
     @Test
-    public void TC_03_Login_Valid() {
+    public void TC_03_Login_Valid(Method method) {
+        ExtentTestManager.startTest(method.getName(), "Login Invalid Data");
         driver.navigate().refresh();
+        ExtentTestManager.getTest().log(Status.INFO, "Login Valid - Step 01: Input Valid Account to Account Textbox");
         loginPage.inputToAccountTextbox(account);
+        ExtentTestManager.getTest().log(Status.INFO, "Login Valid - Step 02: Input Invalid Password to Password Textbox");
         loginPage.inputToPasswordTextbox(password);
+        ExtentTestManager.getTest().log(Status.INFO, "Login Valid - Step 03: Click Login");
         loginPage.clickToLoginButton();
         assertTrue(loginPage.chartTextIsDisplayed());
+        ExtentTestManager.getTest().log(Status.INFO, "Login Valid - Step 04: Swipe To Left");
         loginPage.dragToLeft();
     }
 

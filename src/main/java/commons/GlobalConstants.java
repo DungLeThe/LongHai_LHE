@@ -24,5 +24,5 @@ public class GlobalConstants {
     public static final int SHORT_TIMEOUT = 1;
     public static final int THREE_SECONDS = 3;
     public static final long FIVE_SECONDS = 5;
-    public static final long LONG_TIMEOUT = 20;
+    public static final int LONG_TIMEOUT = 20;
 }

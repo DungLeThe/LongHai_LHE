@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="LHE" parallel="classes" thread-count="3">
+<suite name="LHE">
+<!--<suite name="LHE" parallel="classes" thread-count="3">-->
   <listeners>
     <listener class-name="commons.MethodListener" />
     <listener class-name="reportConfig.ReportNGListener" />
@@ -33,10 +34,12 @@
       <class name="lhe.npp.CreateCategory"/>
       <class name="lhe.npp.ProductListAndViewDetailProduct"/>
       <class name="lhe.npp.ViewAndEditPersonalInformation"/>
+      <class name="lhe.npp.ConfirmReceivedGoods"/>
 
       <class name="lhe.warehouse.WareHouseLogin"/>
       <class name="lhe.warehouse.TransactionSlip"/>
 
+      <class name="lhe.accountant.Login"/>
       <class name="lhe.accountant.ViewOrderDetail"/>
 
 

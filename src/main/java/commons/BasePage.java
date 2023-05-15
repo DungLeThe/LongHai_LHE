@@ -619,10 +619,14 @@ public class BasePage {
         return randomNumeric(5);
     }
 
+    public static String getRandomIntEightNumber() {
+        return randomNumeric(8);
+    }
+
     public static String getRandomString() {
         return RandomStringUtils.randomAlphabetic(5);
     }
 
-    private long longTimeout = GlobalConstants.LONG_TIMEOUT;
-    private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
+    private int longTimeout = GlobalConstants.LONG_TIMEOUT;
+    private int shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 }

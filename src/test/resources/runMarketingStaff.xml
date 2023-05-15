@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Admin">
+<suite name="MarketingStaff">
   <listeners>
     <listener class-name="commons.MethodListener" />
     <listener class-name="reportConfig.ReportNGListener" />
@@ -13,6 +13,7 @@
     <classes>
       <class name="lhe.marketingStaff.Login"/>
       <class name="lhe.marketingStaff.AddOrderFromDistributor"/>
+      <class name="lhe.marketingStaff.AddOrderForGroceries"/>
     </classes>
   </test>
 

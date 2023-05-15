@@ -5,6 +5,7 @@ import pageUIs.npp.NppCategoryPageUI;
 import pageUIs.npp.NppProductPageUI;
 
 import static commons.GlobalConstants.SHORT_TIMEOUT;
+import static commons.GlobalConstants.THREE_SECONDS;
 
 public class ProductPageObject extends BasePage {
     private WebDriver driver;
@@ -40,7 +41,7 @@ public class ProductPageObject extends BasePage {
     }
 
     public void deleteCategory() {
-        sleepInSecond(SHORT_TIMEOUT);
+        sleepInSecond(THREE_SECONDS);
         waitForElementVisible(driver, NppCategoryPageUI.DELETE_CATEGORY_ICON);
         clickToElement(driver, NppCategoryPageUI.DELETE_CATEGORY_ICON);
     }

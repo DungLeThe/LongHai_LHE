@@ -36,7 +36,7 @@ public class AddOrder extends BaseTest {
 
     @Test
     public void TC_01_AddOrderSuccessfully(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
+        ExtentTestManager.startTest(method.getName(), "Add Order");
         goToNppHomePage();
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
@@ -53,7 +53,7 @@ public class AddOrder extends BaseTest {
 
     @Test
     public void TC_02_AddOrderSuccessThenViewOrderDetail(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
+        ExtentTestManager.startTest(method.getName(), "Add Order Then View Order Detail");
         goToNppHomePage();
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
@@ -69,7 +69,7 @@ public class AddOrder extends BaseTest {
 
     @Test
     public void TC_03_AddOrderSuccessThenViewOrderList(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Npp Home Page");
+        ExtentTestManager.startTest(method.getName(), "Add Order Then View Order List");
         goToNppHomePage();
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();

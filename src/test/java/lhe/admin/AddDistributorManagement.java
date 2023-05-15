@@ -75,7 +75,7 @@ public class AddDistributorManagement extends BaseTest {
         emailInvalid = "LongHaiTest";
     }
 
-    public void goToHomPage() {
+    public void goToHomePage() {
         homePage.openPageUrl(driver, ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
@@ -83,7 +83,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test
     public void TC_01_Cancel(Method method) {
         ExtentTestManager.startTest(method.getName(), "Click Cancel Button");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
         distributorPage = createInformationDistributorPage.clickCancelButton();
@@ -93,7 +93,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test
     public void TC_02_Go_To_Add_Distributor_Management(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
@@ -103,7 +103,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test
     public void TC_03_Invalid_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management Invalid Data");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
@@ -121,7 +121,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test
     public void TC_04_Empty_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management Empty Data");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
@@ -164,7 +164,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test()
     public void TC_05_Add_Distributor_Management_Success(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Distributor Management Success");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
@@ -203,7 +203,7 @@ public class AddDistributorManagement extends BaseTest {
         @Test
     public void TC_06_Back_To_Previous_Page(Method method) {
         ExtentTestManager.startTest(method.getName(), "Click Back Button");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
@@ -245,7 +245,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test()
     public void TC_07_Create_Account_Empty_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Empty Data");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
@@ -297,7 +297,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test()
     public void TC_08_Create_Account_Invalid_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Invalid Data");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
@@ -349,7 +349,7 @@ public class AddDistributorManagement extends BaseTest {
     @Test()
     public void TC_09_Create_Account_Success(Method method) {
         ExtentTestManager.startTest(method.getName(), "Create Account Distributor Success");
-        goToHomPage();
+        goToHomePage();
         distributorPage = homePage.clickDistributorManagementButton();
         createInformationDistributorPage = distributorPage.clickAddMemberButton();
 
