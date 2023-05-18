@@ -2,7 +2,6 @@ package lhe.admin;
 
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
@@ -19,10 +18,9 @@ import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
 
-import static commons.BasePage.*;
+import static commons.BasePage.getRandomIntEightNumber;
+import static commons.BasePage.getRandomString;
 import static commons.GlobalConstants.ADMIN_LOGIN;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class AddMarketingStaffForDistributor extends BaseTest {
     WebDriver driver;
@@ -47,9 +45,8 @@ public class AddMarketingStaffForDistributor extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
         name = "Test" + getRandomString();
         gender = "Nam";
@@ -76,7 +73,7 @@ public class AddMarketingStaffForDistributor extends BaseTest {
     }
 
     public void goToHomePage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -124,7 +121,7 @@ public class AddMarketingStaffForDistributor extends BaseTest {
         createAccountMarketingStaffPage.clickCreateMarketingStaffButton();
         userManagementHomePage = createAccountMarketingStaffPage.clickToUserManagementHomePageButton();
 
-        homePage = userManagementHomePage.clickGoToAdminHomePageIcon(driver);
+        homePage = userManagementHomePage.clickGoToAdminHomePageIcon();
         homePage.clickButtonDragToTheLeft();
         distributorPage = homePage.clickDistributorManagementButton();
         detailDistributorPage = distributorPage.clickViewDetailDistributorButton();
@@ -137,8 +134,4 @@ public class AddMarketingStaffForDistributor extends BaseTest {
         detailDistributorPage.clickCloseModalButton();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
-    }
 }

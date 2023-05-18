@@ -2,15 +2,13 @@ package lhe.admin;
 
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
-import pageObjects.admin.order.OrderDetailPageObject;
 import pageObjects.admin.order.CreateOrderPageObject;
+import pageObjects.admin.order.OrderDetailPageObject;
 import pageObjects.admin.order.OrderHomePageObject;
-import pageUIs.admin.AdminHomePageUI;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
@@ -23,8 +21,6 @@ public class AddOrder extends BaseTest {
     WebDriver driver;
 
     private String browserName;
-
-    private AdminHomePageUI homePageUI;
     private AdminLoginPageObject loginPage;
     private AdminHomePageObject homePage;
     private OrderHomePageObject orderHomePage;
@@ -36,9 +32,8 @@ public class AddOrder extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
         selectDistributor = "NPP Test";
         enterNote = "LHETest";
@@ -48,7 +43,7 @@ public class AddOrder extends BaseTest {
     }
 
     public void goToHomPage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -68,10 +63,10 @@ public class AddOrder extends BaseTest {
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
         createOrderPage = orderHomePage.clickAddNewOrderButton();
-        createOrderPage.inputDynamic(driver,"Tìm kiến nhà phân phối", selectDistributor);
+        createOrderPage.inputDynamic("Tìm kiến nhà phân phối", selectDistributor);
         createOrderPage.clickDistributorInput();
         createOrderPage.clickSelectDistributor();
-        createOrderPage.inputDynamic(driver,"Nhập ghi chú", enterNote);
+        createOrderPage.inputDynamic("Nhập ghi chú", enterNote);
         createOrderPage.clickChooseStoreButton();
         createOrderPage.clickSelectStore();
         createOrderPage.clickChooseProductButton();
@@ -79,7 +74,7 @@ public class AddOrder extends BaseTest {
         createOrderPage.clickChooseProductButton();
         createOrderPage.dragAndDropIcon();
         createOrderPage.clickCancelHelpdesk();
-        createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
+        createOrderPage.inputDynamic("Tìm kiếm sản phẩm", productName);
         createOrderPage.clickChooseProductTextbox();
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
@@ -92,10 +87,10 @@ public class AddOrder extends BaseTest {
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
         createOrderPage = orderHomePage.clickAddNewOrderButton();
-        createOrderPage.inputDynamic(driver,"Tìm kiến nhà phân phối", selectDistributor);
+        createOrderPage.inputDynamic("Tìm kiến nhà phân phối", selectDistributor);
         createOrderPage.clickDistributorInput();
         createOrderPage.clickSelectDistributor();
-        createOrderPage.inputDynamic(driver,"Nhập ghi chú", enterNote);
+        createOrderPage.inputDynamic("Nhập ghi chú", enterNote);
         createOrderPage.clickChooseStoreButton();
         createOrderPage.clickSelectStore();
         createOrderPage.clickChooseProductButton();
@@ -103,7 +98,7 @@ public class AddOrder extends BaseTest {
         createOrderPage.clickChooseProductButton();
         createOrderPage.dragAndDropIcon();
         createOrderPage.clickCancelHelpdesk();
-        createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
+        createOrderPage.inputDynamic("Tìm kiếm sản phẩm", productName);
         createOrderPage.clickChooseProductTextbox();
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
@@ -125,10 +120,10 @@ public class AddOrder extends BaseTest {
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
         createOrderPage = orderHomePage.clickAddNewOrderButton();
-        createOrderPage.inputDynamic(driver,"Tìm kiến nhà phân phối", selectDistributor);
+        createOrderPage.inputDynamic("Tìm kiến nhà phân phối", selectDistributor);
         createOrderPage.clickDistributorInput();
         createOrderPage.clickSelectDistributor();
-        createOrderPage.inputDynamic(driver,"Nhập ghi chú", enterNote);
+        createOrderPage.inputDynamic("Nhập ghi chú", enterNote);
         createOrderPage.clickChooseStoreButton();
         createOrderPage.clickSelectStore();
         createOrderPage.clickChooseProductButton();
@@ -136,7 +131,7 @@ public class AddOrder extends BaseTest {
         createOrderPage.clickChooseProductButton();
         createOrderPage.dragAndDropIcon();
         createOrderPage.clickCancelHelpdesk();
-        createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
+        createOrderPage.inputDynamic("Tìm kiếm sản phẩm", productName);
         createOrderPage.clickChooseProductTextbox();
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
@@ -147,7 +142,7 @@ public class AddOrder extends BaseTest {
         orderDetailPage.clickAddProductButton();
         orderDetailPage.dragAndDropIcon();
         orderDetailPage.clickCancelHelpdesk();
-        orderDetailPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productAddName);
+        orderDetailPage.inputDynamic("Tìm kiếm sản phẩm", productAddName);
         orderDetailPage.clickChooseProductAddNewTextbox();
         orderDetailPage.clickAddButton();
         orderDetailPage.clickUpdateOrderButton();
@@ -169,10 +164,5 @@ public class AddOrder extends BaseTest {
         orderDetailPage.clickConfirmButton();
         orderDetailPage.clickCancelButton();
         assertTrue(orderDetailPage.isFailureButtonDisplayed());
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-//        closeBrowserAndDriver();
     }
 }

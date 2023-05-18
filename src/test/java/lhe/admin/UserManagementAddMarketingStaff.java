@@ -1,8 +1,6 @@
 package lhe.admin;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
@@ -12,7 +10,6 @@ import pageObjects.admin.userManagement.CreateMarketingStaffPageObject;
 import pageObjects.admin.userManagement.CreateAccountMarketingStaffPageObject;
 import pageObjects.admin.userManagement.CreateUserManagementPageObject;
 import pageObjects.admin.userManagement.UserManagementHomePageObject;
-import pageUIs.admin.AdminHomePageUI;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
@@ -24,11 +21,9 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class UserManagementAddMarketingStaff extends BaseTest {
-    WebDriver driver;
 
     private String browserName;
 
-    private AdminHomePageUI homePageUI;
     private AdminLoginPageObject loginPage;
     private AdminHomePageObject homePage;
     private UserManagementHomePageObject userManagementHomePage;
@@ -44,9 +39,8 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
         name = "LHETest" + getRandomString();
         gender = "Nam";
@@ -73,7 +67,7 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     }
 
     public void goToHomPage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -340,10 +334,5 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         assertEquals(detailUserPage.getInfoDistributorText("Bộ phận"), "Phòng thị trường");
         assertEquals(detailUserPage.getInfoDistributorText("Chức vụ"), position);
         assertEquals(detailUserPage.getInfoDistributorText("Ngày vào"), timeIn);
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

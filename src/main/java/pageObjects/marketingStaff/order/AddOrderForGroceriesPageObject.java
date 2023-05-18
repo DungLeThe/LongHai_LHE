@@ -1,24 +1,21 @@
 package pageObjects.marketingStaff.order;
 
 import commons.BasePage;
-import org.openqa.selenium.WebDriver;
 import pageUIs.marketingStaff.MarketingStaffHomePageUI;
 
 public class AddOrderForGroceriesPageObject extends BasePage {
-	private WebDriver driver;
 
-	public AddOrderForGroceriesPageObject(WebDriver driver) {
-		this.driver = driver;
-	}
+    public AddOrderForGroceriesPageObject() {
+    }
 
-	public ListGroceriesPageObject clickAddOrderForGroceriesButton() {
-		waitForElementVisible(driver, MarketingStaffHomePageUI.ADD_ORDER_BUTTON);
-		clickToElement(driver, MarketingStaffHomePageUI.ADD_ORDER_BUTTON);
-		return new ListGroceriesPageObject(driver);
-	}
+    public ListGroceriesPageObject clickAddOrderForGroceriesButton() {
+        waitForElementVisible(MarketingStaffHomePageUI.ADD_ORDER_BUTTON);
+        clickToElement(MarketingStaffHomePageUI.ADD_ORDER_BUTTON);
+        return new ListGroceriesPageObject();
+    }
 
-	public boolean isAddOrderTextDisplayed() {
-		waitForElementVisible(driver, MarketingStaffHomePageUI.ADD_ORDER_TEXT);
-		return isElementDisplay(driver, MarketingStaffHomePageUI.ADD_ORDER_TEXT);
-	}
+    public boolean isAddOrderTextDisplayed() {
+        waitForElementVisible(MarketingStaffHomePageUI.ADD_ORDER_TEXT);
+        return isElementDisplay(MarketingStaffHomePageUI.ADD_ORDER_TEXT);
+    }
 }

@@ -2,22 +2,18 @@ package lhe.accountant;
 
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.accountant.AccountantPageObject;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.TimeUnit;
 
 import static commons.GlobalConstants.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class Login extends BaseTest {
-    WebDriver driver;
     private String account, password, accountInvalid, passwordInvalid;
     private String browserName;
     private AccountantPageObject accountantPage;
@@ -25,10 +21,7 @@ public class Login extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ACCOUNTANT_LOGIN);
-        accountantPage = new AccountantPageObject(driver);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        accountantPage = new AccountantPageObject(ACCOUNTANT_LOGIN);
         account = ACCOUNTANT_ACCOUNT;
         accountInvalid = "hoangtest";
         password = ACCOUNTANT_PASSWORD;
@@ -51,7 +44,7 @@ public class Login extends BaseTest {
         assertEquals(accountantPage.getErrorMessageAtAccountTextbox(), "Bạn cần điền vào mục này");
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 05: Verify Error Message At Password Textbox");
-        assertEquals(accountantPage.getErrorMessageAtPassworkTextbox(), "Bạn cần điền vào mục này");
+        assertEquals(accountantPage.getErrorMessageAtPasswordTextbox(), "Bạn cần điền vào mục này");
     }
 
     @Test
@@ -68,18 +61,10 @@ public class Login extends BaseTest {
 
     @Test
     public void TC_03_Login_Valid() {
-        driver.navigate().refresh();
+        accountantPage.openLoginPage();
         accountantPage.inputToAccountTextbox(account);
         accountantPage.inputToPasswordTextbox(password);
         accountantPage.clickToLoginButton();
         assertTrue(accountantPage.dashboardTextIsDisplayed());
-        driver.navigate().refresh();
-
     }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
-    }
-
 }

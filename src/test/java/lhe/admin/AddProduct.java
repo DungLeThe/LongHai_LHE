@@ -1,15 +1,12 @@
 package lhe.admin;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.admin.product.CreateProductPageObject;
 import pageObjects.admin.product.ProductHomePageObject;
-import pageUIs.admin.AdminHomePageUI;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
@@ -21,11 +18,8 @@ import static org.testng.Assert.assertTrue;
 import static pageUIs.admin.AdminHomePageUI.ADD_ATTRIBUTE_BUTTON;
 
 public class AddProduct extends BaseTest {
-    WebDriver driver;
-
     private String browserName;
 
-    private AdminHomePageUI homePageUI;
     private AdminLoginPageObject loginPage;
     private AdminHomePageObject homePage;
     private ProductHomePageObject productHomePage;
@@ -35,13 +29,12 @@ public class AddProduct extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
-        productName = "Thạch rau câu"  + getRandomInt();
+        productName = "Thạch rau câu" + getRandomInt();
         productDescription = "Thạch 900g";
-        productImage =  PROJECT_PATH + "\\uploadFiles\\ProductImage.jpg";
+        productImage = PROJECT_PATH + "\\uploadFiles\\ProductImage.jpg";
         retailPrice = "100000";
         perBarrelPrice = "50000";
         numberOfProductsInOneBox = "20";
@@ -50,7 +43,7 @@ public class AddProduct extends BaseTest {
     }
 
     public void goToHomPage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -73,27 +66,22 @@ public class AddProduct extends BaseTest {
         createProductPage = productHomePage.clickAddNewProductButton();
         createProductPage.clickToCategory();
         createProductPage.clickSelectCategory();
-        createProductPage.inputDynamic(driver,"Nhập tên sản phẩm", productName);
+        createProductPage.inputDynamic("Nhập tên sản phẩm", productName);
         createProductPage.inputProductDescription(productDescription);
         createProductPage.inputProductImage(productImage);
-        createProductPage.inputDynamic(driver,"Nhập giá bán lẻ", retailPrice);
-        createProductPage.inputDynamic(driver,"Nhập giá theo thùng", perBarrelPrice);
-        createProductPage.inputDynamic(driver,"Nhập số lượng sản phẩm trong 1 thùng", numberOfProductsInOneBox);
-        createProductPage.scrollToElement(driver,ADD_ATTRIBUTE_BUTTON);
+        createProductPage.inputDynamic("Nhập giá bán lẻ", retailPrice);
+        createProductPage.inputDynamic("Nhập giá theo thùng", perBarrelPrice);
+        createProductPage.inputDynamic("Nhập số lượng sản phẩm trong 1 thùng", numberOfProductsInOneBox);
+        createProductPage.scrollToElement(ADD_ATTRIBUTE_BUTTON);
         createProductPage.clickAddAttributeButton();
-        createProductPage.inputDynamic(driver,"Nhập tên thuộc tính", attributeName);
-        createProductPage.inputDynamic(driver,"Nhập giá trị thuộc tính", attributeValue);
+        createProductPage.inputDynamic("Nhập tên thuộc tính", attributeName);
+        createProductPage.inputDynamic("Nhập giá trị thuộc tính", attributeValue);
         createProductPage.clickDeleteAttributeButton();
         createProductPage.clickAddAttributeButton();
-        createProductPage.inputDynamic(driver,"Nhập tên thuộc tính", attributeName);
-        createProductPage.inputDynamic(driver,"Nhập giá trị thuộc tính", attributeValue);
+        createProductPage.inputDynamic("Nhập tên thuộc tính", attributeName);
+        createProductPage.inputDynamic("Nhập giá trị thuộc tính", attributeValue);
         createProductPage.clickCreateNewButton();
         productHomePage = createProductPage.clickCloseModalButton();
         assertTrue(productHomePage.productNameDisplayed(productName), productName);
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

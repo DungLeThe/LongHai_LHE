@@ -1,44 +1,41 @@
 package pageObjects.marketingStaff.order;
 
 import commons.BasePage;
-import org.openqa.selenium.WebDriver;
 import pageUIs.marketingStaff.MarketingStaffHomePageUI;
 
 public class PreviewDetailOrderPageObject extends BasePage {
-	private WebDriver driver;
 
-	public PreviewDetailOrderPageObject(WebDriver driver) {
-		this.driver = driver;
-	}
+    public PreviewDetailOrderPageObject() {
+    }
 
-	public String getProductNameText() {
-		waitForLoadingItemInvisible(driver);
-		waitForElementVisible(driver, MarketingStaffHomePageUI.PRODUCT_NAME_TEXT);
-		return getElementText(driver, MarketingStaffHomePageUI.PRODUCT_NAME_TEXT);
-	}
+    public String getProductNameText() {
+        waitForLoadingItemInvisible();
+        waitForElementVisible(MarketingStaffHomePageUI.PRODUCT_NAME_TEXT);
+        return getElementText(MarketingStaffHomePageUI.PRODUCT_NAME_TEXT);
+    }
 
-	public void clickCompletedButton() {
-		waitForElementVisible(driver, MarketingStaffHomePageUI.COMPLETED_BUTTON);
-		clickToElement(driver, MarketingStaffHomePageUI.COMPLETED_BUTTON);
-	}
+    public void clickCompletedButton() {
+        waitForElementVisible(MarketingStaffHomePageUI.COMPLETED_BUTTON);
+        clickToElement(MarketingStaffHomePageUI.COMPLETED_BUTTON);
+    }
 
-	public DetailOrderPageObject clickDetailOrderButton() {
-		waitForLoadingIconInvisible(driver);
-		waitForElementVisible(driver, MarketingStaffHomePageUI.DETAIL_ORDER_BUTTON);
-		clickToElement(driver, MarketingStaffHomePageUI.DETAIL_ORDER_BUTTON);
-		return new DetailOrderPageObject(driver);
-	}
+    public DetailOrderPageObject clickDetailOrderButton() {
+        waitForLoadingIconInvisible();
+        waitForElementVisible(MarketingStaffHomePageUI.DETAIL_ORDER_BUTTON);
+        clickToElement(MarketingStaffHomePageUI.DETAIL_ORDER_BUTTON);
+        return new DetailOrderPageObject();
+    }
 
-	public AddOrderForGroceriesPageObject clickListOrderButton() {
-		waitForLoadingIconInvisible(driver);
-		waitForElementVisible(driver, MarketingStaffHomePageUI.LIST_ORDER_BUTTON);
-		clickToElement(driver, MarketingStaffHomePageUI.LIST_ORDER_BUTTON);
-		return new AddOrderForGroceriesPageObject(driver);
-	}
+    public AddOrderForGroceriesPageObject clickListOrderButton() {
+        waitForLoadingIconInvisible();
+        waitForElementVisible(MarketingStaffHomePageUI.LIST_ORDER_BUTTON);
+        clickToElement(MarketingStaffHomePageUI.LIST_ORDER_BUTTON);
+        return new AddOrderForGroceriesPageObject();
+    }
 
-	public ChooseOneGroceryPageObject clickEditOrderButton() {
-		waitForElementVisible(driver, MarketingStaffHomePageUI.EDIT_ORDER_BUTTON);
-		clickToElement(driver, MarketingStaffHomePageUI.EDIT_ORDER_BUTTON);
-		return new ChooseOneGroceryPageObject(driver);
-	}
+    public ChooseOneGroceryPageObject clickEditOrderButton() {
+        waitForElementVisible(MarketingStaffHomePageUI.EDIT_ORDER_BUTTON);
+        clickToElement(MarketingStaffHomePageUI.EDIT_ORDER_BUTTON);
+        return new ChooseOneGroceryPageObject();
+    }
 }

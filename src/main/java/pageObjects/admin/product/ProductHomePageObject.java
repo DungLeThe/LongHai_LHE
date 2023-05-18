@@ -1,56 +1,53 @@
 package pageObjects.admin.product;
 
 import commons.BasePage;
-import org.openqa.selenium.WebDriver;
 import pageUIs.admin.AdminHomePageUI;
 
 public class ProductHomePageObject extends BasePage {
-	private WebDriver driver;
 
-	public ProductHomePageObject(WebDriver driver) {
-		this.driver = driver;
-	}
+    public ProductHomePageObject() {
+    }
 
-	public boolean isProductWareHouseTextDisplayed() {
-		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_WAREHOUSE_TEXT);
-		return isElementDisplay(driver, AdminHomePageUI.PRODUCT_WAREHOUSE_TEXT);
-	}
+    public boolean isProductWareHouseTextDisplayed() {
+        waitForElementVisible(AdminHomePageUI.PRODUCT_WAREHOUSE_TEXT);
+        return isElementDisplay(AdminHomePageUI.PRODUCT_WAREHOUSE_TEXT);
+    }
 
-		public CreateProductPageObject clickAddNewProductButton() {
-		waitForElementClickable(driver, AdminHomePageUI.ADD_NEW_PRODUCT_BUTTON);
-		clickToElement(driver, AdminHomePageUI.ADD_NEW_PRODUCT_BUTTON);
-		return new CreateProductPageObject(driver);
-	}
+    public CreateProductPageObject clickAddNewProductButton() {
+        waitForElementClickable(AdminHomePageUI.ADD_NEW_PRODUCT_BUTTON);
+        clickToElement(AdminHomePageUI.ADD_NEW_PRODUCT_BUTTON);
+        return new CreateProductPageObject();
+    }
 
-	public boolean productNameDisplayed(String productName) {
-		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_NAME, productName);
-		return isElementDisplay(driver, AdminHomePageUI.PRODUCT_NAME, productName);
-	}
+    public boolean productNameDisplayed(String productName) {
+        waitForElementVisible(AdminHomePageUI.PRODUCT_NAME, productName);
+        return isElementDisplay(AdminHomePageUI.PRODUCT_NAME, productName);
+    }
 
     public ProductDetailPageObject clickViewProduct() {
-		waitForLoadingItemInvisible(driver);
-		waitForElementClickable(driver, AdminHomePageUI.PRODUCT_DETAIL);
-		clickToElement(driver, AdminHomePageUI.PRODUCT_DETAIL);
-		return new ProductDetailPageObject(driver);
+        waitForLoadingItemInvisible();
+        waitForElementClickable(AdminHomePageUI.PRODUCT_DETAIL);
+        clickToElement(AdminHomePageUI.PRODUCT_DETAIL);
+        return new ProductDetailPageObject();
     }
 
     public boolean isProductStatusInactiveTextDisplayed(String productStatusInactiveText) {
-		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_STATUS_INACTIVE_TEXT, productStatusInactiveText);
-		return isElementDisplay(driver, AdminHomePageUI.PRODUCT_STATUS_INACTIVE_TEXT, productStatusInactiveText);
+        waitForElementVisible(AdminHomePageUI.PRODUCT_STATUS_INACTIVE_TEXT, productStatusInactiveText);
+        return isElementDisplay(AdminHomePageUI.PRODUCT_STATUS_INACTIVE_TEXT, productStatusInactiveText);
     }
 
-	public void clickInactiveButton() {
-		waitForElementClickable(driver, AdminHomePageUI.INFO_PRODUCT_INACTIVE_BUTTON);
-		clickToElement(driver, AdminHomePageUI.INFO_PRODUCT_INACTIVE_BUTTON);
-	}
+    public void clickInactiveButton() {
+        waitForElementClickable(AdminHomePageUI.INFO_PRODUCT_INACTIVE_BUTTON);
+        clickToElement(AdminHomePageUI.INFO_PRODUCT_INACTIVE_BUTTON);
+    }
 
-	public boolean isProductStatusActiveTextDisplayed(String productStatusActiveText) {
-		waitForElementVisible(driver, AdminHomePageUI.PRODUCT_STATUS_ACTIVE_TEXT, productStatusActiveText);
-		return isElementDisplay(driver, AdminHomePageUI.PRODUCT_STATUS_ACTIVE_TEXT, productStatusActiveText);
-	}
+    public boolean isProductStatusActiveTextDisplayed(String productStatusActiveText) {
+        waitForElementVisible(AdminHomePageUI.PRODUCT_STATUS_ACTIVE_TEXT, productStatusActiveText);
+        return isElementDisplay(AdminHomePageUI.PRODUCT_STATUS_ACTIVE_TEXT, productStatusActiveText);
+    }
 
-	public void clickActiveButton() {
-		waitForElementClickable(driver, AdminHomePageUI.INFO_PRODUCT_ACTIVE_BUTTON);
-		clickToElement(driver, AdminHomePageUI.INFO_PRODUCT_ACTIVE_BUTTON);
-	}
+    public void clickActiveButton() {
+        waitForElementClickable(AdminHomePageUI.INFO_PRODUCT_ACTIVE_BUTTON);
+        clickToElement(AdminHomePageUI.INFO_PRODUCT_ACTIVE_BUTTON);
+    }
 }

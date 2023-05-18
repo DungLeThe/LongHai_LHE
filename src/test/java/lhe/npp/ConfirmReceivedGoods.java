@@ -1,8 +1,6 @@
 package lhe.npp;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.npp.NppHomePageObject;
@@ -16,7 +14,6 @@ import static commons.GlobalConstants.NPP_LOGIN;
 import static commons.GlobalConstants.PROJECT_PATH;
 
 public class ConfirmReceivedGoods extends BaseTest {
-    private WebDriver driver;
     private String browserName, productImage;
     private NppHomePageObject nppHomePage;
     private NppLoginPageObject nppLoginPage;
@@ -25,14 +22,13 @@ public class ConfirmReceivedGoods extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, NPP_LOGIN);
-        nppLoginPage = new NppLoginPageObject(driver);
-        nppHomePage = nppLoginPage.goToNppHomePage(driver);
+        nppLoginPage = new NppLoginPageObject(NPP_LOGIN);
+        nppHomePage = nppLoginPage.goToNppHomePage();
         productImage = PROJECT_PATH + "\\uploadFiles\\ProductImage.jpg";
     }
 
     public void goToNppHomePage() {
-        nppHomePage.openPageUrl(driver, NPP_LOGIN);
+        nppHomePage.openPageUrl(NPP_LOGIN);
         nppHomePage.dragToLeft();
     }
 
@@ -47,9 +43,5 @@ public class ConfirmReceivedGoods extends BaseTest {
         orderHomePage.inputNoteInReceivedPopup();
         orderHomePage.inputImage(productImage);
         orderHomePage.clickConfirmReceivedButtonFromPopup();
-    }
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

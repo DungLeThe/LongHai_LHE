@@ -2,8 +2,6 @@ package lhe.marketingStaff;
 
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.marketingStaff.MarketingStaffHomePageObject;
@@ -11,14 +9,12 @@ import pageObjects.marketingStaff.MarketingStaffLoginPageObject;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.TimeUnit;
 
 import static commons.GlobalConstants.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class Login extends BaseTest {
-    WebDriver driver;
 
     private String account, password, accountInvalid, passwordInvalid;
     private String browserName;
@@ -29,12 +25,8 @@ public class Login extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, MARKETING_STAFF_LOGIN);
-        marketingStaffLoginPage = new MarketingStaffLoginPageObject(driver);
-        marketingStaffHomePage = new MarketingStaffHomePageObject(driver);
-
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        marketingStaffLoginPage = new MarketingStaffLoginPageObject(MARKETING_STAFF_LOGIN);
+        marketingStaffHomePage = new MarketingStaffHomePageObject();
         account = MARKETING_STAFF_ACCOUNT;
         accountInvalid = "dungtest";
         password = MARKETING_STAFF_PASSWORD;
@@ -62,7 +54,7 @@ public class Login extends BaseTest {
 
     @Test
     public void TC_02_Login_Invalid(Method method) {
-        driver.navigate().refresh();
+        marketingStaffLoginPage.openLoginPage();
 
         ExtentTestManager.startTest(method.getName(), "Login Invalid Data");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Input Account Textbox");
@@ -81,7 +73,7 @@ public class Login extends BaseTest {
 
     @Test
     public void TC_03_Login_Success(Method method) {
-        driver.navigate().refresh();
+        marketingStaffLoginPage.openLoginPage();
 
         ExtentTestManager.startTest(method.getName(), "Login Success");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Input Account Textbox");
@@ -95,10 +87,5 @@ public class Login extends BaseTest {
 
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 04: Click Button Login");
         marketingStaffHomePage = marketingStaffLoginPage.clickToLoginButton();
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

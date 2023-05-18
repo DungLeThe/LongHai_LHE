@@ -1,18 +1,20 @@
 package pageObjects.marketingStaff;
 
 import commons.BasePage;
+import driver.DriverManager;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 import pageUIs.marketingStaff.MarketingStaffLoginPageUI;
 
 import static commons.GlobalConstants.*;
-import static org.testng.Assert.assertTrue;
 
 public class MarketingStaffLoginPageObject extends BasePage {
-    private WebDriver driver;
 
-    public MarketingStaffLoginPageObject(WebDriver driver) {
-        this.driver = driver;
+    public void openLoginPage() {
+        DriverManager.getDriver().get(MARKETING_STAFF_LOGIN);
+    }
+
+    public MarketingStaffLoginPageObject(String marketingStaffLoginUrl) {
+        openPageUrl(marketingStaffLoginUrl);
     }
 
     @Step("Login to website")
@@ -20,68 +22,68 @@ public class MarketingStaffLoginPageObject extends BasePage {
         inputToAccountTextbox(account);
         inputToPasswordTextbox(password);
         clickToLoginButton();
-        waitForLoadingIconInvisible(driver);
-        return new MarketingStaffHomePageObject(driver);
+        waitForLoadingIconInvisible();
+        return new MarketingStaffHomePageObject();
     }
 
     @Step("Click to Login button")
     public MarketingStaffHomePageObject clickToLoginButton() {
-        waitForElementClickable(driver, MarketingStaffLoginPageUI.LOGIN_BUTTON);
-        clickToElement(driver, MarketingStaffLoginPageUI.LOGIN_BUTTON);
-        return new MarketingStaffHomePageObject(driver);
+        waitForElementClickable(MarketingStaffLoginPageUI.LOGIN_BUTTON);
+        clickToElement(MarketingStaffLoginPageUI.LOGIN_BUTTON);
+        return new MarketingStaffHomePageObject();
     }
 
     @Step("Enter to Account textbox")
     public void inputToAccountTextbox(String account) {
-        waitForElementVisible(driver, MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX);
-        sendKeyToElement(driver, MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX, account);
+        waitForElementVisible(MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX);
+        sendKeyToElement(MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX, account);
     }
 
     @Step("Enter to Password textbox")
     public void inputToPasswordTextbox(String password) {
-        waitForElementVisible(driver, MarketingStaffLoginPageUI.PASSWORD_TEXTBOX);
-        sendKeyToElement(driver, MarketingStaffLoginPageUI.PASSWORD_TEXTBOX, password);
+        waitForElementVisible(MarketingStaffLoginPageUI.PASSWORD_TEXTBOX);
+        sendKeyToElement(MarketingStaffLoginPageUI.PASSWORD_TEXTBOX, password);
     }
 
     @Step("Click to Login button")
     public void clickToIconEyeSlash() {
-        waitForElementClickable(driver, MarketingStaffLoginPageUI.ICON_EYE);
-        clickToElement(driver, MarketingStaffLoginPageUI.ICON_EYE);
+        waitForElementClickable(MarketingStaffLoginPageUI.ICON_EYE);
+        clickToElement(MarketingStaffLoginPageUI.ICON_EYE);
     }
 
     @Step("Click to Account textbox")
     public void clickToAccountTextbox() {
-        waitForElementClickable(driver, MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX);
-        clickToElement(driver, MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX);
+        waitForElementClickable(MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX);
+        clickToElement(MarketingStaffLoginPageUI.ACCOUNT_TEXTBOX);
     }
 
     @Step("Click to Password textbox")
     public void clickToPasswordTextbox() {
-        waitForElementClickable(driver, MarketingStaffLoginPageUI.PASSWORD_TEXTBOX);
-        clickToElement(driver, MarketingStaffLoginPageUI.PASSWORD_TEXTBOX);
+        waitForElementClickable(MarketingStaffLoginPageUI.PASSWORD_TEXTBOX);
+        clickToElement(MarketingStaffLoginPageUI.PASSWORD_TEXTBOX);
     }
 
     @Step("Verify Error Message At Account Textbox")
     public String getErrorMessageAtAccountTextbox() {
-        waitForElementVisible(driver, MarketingStaffLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
-        return getElementText(driver, MarketingStaffLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
+        waitForElementVisible(MarketingStaffLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
+        return getElementText(MarketingStaffLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
     }
 
     @Step("Verify Error Message At Passwork Textbox")
     public String getErrorMessageAtPassworkTextbox() {
-        waitForElementVisible(driver, MarketingStaffLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
-        return getElementText(driver, MarketingStaffLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
+        waitForElementVisible(MarketingStaffLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
+        return getElementText(MarketingStaffLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
     }
 
     @Step("Verify Modal Confirm Displayed")
     public boolean isModalConfirmDisplayed() {
-        waitForElementVisible(driver, MarketingStaffLoginPageUI.MODAL_TEXT);
-        return isElementDisplay(driver, MarketingStaffLoginPageUI.MODAL_TEXT);
+        waitForElementVisible(MarketingStaffLoginPageUI.MODAL_TEXT);
+        return isElementDisplay(MarketingStaffLoginPageUI.MODAL_TEXT);
     }
 
-    public MarketingStaffHomePageObject goToMarketingStaffHomePage(WebDriver driver) {
-        MarketingStaffLoginPageObject marketingStaffLoginPage = new MarketingStaffLoginPageObject(driver);
+    public MarketingStaffHomePageObject goToMarketingStaffHomePage() {
+        MarketingStaffLoginPageObject marketingStaffLoginPage = new MarketingStaffLoginPageObject(MARKETING_STAFF_LOGIN);
         marketingStaffLoginPage.loginWebsite(MARKETING_STAFF_ACCOUNT, MARKETING_STAFF_PASSWORD);
-        return new MarketingStaffHomePageObject(driver);
+        return new MarketingStaffHomePageObject();
     }
 }

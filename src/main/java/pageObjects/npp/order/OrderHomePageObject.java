@@ -1,54 +1,52 @@
 package pageObjects.npp.order;
 
 import commons.BasePage;
-import org.openqa.selenium.WebDriver;
 import pageUIs.npp.NppHomePageUI;
 
 public class OrderHomePageObject extends BasePage {
-    private WebDriver driver;
 
-    public OrderHomePageObject(WebDriver driver) {
-        this.driver = driver;
+    public OrderHomePageObject() {
     }
+
     public CreateOrderPageObject createOrderButton() {
-        waitForElementVisible(driver, NppHomePageUI.CREATE_ORDER_BUTTON);
-        clickToElement(driver, NppHomePageUI.CREATE_ORDER_BUTTON);
-        return new CreateOrderPageObject(driver);
+        waitForElementVisible(NppHomePageUI.CREATE_ORDER_BUTTON);
+        clickToElement(NppHomePageUI.CREATE_ORDER_BUTTON);
+        return new CreateOrderPageObject();
     }
 
     public void clickInProgressTab() {
-        waitForLoadingItemInvisible(driver);
-        waitForElementVisible(driver, NppHomePageUI.IN_PROGRESS_TAB);
-        clickToElement(driver, NppHomePageUI.IN_PROGRESS_TAB);
+        waitForLoadingItemInvisible();
+        waitForElementVisible(NppHomePageUI.IN_PROGRESS_TAB);
+        clickToElement(NppHomePageUI.IN_PROGRESS_TAB);
     }
 
     public void clickViewOrderDetailsButton() {
-        waitForElementVisible(driver, NppHomePageUI.VIEW_ORDER_DETAILS_BUTTON);
-        clickToElement(driver, NppHomePageUI.VIEW_ORDER_DETAILS_BUTTON);
+        waitForElementVisible(NppHomePageUI.VIEW_ORDER_DETAILS_BUTTON);
+        clickToElement(NppHomePageUI.VIEW_ORDER_DETAILS_BUTTON);
     }
 
     public void clickConfirmReceivedButton() {
-        waitForElementVisible(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON);
-        clickToElement(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON);
+        waitForElementVisible(NppHomePageUI.CONFIRM_RECEIVED_BUTTON);
+        clickToElement(NppHomePageUI.CONFIRM_RECEIVED_BUTTON);
     }
 
     public void inputNoteInReceivedPopup() {
-        waitForElementVisible(driver, NppHomePageUI.RECEIVED_NOTE);
-        sendKeyToElement(driver, NppHomePageUI.RECEIVED_NOTE,"Đã kiểm tra và nhận đủ hàng");
+        waitForElementVisible(NppHomePageUI.RECEIVED_NOTE);
+        sendKeyToElement(NppHomePageUI.RECEIVED_NOTE, "Đã kiểm tra và nhận đủ hàng");
     }
 
     public void inputImage(String productImage) {
-        uploadImage(driver, NppHomePageUI.PRODUCT_IMAGE,productImage);
+        uploadImage(NppHomePageUI.PRODUCT_IMAGE, productImage);
     }
 
     public void clickConfirmReceivedButtonFromPopup() {
-        waitForElementVisible(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON_FROM_POPUP);
-        clickToElement(driver, NppHomePageUI.CONFIRM_RECEIVED_BUTTON_FROM_POPUP);
+        waitForElementVisible(NppHomePageUI.CONFIRM_RECEIVED_BUTTON_FROM_POPUP);
+        clickToElement(NppHomePageUI.CONFIRM_RECEIVED_BUTTON_FROM_POPUP);
     }
 
     public CreateOrderPageObject clickExportOrderTab() {
-        waitForElementVisible(driver, NppHomePageUI.EXPORT_ORDER_TAB);
-        clickToElement(driver, NppHomePageUI.EXPORT_ORDER_TAB);
-        return new CreateOrderPageObject(driver);
+        waitForElementVisible(NppHomePageUI.EXPORT_ORDER_TAB);
+        clickToElement(NppHomePageUI.EXPORT_ORDER_TAB);
+        return new CreateOrderPageObject();
     }
 }

@@ -1,8 +1,6 @@
 package lhe.admin;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
@@ -24,11 +22,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class UserManagementAddDistributor extends BaseTest {
-    WebDriver driver;
 
     private String browserName;
-
-    private AdminHomePageUI homePageUI;
     private AdminLoginPageObject loginPage;
     private AdminHomePageObject homePage;
     private UserManagementHomePageObject userManagementHomePage;
@@ -43,9 +38,8 @@ public class UserManagementAddDistributor extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
         representative = "LHETest" + getRandomString();
         phone = "09876" + getRandomInt();
@@ -69,7 +63,7 @@ public class UserManagementAddDistributor extends BaseTest {
     }
 
     public void goToHomPage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -81,33 +75,33 @@ public class UserManagementAddDistributor extends BaseTest {
         createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
         createInformationDistributorPage = createUserManagementPage.clickAddDistributorManagement();
 
-        createInformationDistributorPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+        createInformationDistributorPage.inputByPlaceholder("Nơi cấp", issuedBy);
+        createInformationDistributorPage.inputByPlaceholder("Người đại diện", representative);
+        createInformationDistributorPage.inputByPlaceholder("Số điện thoại", phone);
 
         createInformationDistributorPage.inputToTaxCode(taxCode);
         createInformationDistributorPage.inputToIdCard(idCard);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+        createInformationDistributorPage.inputByPlaceholder("Ngày cấp", dateRange);
         createInformationDistributorPage.clickToSelectAddress();
         createInformationDistributorPage.clickToSelectCity();
         createInformationDistributorPage.clickToSelectDistrict();
         createInformationDistributorPage.clickToSelectWard();
-        createInformationDistributorPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+        createInformationDistributorPage.inputByPlaceholder("Địa chỉ cụ thể", enterAddress);
 
-        createInformationDistributorPage.scrollToBottomPage(driver);
+        createInformationDistributorPage.scrollToBottomPage();
 
-        createInformationDistributorPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        createInformationDistributorPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+        createInformationDistributorPage.inputByPlaceholder("Mã chiện - Phòng thị trường tạo", marketRoomCode);
+        createInformationDistributorPage.inputByPlaceholder("Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+        createInformationDistributorPage.inputByPlaceholder("Thời gian vào", timeIn);
+        createInformationDistributorPage.inputByPlaceholder("Diện tích kho", warehouseArea);
         createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
         createInformationDistributorPage.inputToLabor(labor);
-        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.BUSINESS_MODEL_TEXT, homePageUI.BUSINESS_MODEL_VALUE, businessModel);
+        createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.BUSINESS_MODEL_TEXT, AdminHomePageUI.BUSINESS_MODEL_VALUE, businessModel);
 
         createInformationDistributorPage.clickToInputRegion();
-        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.REGION_INPUT_TEXT, homePageUI.REGION_VALUE, region);
+        createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.REGION_INPUT_TEXT, AdminHomePageUI.REGION_VALUE, region);
         createInformationDistributorPage.clickToInputArea();
-        createInformationDistributorPage.selectItemInCustomDropdown(driver, homePageUI.AREA_INPUT_TEXT, homePageUI.AREA_VALUE, area);
+        createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.AREA_INPUT_TEXT, AdminHomePageUI.AREA_VALUE, area);
 
         createAccountDistributorPage = createInformationDistributorPage.clickNextButton();
         assertTrue(createAccountDistributorPage.isCreateUserTextDisplayed());
@@ -132,10 +126,5 @@ public class UserManagementAddDistributor extends BaseTest {
         assertEquals(detailUserPage.getInfoDistributorText("Diện tích kho"), warehouseArea);
         assertEquals(detailUserPage.getInfoDistributorText("Số lượng nhân công"), labor);
         assertEquals(detailUserPage.getInfoDistributorText("Ngày vào"), timeIn);
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

@@ -1,9 +1,7 @@
 package lhe.npp;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.npp.NppHomePageObject;
@@ -17,7 +15,6 @@ import java.lang.reflect.Method;
 import static commons.GlobalConstants.NPP_LOGIN;
 
 public class CreateCategory extends BaseTest {
-    private WebDriver driver;
     private String browserName;
     private NppHomePageObject nppHomePage;
     private NppLoginPageObject nppLoginPage;
@@ -26,13 +23,12 @@ public class CreateCategory extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, NPP_LOGIN);
-        nppLoginPage = new NppLoginPageObject(driver);
-        nppHomePage = nppLoginPage.goToNppHomePage(driver);
+        nppLoginPage = new NppLoginPageObject(NPP_LOGIN);
+        nppHomePage = nppLoginPage.goToNppHomePage();
     }
 
     public void goToNppHomePage() {
-        nppHomePage.openPageUrl(driver, NPP_LOGIN);
+        nppHomePage.openPageUrl(NPP_LOGIN);
         nppHomePage.dragToLeft();
     }
 
@@ -67,10 +63,10 @@ public class CreateCategory extends BaseTest {
         nppProductPage = nppHomePage.clickProductButton();
         nppProductPage.clickViewCategoryButton();
         nppProductPage.createNewCategory();
-        nppProductPage.isElementEnable(driver, NppCategoryPageUI.CONFIRM_CREATE_NEW_CATEGORY_BUTTON);
-        System.out.println(nppProductPage.isElementEnable(driver, NppCategoryPageUI.CONFIRM_CREATE_NEW_CATEGORY_BUTTON));
+        nppProductPage.isElementEnable(NppCategoryPageUI.CONFIRM_CREATE_NEW_CATEGORY_BUTTON);
+        System.out.println(nppProductPage.isElementEnable(NppCategoryPageUI.CONFIRM_CREATE_NEW_CATEGORY_BUTTON));
 
-        Assert.assertFalse(nppProductPage.isElementEnable(driver, NppCategoryPageUI.CONFIRM_CREATE_NEW_CATEGORY_BUTTON));
+        Assert.assertFalse(nppProductPage.isElementEnable(NppCategoryPageUI.CONFIRM_CREATE_NEW_CATEGORY_BUTTON));
     }
 
     @Test
@@ -83,10 +79,5 @@ public class CreateCategory extends BaseTest {
         nppProductPage.clickCategoryCheckbox();
         Assert.assertEquals(nppProductPage.numberOfCheckboxesIsSelected(), "Đã chọn (1)");
         System.out.println(nppProductPage.numberOfCheckboxesIsSelected());
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-//        closeBrowserAndDriver();
     }
 }

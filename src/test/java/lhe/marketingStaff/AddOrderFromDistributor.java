@@ -1,8 +1,6 @@
 package lhe.marketingStaff;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.marketingStaff.MarketingStaffHomePageObject;
@@ -20,7 +18,6 @@ import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class AddOrderFromDistributor extends BaseTest {
-    WebDriver driver;
 
     private String browserName;
 
@@ -36,9 +33,8 @@ public class AddOrderFromDistributor extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, MARKETING_STAFF_LOGIN);
-        marketingStaffLoginPage = new MarketingStaffLoginPageObject(driver);
-        marketingStaffHomePage = marketingStaffLoginPage.goToMarketingStaffHomePage(driver);
+        marketingStaffLoginPage = new MarketingStaffLoginPageObject(MARKETING_STAFF_LOGIN);
+        marketingStaffHomePage = marketingStaffLoginPage.goToMarketingStaffHomePage();
 
         product = "Thạch rau câu phong cách Nhật Bản Kimiko 990g";
         numberOfBoxes = "3";
@@ -46,7 +42,7 @@ public class AddOrderFromDistributor extends BaseTest {
     }
 
     public void goToMarketingStaffHomePage() {
-        marketingStaffHomePage.openPageUrl(driver, MARKETING_STAFF_LOGIN);
+        marketingStaffHomePage.openPageUrl(MARKETING_STAFF_LOGIN);
     }
 
     @Test
@@ -111,10 +107,5 @@ public class AddOrderFromDistributor extends BaseTest {
         listProductsPage.inputNumberOfBags(numberOfBags);
         listProductsPage.clickConfirmButton();
         addOrderFromDistributorPage = listProductsPage.clickListOrderButton();
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

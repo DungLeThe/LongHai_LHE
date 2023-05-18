@@ -1,8 +1,6 @@
 package lhe.npp;
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.npp.NppHomePageObject;
@@ -14,7 +12,6 @@ import java.lang.reflect.Method;
 import static commons.GlobalConstants.NPP_LOGIN;
 
 public class AddOrder extends BaseTest {
-    private WebDriver driver;
     private String browserName;
     private NppHomePageObject nppHomePage;
     private NppLoginPageObject nppLoginPage;
@@ -24,13 +21,12 @@ public class AddOrder extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, NPP_LOGIN);
-        nppLoginPage = new NppLoginPageObject(driver);
-        nppHomePage = nppLoginPage.goToNppHomePage(driver);
+        nppLoginPage = new NppLoginPageObject(NPP_LOGIN);
+        nppHomePage = nppLoginPage.goToNppHomePage();
     }
 
     public void goToNppHomePage() {
-        nppHomePage.openPageUrl(driver, NPP_LOGIN);
+        nppHomePage.openPageUrl(NPP_LOGIN);
         nppHomePage.dragToLeft();
     }
 
@@ -41,10 +37,10 @@ public class AddOrder extends BaseTest {
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
-        addOrderPage.waitForLoadingItemInvisible(driver);
+        addOrderPage.waitForLoadingItemInvisible();
         addOrderPage.dragAndDropIcon();
         addOrderPage.searchProduct();
-        addOrderPage.waitForLoadingItemInvisible(driver);
+        addOrderPage.waitForLoadingItemInvisible();
         addOrderPage.inputSelectProductCheckbox();
         addOrderPage.clickConfirmOrder();
         addOrderPage.getTextFromSuccessPopup();
@@ -58,10 +54,10 @@ public class AddOrder extends BaseTest {
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
-        addOrderPage.waitForLoadingItemInvisible(driver);
+        addOrderPage.waitForLoadingItemInvisible();
         addOrderPage.dragAndDropIcon();
         addOrderPage.searchProduct();
-        addOrderPage.waitForLoadingItemInvisible(driver);
+        addOrderPage.waitForLoadingItemInvisible();
         addOrderPage.inputSelectProductCheckbox();
         addOrderPage.clickConfirmOrder();
         addOrderPage.clickOnOrderDetail();
@@ -74,17 +70,12 @@ public class AddOrder extends BaseTest {
         orderHomePage = nppHomePage.clickOrderButton();
         addOrderPage = orderHomePage.createOrderButton();
         addOrderPage.inputNote();
-        addOrderPage.waitForLoadingItemInvisible(driver);
+        addOrderPage.waitForLoadingItemInvisible();
         addOrderPage.dragAndDropIcon();
         addOrderPage.searchProduct();
-        addOrderPage.waitForLoadingItemInvisible(driver);
+        addOrderPage.waitForLoadingItemInvisible();
         addOrderPage.inputSelectProductCheckbox();
         addOrderPage.clickConfirmOrder();
         addOrderPage.clickOnOrderList();
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

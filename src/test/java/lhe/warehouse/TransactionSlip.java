@@ -1,9 +1,7 @@
 package lhe.warehouse;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.warehouse.WareHouseHomePageObject;
@@ -15,7 +13,6 @@ import java.lang.reflect.Method;
 import static commons.GlobalConstants.WARE_HOUSE_LOGIN;
 
 public class TransactionSlip extends BaseTest {
-    private WebDriver driver;
     private String browserName;
     private WareHouseHomePageObject whHomePage;
     private WareHouseLoginPageObject whLoginPage;
@@ -24,13 +21,12 @@ public class TransactionSlip extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, WARE_HOUSE_LOGIN);
-        whLoginPage = new WareHouseLoginPageObject(driver);
-        whHomePage = whLoginPage.goToWareHouseHomePage(driver);
+        whLoginPage = new WareHouseLoginPageObject(WARE_HOUSE_LOGIN);
+        whHomePage = whLoginPage.goToWareHouseHomePage();
     }
 
     public void goToWareHouseHomePage() {
-        whHomePage.openPageUrl(driver, WARE_HOUSE_LOGIN);
+        whHomePage.openPageUrl(WARE_HOUSE_LOGIN);
     }
 
     @Test
@@ -66,10 +62,5 @@ public class TransactionSlip extends BaseTest {
         whTransactionSlipPage.clickCancel();
         whTransactionSlipPage.clickConfirmCancel();
         Assert.assertTrue(whTransactionSlipPage.isCancelledButtonDisplayed());
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

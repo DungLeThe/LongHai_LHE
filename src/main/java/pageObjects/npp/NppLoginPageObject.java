@@ -1,18 +1,20 @@
 package pageObjects.npp;
 
 import commons.BasePage;
+import driver.DriverManager;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 import pageUIs.npp.NppLoginPageUI;
 
-import static commons.GlobalConstants.NPP_ACCOUNT;
-import static commons.GlobalConstants.NPP_PASSWORD;
+import static commons.GlobalConstants.*;
 
 public class NppLoginPageObject extends BasePage {
-    private WebDriver driver;
 
-    public NppLoginPageObject(WebDriver driver) {
-        this.driver = driver;
+    public void openLoginPage() {
+        DriverManager.getDriver().get(NPP_LOGIN);
+    }
+
+    public NppLoginPageObject(String nppLogin) {
+        openPageUrl(nppLogin);
     }
 
     @Step("Login to website")
@@ -20,80 +22,80 @@ public class NppLoginPageObject extends BasePage {
         inputToAccountTextbox(account);
         inputToPasswordTextbox(password);
         clickToLoginButton();
-        waitForLoadingIconInvisible(driver);
-        return new NppHomePageObject(driver);
+        waitForLoadingIconInvisible();
+        return new NppHomePageObject();
     }
 
     @Step("Click to Account textbox")
     public void clickToAccountTextbox() {
-        waitForElementClickable(driver, NppLoginPageUI.NPP_ACCOUNT_TEXTBOX);
-        clickToElement(driver, NppLoginPageUI.NPP_ACCOUNT_TEXTBOX);
+        waitForElementClickable(NppLoginPageUI.NPP_ACCOUNT_TEXTBOX);
+        clickToElement(NppLoginPageUI.NPP_ACCOUNT_TEXTBOX);
     }
 
     @Step("Click to Password textbox")
     public void clickToPasswordTextbox() {
-        waitForElementClickable(driver, NppLoginPageUI.NPP_PASSWORD_TEXTBOX);
-        clickToElement(driver, NppLoginPageUI.NPP_PASSWORD_TEXTBOX);
+        waitForElementClickable(NppLoginPageUI.NPP_PASSWORD_TEXTBOX);
+        clickToElement(NppLoginPageUI.NPP_PASSWORD_TEXTBOX);
     }
 
     @Step("Verify Error Message At Account Textbox")
     public String getErrorMessageAtAccountTextbox() {
-        waitForElementVisible(driver, NppLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
-        return getElementText(driver, NppLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
+        waitForElementVisible(NppLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
+        return getElementText(NppLoginPageUI.ACCOUNT_EMPTY_ERROR_MESSAGE);
     }
 
     @Step("Verify Error Message At Passwork Textbox")
     public String getErrorMessageAtPassworkTextbox() {
-        waitForElementVisible(driver, NppLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
-        return getElementText(driver, NppLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
+        waitForElementVisible(NppLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
+        return getElementText(NppLoginPageUI.PASS_EMPTY_ERROR_MESSAGE);
     }
 
     public void inputToAccountTextbox(String account) {
-        waitForElementVisible(driver, NppLoginPageUI.NPP_ACCOUNT_TEXTBOX);
-        sendKeyToElement(driver, NppLoginPageUI.NPP_ACCOUNT_TEXTBOX, account);
+        waitForElementVisible(NppLoginPageUI.NPP_ACCOUNT_TEXTBOX);
+        sendKeyToElement(NppLoginPageUI.NPP_ACCOUNT_TEXTBOX, account);
 
     }
 
     public void inputToPasswordTextbox(String passwordInvalid) {
-        waitForElementVisible(driver, NppLoginPageUI.NPP_PASSWORD_TEXTBOX);
-        sendKeyToElement(driver, NppLoginPageUI.NPP_PASSWORD_TEXTBOX, passwordInvalid);
+        waitForElementVisible(NppLoginPageUI.NPP_PASSWORD_TEXTBOX);
+        sendKeyToElement(NppLoginPageUI.NPP_PASSWORD_TEXTBOX, passwordInvalid);
     }
 
     public void clickToEyeIcon() {
-        waitForElementVisible(driver, NppLoginPageUI.EYE_ICON);
-        clickToElement(driver, NppLoginPageUI.EYE_ICON);
+        waitForElementVisible(NppLoginPageUI.EYE_ICON);
+        clickToElement(NppLoginPageUI.EYE_ICON);
     }
 
     public void clickToLoginButton() {
-        waitForElementVisible(driver, NppLoginPageUI.LOGIN_BUTTON);
-        clickToElement(driver, NppLoginPageUI.LOGIN_BUTTON);
+        waitForElementVisible(NppLoginPageUI.LOGIN_BUTTON);
+        clickToElement(NppLoginPageUI.LOGIN_BUTTON);
     }
 
     public void closeErrorPopup() {
-        waitForElementVisible(driver, NppLoginPageUI.CLOSE_POPUP_BUTTON);
-        clickToElement(driver, NppLoginPageUI.CLOSE_POPUP_BUTTON);
+        waitForElementVisible(NppLoginPageUI.CLOSE_POPUP_BUTTON);
+        clickToElement(NppLoginPageUI.CLOSE_POPUP_BUTTON);
     }
 
     public String getErrorTextModal() {
-        waitForElementVisible(driver, NppLoginPageUI.MODAL_TEXT);
-        return getElementText(driver, NppLoginPageUI.MODAL_TEXT);
+        waitForElementVisible(NppLoginPageUI.MODAL_TEXT);
+        return getElementText(NppLoginPageUI.MODAL_TEXT);
     }
 
     public boolean chartTextIsDisplayed() {
-        waitForElementVisible(driver, NppLoginPageUI.LOGIN_SUCCESS_MARK);
-        return isElementDisplay(driver, NppLoginPageUI.LOGIN_SUCCESS_MARK);
+        waitForElementVisible(NppLoginPageUI.LOGIN_SUCCESS_MARK);
+        return isElementDisplay(NppLoginPageUI.LOGIN_SUCCESS_MARK);
     }
 
     public void dragToLeft() {
-        waitForElementVisible(driver, NppLoginPageUI.PROFIT_TEXT);
-        clickAndHold(driver, NppLoginPageUI.PROFIT_TEXT);
+        waitForElementVisible(NppLoginPageUI.PROFIT_TEXT);
+        clickAndHold(NppLoginPageUI.PROFIT_TEXT);
     }
 
-    public NppHomePageObject goToNppHomePage(WebDriver driver) {
-        NppLoginPageObject loginNppPage = new NppLoginPageObject(this.driver);
+    public NppHomePageObject goToNppHomePage() {
+        NppLoginPageObject loginNppPage = new NppLoginPageObject(NPP_LOGIN);
         NppHomePageObject NppHomePage;
         NppHomePage = loginNppPage.loginWebsite(NPP_ACCOUNT, NPP_PASSWORD);
-        NppHomePage.clickAndHold(this.driver, NppLoginPageUI.PROFIT_TEXT);
-        return new NppHomePageObject(this.driver);
+        NppHomePage.clickAndHold(NppLoginPageUI.PROFIT_TEXT);
+        return new NppHomePageObject();
     }
 }

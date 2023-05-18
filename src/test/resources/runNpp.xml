@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Npp">
+<suite name="Npp" parallel="classes" thread-count="3">
   <listeners>
     <listener class-name="commons.MethodListener" />
     <listener class-name="reportConfig.ReportNGListener" />

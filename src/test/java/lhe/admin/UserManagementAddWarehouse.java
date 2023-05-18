@@ -1,15 +1,12 @@
 package lhe.admin;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.admin.distributorManagement.DetailUserPageObject;
 import pageObjects.admin.userManagement.*;
-import pageUIs.admin.AdminHomePageUI;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
@@ -21,11 +18,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class UserManagementAddWarehouse extends BaseTest {
-    WebDriver driver;
 
     private String browserName;
-
-    private AdminHomePageUI homePageUI;
     private AdminLoginPageObject loginPage;
     private AdminHomePageObject homePage;
     private UserManagementHomePageObject userManagementHomePage;
@@ -41,9 +35,8 @@ public class UserManagementAddWarehouse extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
         name = "LHETest" + getRandomString();
         gender = "Nam";
@@ -68,7 +61,7 @@ public class UserManagementAddWarehouse extends BaseTest {
     }
 
     public void goToHomPage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -316,10 +309,5 @@ public class UserManagementAddWarehouse extends BaseTest {
         assertEquals(detailUserPage.getInfoDistributorText("Tình trạng hôn nhân"), maritalStatus);
         assertEquals(detailUserPage.getInfoDistributorText("Bộ phận"), "Bộ phận kho");
         assertEquals(detailUserPage.getInfoDistributorText("Chức vụ"), position);
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

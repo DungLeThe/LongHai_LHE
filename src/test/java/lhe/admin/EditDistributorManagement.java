@@ -1,15 +1,14 @@
 package lhe.admin;
 
 import commons.BaseTest;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.admin.AdminHomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
-import pageObjects.admin.distributorManagement.*;
-import pageUIs.admin.AdminHomePageUI;
+import pageObjects.admin.distributorManagement.ConfirmEditInformationPageObject;
+import pageObjects.admin.distributorManagement.DetailDistributorPageObject;
+import pageObjects.admin.distributorManagement.DistributorManagementPageObject;
+import pageObjects.admin.distributorManagement.EditInformationPageObject;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
@@ -21,7 +20,6 @@ import static commons.GlobalConstants.PROJECT_PATH;
 import static org.testng.Assert.assertTrue;
 
 public class EditDistributorManagement extends BaseTest {
-    WebDriver driver;
 
     private String representative, phone, taxCode, idCard, idCardInvalid, dateRange, issuedBy, enterAddress, warehouseArea,
             labor, timeIn, distributionRoomCode, marketRoomCode, avatarImage;
@@ -33,16 +31,14 @@ public class EditDistributorManagement extends BaseTest {
     private EditInformationPageObject editInformationPage;
     private DetailDistributorPageObject detailDistributorPage;
     private ConfirmEditInformationPageObject confirmEditInformationPage;
-    private AdminHomePageUI homePageUI;
 
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
-        avatarImage =  PROJECT_PATH + "\\uploadFiles\\AvatarImage.jpg";
+        avatarImage = PROJECT_PATH + "\\uploadFiles\\AvatarImage.jpg";
         representative = "LHETest" + getRandomString();
         phone = "09876" + getRandomInt();
         taxCode = "01234" + getRandomInt();
@@ -59,7 +55,7 @@ public class EditDistributorManagement extends BaseTest {
     }
 
     public void goToHomPage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -72,32 +68,27 @@ public class EditDistributorManagement extends BaseTest {
         editInformationPage = detailDistributorPage.clickEditDistributorButton();
 
         editInformationPage.inputAvatarImage(avatarImage);
-        editInformationPage.inputByPlaceholder(driver, "Nơi cấp", issuedBy);
-        editInformationPage.inputByPlaceholder(driver, "Người đại diện", representative);
-        editInformationPage.inputByPlaceholder(driver, "Số điện thoại", phone);
+        editInformationPage.inputByPlaceholder("Nơi cấp", issuedBy);
+        editInformationPage.inputByPlaceholder("Người đại diện", representative);
+        editInformationPage.inputByPlaceholder("Số điện thoại", phone);
 
         editInformationPage.inputToTaxCode(taxCode);
         editInformationPage.inputToIdCard(idCard);
-        editInformationPage.inputByPlaceholder(driver, "Ngày cấp", dateRange);
+        editInformationPage.inputByPlaceholder("Ngày cấp", dateRange);
         editInformationPage.clickToSelectAddress();
         editInformationPage.clickToSelectCity();
         editInformationPage.clickToSelectDistrict();
 
-        editInformationPage.scrollToBottomPage(driver);
-        editInformationPage.inputByPlaceholder(driver, "Địa chỉ cụ thể", enterAddress);
+        editInformationPage.scrollToBottomPage();
+        editInformationPage.inputByPlaceholder("Địa chỉ cụ thể", enterAddress);
 
-        editInformationPage.inputByPlaceholder(driver, "Mã chiện - Phòng thị trường tạo", marketRoomCode);
-        editInformationPage.inputByPlaceholder(driver, "Mã NPP - Phòng kế toán tạo", distributionRoomCode);
-        editInformationPage.inputByPlaceholder(driver, "Thời gian vào", timeIn);
-        editInformationPage.inputByPlaceholder(driver, "Diện tích kho", warehouseArea);
+        editInformationPage.inputByPlaceholder("Mã chiện - Phòng thị trường tạo", marketRoomCode);
+        editInformationPage.inputByPlaceholder("Mã NPP - Phòng kế toán tạo", distributionRoomCode);
+        editInformationPage.inputByPlaceholder("Thời gian vào", timeIn);
+        editInformationPage.inputByPlaceholder("Diện tích kho", warehouseArea);
         editInformationPage.inputToWarehouseArea(warehouseArea);
         editInformationPage.inputToLabor(labor);
         confirmEditInformationPage = editInformationPage.clickSaveButton();
         assertTrue(confirmEditInformationPage.isConfirmSuccessTextDisplayed());
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void afterClass() {
-        closeBrowserAndDriver();
     }
 }

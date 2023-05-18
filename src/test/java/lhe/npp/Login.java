@@ -2,7 +2,6 @@ package lhe.npp;
 
 import com.aventstack.extentreports.Status;
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -11,14 +10,12 @@ import pageObjects.npp.NppLoginPageObject;
 import reportConfig.ExtentTestManager;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.TimeUnit;
 
 import static commons.GlobalConstants.NPP_LOGIN;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class Login extends BaseTest {
-    WebDriver driver;
 
     private String account, password, accountInvalid, passwordInvalid;
     private String browserName;
@@ -29,12 +26,8 @@ public class Login extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, NPP_LOGIN);
-        loginPage = new NppLoginPageObject(driver);
-        homePage = new NppHomePageObject(driver);
-
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        loginPage = new NppLoginPageObject(NPP_LOGIN);
+        homePage = new NppHomePageObject();
         account = "npp.lhe";
         accountInvalid = "hoangtest";
         password = "lhe@1234";
@@ -80,7 +73,7 @@ public class Login extends BaseTest {
     @Test
     public void TC_03_Login_Valid(Method method) {
         ExtentTestManager.startTest(method.getName(), "Login Invalid Data");
-        driver.navigate().refresh();
+        loginPage.openLoginPage();
         ExtentTestManager.getTest().log(Status.INFO, "Login Valid - Step 01: Input Valid Account to Account Textbox");
         loginPage.inputToAccountTextbox(account);
         ExtentTestManager.getTest().log(Status.INFO, "Login Valid - Step 02: Input Invalid Password to Password Textbox");

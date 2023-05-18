@@ -2,14 +2,13 @@ package pageObjects.warehouse;
 
 import commons.BasePage;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
+
+import static commons.GlobalConstants.WARE_HOUSE_LOGIN;
 
 public class WareHouseTransactionSlipPageObject extends BasePage {
-    private WebDriver driver;
-    WareHouseLoginPageObject login = new WareHouseLoginPageObject(driver);
+    WareHouseLoginPageObject login = new WareHouseLoginPageObject(WARE_HOUSE_LOGIN);
 
-    public WareHouseTransactionSlipPageObject(WebDriver driver) {
-        this.driver = driver;
+    public WareHouseTransactionSlipPageObject() {
     }
 
     @Step("Login to website")
@@ -17,7 +16,7 @@ public class WareHouseTransactionSlipPageObject extends BasePage {
         login.inputToAccountTextbox(account);
         login.inputToPasswordTextbox(password);
         login.clickToLoginButton();
-        waitForLoadingIconInvisible(driver);
-        return new WareHouseTransactionSlipPageObject(driver);
+        waitForLoadingIconInvisible();
+        return new WareHouseTransactionSlipPageObject();
     }
 }

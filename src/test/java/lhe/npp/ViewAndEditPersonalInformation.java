@@ -1,7 +1,6 @@
 package lhe.npp;
 
 import commons.BaseTest;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -10,12 +9,13 @@ import pageObjects.npp.NppLoginPageObject;
 import pageObjects.npp.UserInfoObject.NppUserInfoObject;
 import pageUIs.npp.NppUserInfoPageUI;
 import reportConfig.ExtentTestManager;
+
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
+
 import static commons.GlobalConstants.NPP_LOGIN;
 
 public class ViewAndEditPersonalInformation extends BaseTest {
-    WebDriver driver;
     private String browserName;
     private NppLoginPageObject loginPage;
     private NppHomePageObject homePage;
@@ -30,18 +30,15 @@ public class ViewAndEditPersonalInformation extends BaseTest {
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
-        driver = getBrowserDriver(browserName, NPP_LOGIN);
-        loginPage = new NppLoginPageObject(driver);
-        homePage = new NppHomePageObject(driver);
-        infoPage = new NppUserInfoObject(driver);
+        loginPage = new NppLoginPageObject(NPP_LOGIN);
+        homePage = new NppHomePageObject();
+        infoPage = new NppUserInfoObject();
 
-        homePage = loginPage.goToNppHomePage(driver);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        homePage = loginPage.goToNppHomePage();
     }
 
     public void goToNppHomePage() {
-        homePage.openPageUrl(driver, NPP_LOGIN);
+        homePage.openPageUrl(NPP_LOGIN);
         homePage.dragToLeft();
     }
 
@@ -52,17 +49,17 @@ public class ViewAndEditPersonalInformation extends BaseTest {
         infoPage = homePage.clickPersonalInfoIcon();
         infoPage.clickPersonalInfoTab();
         infoPage.clickEditPersonalInfoButton();
-        infoPage.clearValueInElementByDeleteKey(driver, NppUserInfoPageUI.FULLNAME_FIELD);
-        infoPage.clearValueInElementByDeleteKey(driver, NppUserInfoPageUI.ID_NUMBER_FIELD);
-        infoPage.clearValueInElementByDeleteKey(driver, NppUserInfoPageUI.DOB_FIELD);
-        infoPage.clearValueInElementByDeleteKey(driver, NppUserInfoPageUI.PHONE_NUMBER_FIELD);
-        infoPage.clearValueInElementByDeleteKey(driver, NppUserInfoPageUI.ADDRESS_FIELD);
-        infoPage.sendKeyToElement(driver, NppUserInfoPageUI.FULLNAME_FIELD, fullName);
-        infoPage.sendKeyToElement(driver, NppUserInfoPageUI.ID_NUMBER_FIELD, idNumber);
-        infoPage.sendKeyToElement(driver, NppUserInfoPageUI.DOB_FIELD, dateOfBirth);
-        infoPage.sendKeyToElement(driver, NppUserInfoPageUI.PHONE_NUMBER_FIELD, phoneNumber);
-        infoPage.sendKeyToElement(driver, NppUserInfoPageUI.ADDRESS_FIELD, address);
-        infoPage.clickToElement(driver, NppUserInfoPageUI.SAVE_INFO_BUTTON);
+        infoPage.clearValueInElementByDeleteKey(NppUserInfoPageUI.FULLNAME_FIELD);
+        infoPage.clearValueInElementByDeleteKey(NppUserInfoPageUI.ID_NUMBER_FIELD);
+        infoPage.clearValueInElementByDeleteKey(NppUserInfoPageUI.DOB_FIELD);
+        infoPage.clearValueInElementByDeleteKey(NppUserInfoPageUI.PHONE_NUMBER_FIELD);
+        infoPage.clearValueInElementByDeleteKey(NppUserInfoPageUI.ADDRESS_FIELD);
+        infoPage.sendKeyToElement(NppUserInfoPageUI.FULLNAME_FIELD, fullName);
+        infoPage.sendKeyToElement(NppUserInfoPageUI.ID_NUMBER_FIELD, idNumber);
+        infoPage.sendKeyToElement(NppUserInfoPageUI.DOB_FIELD, dateOfBirth);
+        infoPage.sendKeyToElement(NppUserInfoPageUI.PHONE_NUMBER_FIELD, phoneNumber);
+        infoPage.sendKeyToElement(NppUserInfoPageUI.ADDRESS_FIELD, address);
+        infoPage.clickToElement(NppUserInfoPageUI.SAVE_INFO_BUTTON);
         Assert.assertEquals(infoPage.getInfoDistributor("Họ và tên"), fullName);
         Assert.assertEquals(infoPage.getInfoDistributor("CMT/CCCD"), idNumber);
         Assert.assertEquals(infoPage.getInfoDistributor("Ngày sinh"), dateOfBirth);

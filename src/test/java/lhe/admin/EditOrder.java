@@ -37,8 +37,8 @@ public class EditOrder extends BaseTest {
     public void beforeClass() {
         browserName = "chrome";
         driver = getBrowserDriver(browserName, ADMIN_LOGIN);
-        loginPage = new AdminLoginPageObject(driver);
-        homePage = loginPage.goToAdminHomePage(driver);
+        loginPage = new AdminLoginPageObject(ADMIN_LOGIN);
+        homePage = loginPage.goToAdminHomePage();
 
         selectDistributor = "NPP Test";
         enterNote = "LHETest";
@@ -47,7 +47,7 @@ public class EditOrder extends BaseTest {
     }
 
     public void goToHomPage() {
-        homePage.openPageUrl(driver, ADMIN_LOGIN);
+        homePage.openPageUrl(ADMIN_LOGIN);
         homePage.clickButtonDragToTheLeft();
     }
 
@@ -67,10 +67,10 @@ public class EditOrder extends BaseTest {
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
         createOrderPage = orderHomePage.clickAddNewOrderButton();
-        createOrderPage.inputDynamic(driver,"Tìm kiến nhà phân phối", selectDistributor);
+        createOrderPage.inputDynamic("Tìm kiến nhà phân phối", selectDistributor);
         createOrderPage.clickDistributorInput();
         createOrderPage.clickSelectDistributor();
-        createOrderPage.inputDynamic(driver,"Nhập ghi chú", enterNote);
+        createOrderPage.inputDynamic("Nhập ghi chú", enterNote);
         createOrderPage.clickChooseStoreButton();
         createOrderPage.clickSelectStore();
         createOrderPage.clickChooseProductButton();
@@ -78,7 +78,7 @@ public class EditOrder extends BaseTest {
         createOrderPage.clickChooseProductButton();
         createOrderPage.dragAndDropIcon();
         createOrderPage.clickCancelHelpdesk();
-        createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
+        createOrderPage.inputDynamic("Tìm kiếm sản phẩm", productName);
         createOrderPage.clickChooseProductTextbox();
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
@@ -91,10 +91,10 @@ public class EditOrder extends BaseTest {
         goToHomPage();
         orderHomePage = homePage.clickOrderButton();
         createOrderPage = orderHomePage.clickAddNewOrderButton();
-        createOrderPage.inputDynamic(driver,"Tìm kiến nhà phân phối", selectDistributor);
+        createOrderPage.inputDynamic("Tìm kiến nhà phân phối", selectDistributor);
         createOrderPage.clickDistributorInput();
         createOrderPage.clickSelectDistributor();
-        createOrderPage.inputDynamic(driver,"Nhập ghi chú", enterNote);
+        createOrderPage.inputDynamic("Nhập ghi chú", enterNote);
         createOrderPage.clickChooseStoreButton();
         createOrderPage.clickSelectStore();
         createOrderPage.clickChooseProductButton();
@@ -102,7 +102,7 @@ public class EditOrder extends BaseTest {
         createOrderPage.clickChooseProductButton();
         createOrderPage.dragAndDropIcon();
         createOrderPage.clickCancelHelpdesk();
-        createOrderPage.inputDynamic(driver,"Tìm kiếm sản phẩm", productName);
+        createOrderPage.inputDynamic("Tìm kiếm sản phẩm", productName);
         createOrderPage.clickChooseProductTextbox();
         createOrderPage.clickAddButton();
         createOrderPage.clickCreateOrderButton();
