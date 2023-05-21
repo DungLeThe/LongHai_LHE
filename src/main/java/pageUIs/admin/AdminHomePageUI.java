@@ -22,7 +22,7 @@ public class AdminHomePageUI {
     public static final String LABOR_INPUT_TEXT = "//input[@placeholder='Nhập số lượng']";
     public static final String ID_CARD_INPUT_TEXT = "//input[@placeholder='Nhập CMT/CCCD']";
     public static final String ACCOUNT_DISTRIBUTOR_INPUT_TEXT = "//input[@placeholder='VD: Số điện thoại của bạn']";
-    public static final String PASSWORD_DISTRIBUTOR_INPUT_TEXT = "//input[@placeholder='Nhập mật khẩu']";
+    public static final String PASSWORD_DISTRIBUTOR_INPUT_TEXT = "//p[text()='Mật khẩu ']/following-sibling::div//input";
     public static final String EMAIL_DISTRIBUTOR_INPUT_TEXT = "//input[@placeholder='Nhập email']";
     public static final String REGION_INPUT_TEXT = "//input[@placeholder='Chọn vùng']";
     public static final String REGION_VALUE = "//ul[@class='vs__dropdown-menu']/li";

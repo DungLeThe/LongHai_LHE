@@ -170,7 +170,6 @@ public class AddDistributorManagement extends BaseTest {
         createInformationDistributorPage.inputByPlaceholder("Mã chiện - Phòng thị trường tạo", marketRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Mã NPP - Phòng kế toán tạo", distributionRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Thời gian vào", timeIn);
-        createInformationDistributorPage.inputByPlaceholder("Diện tích kho", warehouseArea);
         createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
         createInformationDistributorPage.inputToLabor(labor);
         createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.BUSINESS_MODEL_TEXT, AdminHomePageUI.BUSINESS_MODEL_VALUE, businessModel);
@@ -209,7 +208,6 @@ public class AddDistributorManagement extends BaseTest {
         createInformationDistributorPage.inputByPlaceholder("Mã chiện - Phòng thị trường tạo", marketRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Mã NPP - Phòng kế toán tạo", distributionRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Thời gian vào", timeIn);
-        createInformationDistributorPage.inputByPlaceholder("Diện tích kho", warehouseArea);
         createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
         createInformationDistributorPage.inputToLabor(labor);
         createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.BUSINESS_MODEL_TEXT, AdminHomePageUI.BUSINESS_MODEL_VALUE, businessModel);
@@ -251,7 +249,6 @@ public class AddDistributorManagement extends BaseTest {
         createInformationDistributorPage.inputByPlaceholder("Mã chiện - Phòng thị trường tạo", marketRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Mã NPP - Phòng kế toán tạo", distributionRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Thời gian vào", timeIn);
-        createInformationDistributorPage.inputByPlaceholder("Diện tích kho", warehouseArea);
         createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
         createInformationDistributorPage.inputToLabor(labor);
         createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.BUSINESS_MODEL_TEXT, AdminHomePageUI.BUSINESS_MODEL_VALUE, businessModel);
@@ -303,7 +300,6 @@ public class AddDistributorManagement extends BaseTest {
         createInformationDistributorPage.inputByPlaceholder("Mã chiện - Phòng thị trường tạo", marketRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Mã NPP - Phòng kế toán tạo", distributionRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Thời gian vào", timeIn);
-        createInformationDistributorPage.inputByPlaceholder("Diện tích kho", warehouseArea);
         createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
         createInformationDistributorPage.inputToLabor(labor);
         createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.BUSINESS_MODEL_TEXT, AdminHomePageUI.BUSINESS_MODEL_VALUE, businessModel);
@@ -355,7 +351,6 @@ public class AddDistributorManagement extends BaseTest {
         createInformationDistributorPage.inputByPlaceholder("Mã chiện - Phòng thị trường tạo", marketRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Mã NPP - Phòng kế toán tạo", distributionRoomCode);
         createInformationDistributorPage.inputByPlaceholder("Thời gian vào", timeIn);
-        createInformationDistributorPage.inputByPlaceholder("Diện tích kho", warehouseArea);
         createInformationDistributorPage.inputToWarehouseArea(warehouseArea);
         createInformationDistributorPage.inputToLabor(labor);
         createInformationDistributorPage.selectItemInCustomDropdown(AdminHomePageUI.BUSINESS_MODEL_TEXT, AdminHomePageUI.BUSINESS_MODEL_VALUE, businessModel);

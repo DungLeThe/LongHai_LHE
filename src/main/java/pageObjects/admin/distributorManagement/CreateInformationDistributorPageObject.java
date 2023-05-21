@@ -135,14 +135,14 @@ public class CreateInformationDistributorPageObject extends BasePage {
         clickToElement(AdminHomePageUI.SELECT_WARD);
     }
 
-    public void inputToWarehouseArea(String idCard) {
+    public void inputToWarehouseArea(String warehouseArea) {
         waitForElementVisible(AdminHomePageUI.WAREHOUSE_AREA_INPUT_TEXT);
-        sendKeyToElement(AdminHomePageUI.WAREHOUSE_AREA_INPUT_TEXT, idCard);
+        sendKeyToElement(AdminHomePageUI.WAREHOUSE_AREA_INPUT_TEXT, warehouseArea);
     }
 
-    public void inputToLabor(String idCard) {
+    public void inputToLabor(String labor) {
         waitForElementVisible(AdminHomePageUI.LABOR_INPUT_TEXT);
-        sendKeyToElement(AdminHomePageUI.LABOR_INPUT_TEXT, idCard);
+        sendKeyToElement(AdminHomePageUI.LABOR_INPUT_TEXT, labor);
     }
 
     public void clickToInputRegion() {

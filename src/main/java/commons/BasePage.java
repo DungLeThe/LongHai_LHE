@@ -169,8 +169,30 @@ public class BasePage {
 
     public void sendKeyToElement(String locatorType, String textValue) {
         WebElement element = this.getWebElement(locatorType);
-        element.clear();
+        clearElementText(locatorType);
         element.sendKeys(textValue);
+    }
+
+    public void clearElementText(String locatorType) {
+        WebElement element = getWebElement(locatorType);
+        sleepMiliSecond(200);
+        getActions().click(element).keyDown(element, Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE).build().perform();
+        if (!"".equals(element.getText()))
+            getActions().keyDown(element, Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE).build().perform();
+        sleepMiliSecond(200);
+    }
+
+    public void clearElementText(String locatorType, String... dynamicValues) {
+        WebElement element = this.getWebElement(getDynamicXpath(locatorType, dynamicValues));
+        sleepMiliSecond(200);
+        getActions().click(element).keyDown(element, Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE).build().perform();
+        if (!"".equals(element.getText()))
+            getActions().keyDown(element, Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE).build().perform();
+        sleepMiliSecond(200);
+    }
+
+    public static Actions getActions() {
+        return new Actions(DriverManager.getDriver());
     }
 
     public void clearValueInElementByDeleteKey(String locatorType) {
@@ -180,7 +202,7 @@ public class BasePage {
 
     public void sendKeyToElement(String locatorType, String textValue, String... dynamicValues) {
         WebElement element = this.getWebElement(getDynamicXpath(locatorType, dynamicValues));
-        element.clear();
+        clearElementText(locatorType, dynamicValues);
         element.sendKeys(textValue);
     }
 
@@ -598,6 +620,14 @@ public class BasePage {
     public void sleepInSecond(int second) {
         try {
             Thread.sleep(second * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void sleepMiliSecond(double miliSecond) {
+        try {
+            Thread.sleep((long) (miliSecond));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

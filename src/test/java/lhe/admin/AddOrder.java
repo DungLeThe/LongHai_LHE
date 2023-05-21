@@ -18,7 +18,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class AddOrder extends BaseTest {
-    WebDriver driver;
 
     private String browserName;
     private AdminLoginPageObject loginPage;
