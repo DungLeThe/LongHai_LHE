@@ -78,14 +78,14 @@ public class AdminHomePageUI {
             "//input[@placeholder='Nhập email']/parent::div/following-sibling::p";
     public static final String VIEW_DETAIL_ALL_DISTRIBUTOR_DIV = "//div[contains(text(),'Nhà phân phối')]";
     public static final String VIEW_DETAIL_NEW_DISTRIBUTOR = "//div[@class='user-manager__search mb15']/following-sibling::div/div/div[1]//p[@class='p5 mb05']";
-    public static final String USER_NAME_TEXT = "//div[@class='user-manager__user-details__avatar']//p[@class='h5']";
+    public static final String USER_NAME_TEXT = "//div[@class='user-manager__user-details__container px1']//p[@class='p5']";
     public static final String INFO_DISTRIBUTOR_TEXT = "//p[text()='%s']/following-sibling::p";
     public static final String VIEW_DETAIL_ALL_ACCOUNTANT_DIV = "//div[contains(text(),'Kế toán')]";
     public static final String VIEW_DETAIL_NEW_ACCOUNTANT = "//div[@class='user-manager__search mb15']/following-sibling::div/div/div[1]//p[@class='p5 mb05']";
     public static final String VIEW_DETAIL_ALL_ADMIN_DIV = "//div[contains(text(),'Tổng')]";
     public static final String VIEW_DETAIL_NEW_ADMIN = "//div[@class='user-manager__search mb15']/following-sibling::div/div/div[1]//p[@class='p5 mb05']";
     public static final String VIEW_DETAIL_ALL_MARKETING_STAFF_DIV = "//div[contains(text(),'Nhân viên thị trường')]";
-    public static final String VIEW_DETAIL_NEW_MARKETING_STAFF = "//div[@class='user-manager__search mb15']/following-sibling::div/div/div[1]//p[@class='p5 mb05']";
+    public static final String VIEW_DETAIL_NEW_MARKETING_STAFF = "//div[@class='user-manager__search mb15']/following-sibling::div/div/div[1]//p[@class='p5']";
     public static final String VIEW_DETAIL_ALL_WAREHOUSE_DIV = "//div[contains(text(),'Kho')]";
     public static final String VIEW_DETAIL_NEW_WAREHOUSE = "//div[@class='user-manager__search mb15']/following-sibling::div/div/div[1]//p[@class='p5 mb05']";
     public static final String STAFF_TAB_IN_DISTRIBUTOR_DETAIL = "//div[contains(text(),'Nhân viên')]";

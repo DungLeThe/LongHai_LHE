@@ -230,6 +230,8 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
         createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
         createMarketingStaffPage.inputToName(name);
+        createMarketingStaffPage.inputToGender(gender);
+        createMarketingStaffPage.clickToValueGender();
         createMarketingStaffPage.inputToPhone(phone);
         createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
         createMarketingStaffPage.inputToIdCard(idCard);
@@ -238,8 +240,6 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         createMarketingStaffPage.inputToAddress(address);
         createMarketingStaffPage.inputToTimeIn(timeIn);
         createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
 
         createMarketingStaffPage.clickNextMarketingStaffButton();
         createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
@@ -281,6 +281,8 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
         createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
         createMarketingStaffPage.inputToName(name);
+        createMarketingStaffPage.inputToGender(gender);
+        createMarketingStaffPage.clickToValueGender();
         createMarketingStaffPage.inputToPhone(phone);
         createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
         createMarketingStaffPage.inputToIdCard(idCard);
@@ -289,8 +291,6 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         createMarketingStaffPage.inputToAddress(address);
         createMarketingStaffPage.inputToTimeIn(timeIn);
         createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
 
         createMarketingStaffPage.clickNextMarketingStaffButton();
         createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
