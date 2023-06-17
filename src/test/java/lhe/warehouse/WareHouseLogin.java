@@ -27,9 +27,9 @@ public class WareHouseLogin extends BaseTest {
         browserName = "chrome";
         loginPage = new WareHouseLoginPageObject(WARE_HOUSE_LOGIN);
         homePage = new WareHouseHomePageObject();
-        account = "0966666666";
+        account = "kho.lhe";
         accountInvalid = "hoangtest";
-        password = "Longhai@2023";
+        password = "lhe@1234";
         passwordInvalid = "hoangtest@11";
     }
 

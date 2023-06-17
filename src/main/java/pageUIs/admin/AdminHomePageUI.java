@@ -109,7 +109,8 @@ public class AdminHomePageUI {
     public static final String CREATE_NEW_BUTTON = "//span[text()='Tạo mới']";
     public static final String PRODUCT_NAME = "//p[contains(normalize-space(),'%s')]";
     public static final String PRODUCT_DETAIL = "//p[@class='p3 mb025']";
-    public static final String EDIT_PRODUCT_BUTTON = "//span[contains(normalize-space(),'Chỉnh sửa')]";
+//    public static final String EDIT_PRODUCT_BUTTON = "//span[contains(normalize-space(),'Chỉnh sửa')]";
+    public static final String EDIT_PRODUCT_BUTTON = "//span[contains(normalize-space(),'Điều chỉnh')]";
     public static final String PRODUCT_DETAIL_TEXT = "//span[contains(normalize-space(),'Chi tiết sản phẩm')]";
     public static final String CANCEL_EDIT_PRODUCT_BUTTON = "//span[text()='Huỷ bỏ']";
     public static final String CHANGE_STATUS_PRODUCT_LABEL = "//div[@class='label']";

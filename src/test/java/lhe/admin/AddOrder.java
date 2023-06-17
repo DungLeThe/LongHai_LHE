@@ -146,6 +146,7 @@ public class AddOrder extends BaseTest {
         orderDetailPage.clickAddButton();
         orderDetailPage.clickUpdateOrderButton();
         orderDetailPage.clickCancelButton();
+        // Bug Cập nhật đơn xong ko có approve
         orderDetailPage.clickApproveOrderButton();
         orderDetailPage.clickCancelButton();
         assertTrue(orderDetailPage.isProcessingButtonDisplayed());

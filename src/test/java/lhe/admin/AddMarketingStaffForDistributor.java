@@ -86,6 +86,8 @@ public class AddMarketingStaffForDistributor extends BaseTest {
         createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
         createMarketingStaffPage.inputToName(name);
         createMarketingStaffPage.inputToPhone(phone);
+        createMarketingStaffPage.inputToGender(gender);
+        createMarketingStaffPage.clickToValueGender();
         createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
         createMarketingStaffPage.inputToIdCard(idCard);
         createMarketingStaffPage.inputToDateRange(dateRange);
@@ -93,8 +95,6 @@ public class AddMarketingStaffForDistributor extends BaseTest {
         createMarketingStaffPage.inputToAddress(address);
         createMarketingStaffPage.inputToTimeIn(timeIn);
         createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
 
         createMarketingStaffPage.clickNextMarketingStaffButton();
         createMarketingStaffPage.inputToMaritalStatus(maritalStatus);

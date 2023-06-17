@@ -135,17 +135,14 @@ public class UserManagementAddAccountant extends BaseTest {
         createAccountantPage = createUserManagementPage.clickAddAccountant();
         createAccountantPage.inputToName(name);
         createAccountantPage.inputToPhone(phone);
+        createAccountantPage.inputToGender(gender);
+        createAccountantPage.clickToValueGender();
         createAccountantPage.inputToDateOfBirth(dateOfBirth);
         createAccountantPage.inputToIdCard(idCard);
         createAccountantPage.inputToDateRange(dateRange);
         createAccountantPage.inputToIssuedBy(issuedBy);
         createAccountantPage.inputToAddress(address);
         createAccountantPage.inputToTimeIn(timeIn);
-        createAccountantPage.clickNextAccountantButton();
-        createAccountantPage.inputToGender(gender);
-        createAccountantPage.clickToValueGender();
-
-        createAccountantPage.clickNextAccountantButton();
         createAccountantPage.inputToMaritalStatus(maritalStatus);
         createAccountantPage.clickToValueMaritalStatus();
 
@@ -169,17 +166,14 @@ public class UserManagementAddAccountant extends BaseTest {
         createAccountantPage = createUserManagementPage.clickAddAccountant();
         createAccountantPage.inputToName(name);
         createAccountantPage.inputToPhone(phone);
+        createAccountantPage.inputToGender(gender);
+        createAccountantPage.clickToValueGender();
         createAccountantPage.inputToDateOfBirth(dateOfBirth);
         createAccountantPage.inputToIdCard(idCard);
         createAccountantPage.inputToDateRange(dateRange);
         createAccountantPage.inputToIssuedBy(issuedBy);
         createAccountantPage.inputToAddress(address);
         createAccountantPage.inputToTimeIn(timeIn);
-        createAccountantPage.clickNextAccountantButton();
-        createAccountantPage.inputToGender(gender);
-        createAccountantPage.clickToValueGender();
-
-        createAccountantPage.clickNextAccountantButton();
         createAccountantPage.inputToMaritalStatus(maritalStatus);
         createAccountantPage.clickToValueMaritalStatus();
 
@@ -215,17 +209,14 @@ public class UserManagementAddAccountant extends BaseTest {
         createAccountantPage = createUserManagementPage.clickAddAccountant();
         createAccountantPage.inputToName(name);
         createAccountantPage.inputToPhone(phone);
+        createAccountantPage.inputToGender(gender);
+        createAccountantPage.clickToValueGender();
         createAccountantPage.inputToDateOfBirth(dateOfBirth);
         createAccountantPage.inputToIdCard(idCard);
         createAccountantPage.inputToDateRange(dateRange);
         createAccountantPage.inputToIssuedBy(issuedBy);
         createAccountantPage.inputToAddress(address);
         createAccountantPage.inputToTimeIn(timeIn);
-        createAccountantPage.clickNextAccountantButton();
-        createAccountantPage.inputToGender(gender);
-        createAccountantPage.clickToValueGender();
-
-        createAccountantPage.clickNextAccountantButton();
         createAccountantPage.inputToMaritalStatus(maritalStatus);
         createAccountantPage.clickToValueMaritalStatus();
 
@@ -261,17 +252,14 @@ public class UserManagementAddAccountant extends BaseTest {
         createAccountantPage = createUserManagementPage.clickAddAccountant();
         createAccountantPage.inputToName(name);
         createAccountantPage.inputToPhone(phone);
+        createAccountantPage.inputToGender(gender);
+        createAccountantPage.clickToValueGender();
         createAccountantPage.inputToDateOfBirth(dateOfBirth);
         createAccountantPage.inputToIdCard(idCard);
         createAccountantPage.inputToDateRange(dateRange);
         createAccountantPage.inputToIssuedBy(issuedBy);
         createAccountantPage.inputToAddress(address);
         createAccountantPage.inputToTimeIn(timeIn);
-        createAccountantPage.clickNextAccountantButton();
-        createAccountantPage.inputToGender(gender);
-        createAccountantPage.clickToValueGender();
-
-        createAccountantPage.clickNextAccountantButton();
         createAccountantPage.inputToMaritalStatus(maritalStatus);
         createAccountantPage.clickToValueMaritalStatus();
 

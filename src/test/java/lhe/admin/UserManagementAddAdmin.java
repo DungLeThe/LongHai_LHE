@@ -139,17 +139,14 @@ public class UserManagementAddAdmin extends BaseTest {
 
         createAdminPage.inputToName(name);
         createAdminPage.inputToPhone(phone);
+        createAdminPage.inputToGender(gender);
+        createAdminPage.clickToValueGender();
         createAdminPage.inputToDateOfBirth(dateOfBirth);
         createAdminPage.inputToIdCard(idCard);
         createAdminPage.inputToDateRange(dateRange);
         createAdminPage.inputToIssuedBy(issuedBy);
         createAdminPage.inputToAddress(address);
         createAdminPage.inputToTimeIn(timeIn);
-        createAdminPage.clickNextWarehouseButton();
-        createAdminPage.inputToGender(gender);
-        createAdminPage.clickToValueGender();
-
-        createAdminPage.clickNextWarehouseButton();
         createAdminPage.inputToMaritalStatus(maritalStatus);
         createAdminPage.clickToValueMaritalStatus();
 
@@ -174,17 +171,14 @@ public class UserManagementAddAdmin extends BaseTest {
 
         createAdminPage.inputToName(name);
         createAdminPage.inputToPhone(phone);
+        createAdminPage.inputToGender(gender);
+        createAdminPage.clickToValueGender();
         createAdminPage.inputToDateOfBirth(dateOfBirth);
         createAdminPage.inputToIdCard(idCard);
         createAdminPage.inputToDateRange(dateRange);
         createAdminPage.inputToIssuedBy(issuedBy);
         createAdminPage.inputToAddress(address);
         createAdminPage.inputToTimeIn(timeIn);
-        createAdminPage.clickNextWarehouseButton();
-        createAdminPage.inputToGender(gender);
-        createAdminPage.clickToValueGender();
-
-        createAdminPage.clickNextWarehouseButton();
         createAdminPage.inputToMaritalStatus(maritalStatus);
         createAdminPage.clickToValueMaritalStatus();
 
@@ -221,17 +215,14 @@ public class UserManagementAddAdmin extends BaseTest {
 
         createAdminPage.inputToName(name);
         createAdminPage.inputToPhone(phone);
+        createAdminPage.inputToGender(gender);
+        createAdminPage.clickToValueGender();
         createAdminPage.inputToDateOfBirth(dateOfBirth);
         createAdminPage.inputToIdCard(idCard);
         createAdminPage.inputToDateRange(dateRange);
         createAdminPage.inputToIssuedBy(issuedBy);
         createAdminPage.inputToAddress(address);
         createAdminPage.inputToTimeIn(timeIn);
-        createAdminPage.clickNextWarehouseButton();
-        createAdminPage.inputToGender(gender);
-        createAdminPage.clickToValueGender();
-
-        createAdminPage.clickNextWarehouseButton();
         createAdminPage.inputToMaritalStatus(maritalStatus);
         createAdminPage.clickToValueMaritalStatus();
 
@@ -268,17 +259,14 @@ public class UserManagementAddAdmin extends BaseTest {
 
         createAdminPage.inputToName(name);
         createAdminPage.inputToPhone(phone);
+        createAdminPage.inputToGender(gender);
+        createAdminPage.clickToValueGender();
         createAdminPage.inputToDateOfBirth(dateOfBirth);
         createAdminPage.inputToIdCard(idCard);
         createAdminPage.inputToDateRange(dateRange);
         createAdminPage.inputToIssuedBy(issuedBy);
         createAdminPage.inputToAddress(address);
         createAdminPage.inputToTimeIn(timeIn);
-        createAdminPage.clickNextWarehouseButton();
-        createAdminPage.inputToGender(gender);
-        createAdminPage.clickToValueGender();
-
-        createAdminPage.clickNextWarehouseButton();
         createAdminPage.inputToMaritalStatus(maritalStatus);
         createAdminPage.clickToValueMaritalStatus();
 

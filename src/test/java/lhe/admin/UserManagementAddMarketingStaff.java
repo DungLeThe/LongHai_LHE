@@ -108,32 +108,7 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     }
 
     @Test
-    public void TC_03_Add_Marketing_Staff_Empty_Data_In_Dropdown_List(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Add Marketing Staff Empty Data In Dropdown List");
-        goToHomPage();
-        userManagementHomePage = homePage.clickUserManagementButton();
-        createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
-        createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
-        createMarketingStaffPage.inputToName(name);
-        createMarketingStaffPage.inputToPhone(phone);
-        createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
-        createMarketingStaffPage.inputToIdCard(idCard);
-        createMarketingStaffPage.inputToDateRange(dateRange);
-        createMarketingStaffPage.inputToIssuedBy(issuedBy);
-        createMarketingStaffPage.inputToAddress(address);
-        createMarketingStaffPage.inputToTimeIn(timeIn);
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-
-        assertEquals(createMarketingStaffPage.getErrorMessageGender(), "Vui lòng chọn");
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
-
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-        assertEquals(createMarketingStaffPage.getErrorMessageMaritalStatus(), "Vui lòng chọn");
-    }
-
-    @Test
-    public void TC_04_Add_Marketing_Staff_Success(Method method) {
+    public void TC_03_Add_Marketing_Staff_Success(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Marketing Staff Success");
         goToHomPage();
         userManagementHomePage = homePage.clickUserManagementButton();
@@ -141,17 +116,14 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
         createMarketingStaffPage.inputToName(name);
         createMarketingStaffPage.inputToPhone(phone);
+        createMarketingStaffPage.inputToGender(gender);
+        createMarketingStaffPage.clickToValueGender();
         createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
         createMarketingStaffPage.inputToIdCard(idCard);
         createMarketingStaffPage.inputToDateRange(dateRange);
         createMarketingStaffPage.inputToIssuedBy(issuedBy);
         createMarketingStaffPage.inputToAddress(address);
         createMarketingStaffPage.inputToTimeIn(timeIn);
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
-
-        createMarketingStaffPage.clickNextMarketingStaffButton();
         createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
         createMarketingStaffPage.clickToValueMaritalStatus();
 
@@ -172,7 +144,7 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     }
 
     @Test
-    public void TC_05_Add_Marketing_Staff_Account_Empty_Data(Method method) {
+    public void TC_04_Add_Marketing_Staff_Account_Empty_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Marketing Staff Account Empty Data");
         goToHomPage();
         userManagementHomePage = homePage.clickUserManagementButton();
@@ -180,17 +152,14 @@ public class UserManagementAddMarketingStaff extends BaseTest {
         createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
         createMarketingStaffPage.inputToName(name);
         createMarketingStaffPage.inputToPhone(phone);
+        createMarketingStaffPage.inputToGender(gender);
+        createMarketingStaffPage.clickToValueGender();
         createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
         createMarketingStaffPage.inputToIdCard(idCard);
         createMarketingStaffPage.inputToDateRange(dateRange);
         createMarketingStaffPage.inputToIssuedBy(issuedBy);
         createMarketingStaffPage.inputToAddress(address);
         createMarketingStaffPage.inputToTimeIn(timeIn);
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-        createMarketingStaffPage.inputToGender(gender);
-        createMarketingStaffPage.clickToValueGender();
-
-        createMarketingStaffPage.clickNextMarketingStaffButton();
         createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
         createMarketingStaffPage.clickToValueMaritalStatus();
 
@@ -223,25 +192,22 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     }
 
     @Test
-    public void TC_06_Add_Marketing_Staff_Account_Invalid_Data(Method method) {
+    public void TC_05_Add_Marketing_Staff_Account_Invalid_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Marketing Staff Account Invalid Data");
         goToHomPage();
         userManagementHomePage = homePage.clickUserManagementButton();
         createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
         createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
         createMarketingStaffPage.inputToName(name);
+        createMarketingStaffPage.inputToPhone(phone);
         createMarketingStaffPage.inputToGender(gender);
         createMarketingStaffPage.clickToValueGender();
-        createMarketingStaffPage.inputToPhone(phone);
         createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
         createMarketingStaffPage.inputToIdCard(idCard);
         createMarketingStaffPage.inputToDateRange(dateRange);
         createMarketingStaffPage.inputToIssuedBy(issuedBy);
         createMarketingStaffPage.inputToAddress(address);
         createMarketingStaffPage.inputToTimeIn(timeIn);
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-
-        createMarketingStaffPage.clickNextMarketingStaffButton();
         createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
         createMarketingStaffPage.clickToValueMaritalStatus();
 
@@ -274,25 +240,22 @@ public class UserManagementAddMarketingStaff extends BaseTest {
     }
 
     @Test
-    public void TC_07_Add_Marketing_Staff_Account_Success(Method method) {
+    public void TC_06_Add_Marketing_Staff_Account_Success(Method method) {
         ExtentTestManager.startTest(method.getName(), "Add Marketing Staff Account Success");
         goToHomPage();
         userManagementHomePage = homePage.clickUserManagementButton();
         createUserManagementPage = userManagementHomePage.clickAddUserManagementButton();
         createMarketingStaffPage = createUserManagementPage.clickAddMarketingStaff();
         createMarketingStaffPage.inputToName(name);
+        createMarketingStaffPage.inputToPhone(phone);
         createMarketingStaffPage.inputToGender(gender);
         createMarketingStaffPage.clickToValueGender();
-        createMarketingStaffPage.inputToPhone(phone);
         createMarketingStaffPage.inputToDateOfBirth(dateOfBirth);
         createMarketingStaffPage.inputToIdCard(idCard);
         createMarketingStaffPage.inputToDateRange(dateRange);
         createMarketingStaffPage.inputToIssuedBy(issuedBy);
         createMarketingStaffPage.inputToAddress(address);
         createMarketingStaffPage.inputToTimeIn(timeIn);
-        createMarketingStaffPage.clickNextMarketingStaffButton();
-
-        createMarketingStaffPage.clickNextMarketingStaffButton();
         createMarketingStaffPage.inputToMaritalStatus(maritalStatus);
         createMarketingStaffPage.clickToValueMaritalStatus();
 

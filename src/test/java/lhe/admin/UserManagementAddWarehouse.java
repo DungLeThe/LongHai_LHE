@@ -138,17 +138,14 @@ public class UserManagementAddWarehouse extends BaseTest {
 
         createWarehousePage.inputToName(name);
         createWarehousePage.inputToPhone(phone);
+        createWarehousePage.inputToGender(gender);
+        createWarehousePage.clickToValueGender();
         createWarehousePage.inputToDateOfBirth(dateOfBirth);
         createWarehousePage.inputToIdCard(idCard);
         createWarehousePage.inputToDateRange(dateRange);
         createWarehousePage.inputToIssuedBy(issuedBy);
         createWarehousePage.inputToAddress(address);
         createWarehousePage.inputToTimeIn(timeIn);
-        createWarehousePage.clickNextWarehouseButton();
-        createWarehousePage.inputToGender(gender);
-        createWarehousePage.clickToValueGender();
-
-        createWarehousePage.clickNextWarehouseButton();
         createWarehousePage.inputToMaritalStatus(maritalStatus);
         createWarehousePage.clickToValueMaritalStatus();
 
@@ -179,11 +176,8 @@ public class UserManagementAddWarehouse extends BaseTest {
         createWarehousePage.inputToIssuedBy(issuedBy);
         createWarehousePage.inputToAddress(address);
         createWarehousePage.inputToTimeIn(timeIn);
-        createWarehousePage.clickNextWarehouseButton();
         createWarehousePage.inputToGender(gender);
         createWarehousePage.clickToValueGender();
-
-        createWarehousePage.clickNextWarehouseButton();
         createWarehousePage.inputToMaritalStatus(maritalStatus);
         createWarehousePage.clickToValueMaritalStatus();
 
@@ -226,11 +220,8 @@ public class UserManagementAddWarehouse extends BaseTest {
         createWarehousePage.inputToIssuedBy(issuedBy);
         createWarehousePage.inputToAddress(address);
         createWarehousePage.inputToTimeIn(timeIn);
-        createWarehousePage.clickNextWarehouseButton();
         createWarehousePage.inputToGender(gender);
         createWarehousePage.clickToValueGender();
-
-        createWarehousePage.clickNextWarehouseButton();
         createWarehousePage.inputToMaritalStatus(maritalStatus);
         createWarehousePage.clickToValueMaritalStatus();
 
@@ -267,17 +258,14 @@ public class UserManagementAddWarehouse extends BaseTest {
 
         createWarehousePage.inputToName(name);
         createWarehousePage.inputToPhone(phone);
+        createWarehousePage.inputToGender(gender);
+        createWarehousePage.clickToValueGender();
         createWarehousePage.inputToDateOfBirth(dateOfBirth);
         createWarehousePage.inputToIdCard(idCard);
         createWarehousePage.inputToDateRange(dateRange);
         createWarehousePage.inputToIssuedBy(issuedBy);
         createWarehousePage.inputToAddress(address);
         createWarehousePage.inputToTimeIn(timeIn);
-        createWarehousePage.clickNextWarehouseButton();
-        createWarehousePage.inputToGender(gender);
-        createWarehousePage.clickToValueGender();
-
-        createWarehousePage.clickNextWarehouseButton();
         createWarehousePage.inputToMaritalStatus(maritalStatus);
         createWarehousePage.clickToValueMaritalStatus();
 
