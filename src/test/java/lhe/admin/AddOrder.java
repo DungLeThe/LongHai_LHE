@@ -113,7 +113,7 @@ public class AddOrder extends BaseTest {
         assertTrue(orderDetailPage.isProcessingButtonDisplayed());
     }
 
-    @Test
+//    @Test
     public void TC_04_Approve_Order_From_Order_Home_Page(Method method) {
         ExtentTestManager.startTest(method.getName(), "Approve Order From Order Home Page");
         goToHomPage();

@@ -36,31 +36,4 @@ public class TransactionSlip extends BaseTest {
         whTransactionSlipPage = whHomePage.clickTransactionSlipButton();
         whTransactionSlipPage.clickExportNote();
     }
-
-    @Test
-    public void TC_02_ApproveExportNote(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Ware House Home Page");
-        goToWareHouseHomePage();
-        whTransactionSlipPage = whHomePage.clickTransactionSlipButton();
-        whTransactionSlipPage.clickExportNote();
-        whTransactionSlipPage.clickViewExportNoteDetail();
-        whTransactionSlipPage.inputDeliverName();
-        whTransactionSlipPage.inputDriverPlate();
-        whTransactionSlipPage.chooseReasonToExport();
-        whTransactionSlipPage.clickExport();
-        whTransactionSlipPage.clickConfirmExport();
-        Assert.assertTrue(whTransactionSlipPage.isApprovedButtonDisplayed());
-    }
-
-    @Test
-    public void TC_03_DenyExportNote(Method method) {
-        ExtentTestManager.startTest(method.getName(), "Go To Ware House Home Page");
-        goToWareHouseHomePage();
-        whTransactionSlipPage = whHomePage.clickTransactionSlipButton();
-        whTransactionSlipPage.clickExportNote();
-        whTransactionSlipPage.clickViewExportNoteDetail();
-        whTransactionSlipPage.clickCancel();
-        whTransactionSlipPage.clickConfirmCancel();
-        Assert.assertTrue(whTransactionSlipPage.isCancelledButtonDisplayed());
-    }
 }

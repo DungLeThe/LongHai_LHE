@@ -5,15 +5,15 @@ import java.io.File;
 public class GlobalConstants {
     public static final String ADMIN_LOGIN = "https://admin.longhaii.com/";
     public static final String NPP_LOGIN = "https://npp.longhaii.com/";
-    public static final String WARE_HOUSE_LOGIN = "https://kho.thachlonghai.co/";
+    public static final String WARE_HOUSE_LOGIN = "https://kho.longhaii.com/";
     public static final String ACCOUNTANT_LOGIN = "https://kt.longhaii.com/";
     public static final String MARKETING_STAFF_LOGIN = "https://nvtt.longhaii.com/";
     public static String ADMIN_ACCOUNT = "adminqc";
     public static String ADMIN_PASSWORD = "admin@11";
     public static String NPP_ACCOUNT ="npp.lhe";
     public static String NPP_PASSWORD ="lhe@1234";
-    public static String WARE_HOUSE_ACCOUNT = "0966666666";
-    public static String WARE_HOUSE_PASSWORD ="Longhai@2023";
+    public static String WARE_HOUSE_ACCOUNT = "kho.lhe";
+    public static String WARE_HOUSE_PASSWORD ="lhe@1234";
     public static String ACCOUNTANT_ACCOUNT = "0955555555";
     public static String ACCOUNTANT_PASSWORD = "Longhai@2023";
     public static String MARKETING_STAFF_ACCOUNT = "nvtt.lhe";

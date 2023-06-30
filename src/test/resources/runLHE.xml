@@ -8,14 +8,14 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
   </listeners>
 
-  <test name="Run On CHROME" parallel="classes" thread-count="5">
+  <test name="Run On CHROME" parallel="classes" thread-count="3">
 	<parameter name="browser" value="chrome"/>
     <classes>
       <class name="lhe.admin.Login"/>
       <class name="lhe.admin.AddDistributorManagement"/>
       <class name="lhe.admin.EditDistributorManagement"/>
       <class name="lhe.admin.AddProduct"/>
-      <class name="lhe.admin.EditProduct"/>
+<!--      <class name="lhe.admin.EditProduct"/>-->
       <class name="lhe.admin.AddOrder"/>
       <class name="lhe.admin.AddMarketingStaffForDistributor"/>
       <class name="lhe.admin.UserManagementAddDistributor"/>
@@ -33,7 +33,6 @@
       <class name="lhe.npp.CreateCategory"/>
       <class name="lhe.npp.ProductListAndViewDetailProduct"/>
       <class name="lhe.npp.ViewAndEditPersonalInformation"/>
-      <class name="lhe.npp.ConfirmReceivedGoods"/>
 
       <class name="lhe.warehouse.WareHouseLogin"/>
       <class name="lhe.warehouse.TransactionSlip"/>

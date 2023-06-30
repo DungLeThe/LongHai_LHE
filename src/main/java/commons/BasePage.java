@@ -253,12 +253,12 @@ public class BasePage {
         }
     }
 
-    public String getElementAttribute(String locatorType, String atributeName) {
-        return this.getWebElement(locatorType).getAttribute(atributeName);
+    public String getElementAttribute(String locatorType, String attributeName) {
+        return this.getWebElement(locatorType).getAttribute(attributeName);
     }
 
-    public String getElementAttribute(String locatorType, String atributeName, String... dynamicValues) {
-        return this.getWebElement(getDynamicXpath(locatorType, dynamicValues)).getAttribute(atributeName);
+    public String getElementAttribute(String locatorType, String attributeName, String... dynamicValues) {
+        return this.getWebElement(getDynamicXpath(locatorType, dynamicValues)).getAttribute(attributeName);
     }
 
     public String getCssValue(String locator, String propertyName) {
